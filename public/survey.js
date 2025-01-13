@@ -38,10 +38,14 @@ function surveyEdit(id) {
       var contentdiv = document.getElementById("mycontent");
       // contentdiv.innerHTML = response.data["description"];
       survey.id.value = response.data["id"];
-      survey.description.value = response.data["description"];
+      survey.title.value = response.data["title"];
       survey.detail.value = response.data["detail"];
          survey.state.value = response.data["state"];
+         survey.date_start.value = response.data["date_start"];
+         survey.date_end.value = response.data["date_end"];
             survey.type.value = response.data["type"];
+                  // JavaScript para establecer el contenido del textarea
+      document.getElementsByClassName("note-editable")[0].innerHTML = response.data["description"];
     })
     .catch(function(response) {
       //handle error

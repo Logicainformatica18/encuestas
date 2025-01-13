@@ -17,7 +17,8 @@
                                 <thead>
                                     <th></th>
                                     <th class="sorting">ID</th>
-                                    <th class="sorting">Descripción</th>
+                                    <th class="sorting">Título</th>
+                                    
                                     <th class="sorting">Detalle</th>
                                         <th class="sorting">Tipo</th>
                                     <th class="sorting">Url</th>
@@ -33,7 +34,7 @@
                                         <tr>
                                             <td></td>
                                             <td>{{ $surveys->id }}</td>
-                                            <td>{{ $surveys->description }}</td>
+                                            <td>{{ $surveys->title }}</td>
                                             <td>{{ $surveys->detail }}</td>
                                               <td>{{ $surveys->type }}</td>
                                             <td> 

@@ -12,7 +12,7 @@ class SurveySeeder extends Seeder
      */
     public function run(): void
     {
-          Survey::create(['description' => 'Encuesta1','detail' =>'',
+          Survey::create(['title' => 'Encuesta1','detail' =>'',
           'url'=>'',
            'date_start' => '2023-05-04',
             'date_end' => '2023-05-04',

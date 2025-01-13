@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AnthonyCode</title>
+    <title>ComexLat</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/jpg" href="{{ asset('dist/img/favicon.png') }}" />
@@ -103,13 +103,13 @@
                             <div class="login-logo">
                                 <img src="{{ asset('logo_anthonycode.png') }}" alt="" srcset=""width="30%">
                            
-                                <h1 style="font-weight: bold;font-size:50px; color: #042d89;"><b>Encuestas</b>
+                                <h1 style="font-weight: bold;font-size:50px; color: #F59C1C;"><b>Encuestas</b>
                                 </h1>
                             </div>
-                            <p class="login-box-msg" style="color:#042d89;">Ingrese sus datos para iniciar sesión</p>
+                            <p class="login-box-msg" style="color:#F59C1C;">Ingrese sus datos para iniciar sesión</p>
 
                             <form method="POST" action="{{ route('login') }}">
-                                &nbsp;&nbsp;<span style="color: #042d89;font-size:13px">Email</span>
+                                &nbsp;&nbsp;<span style="color: #F59C1C;font-size:13px">Email</span>
                                 {{ csrf_field() }}
                                 <div class="input-group mb-3 container">
 
@@ -128,7 +128,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                &nbsp;&nbsp;<span style="color: #042d89;font-size:13px">Contraseña</span>
+                                &nbsp;&nbsp;<span style="color: #F59C1C;font-size:13px">Contraseña</span>
                                 <div class="input-group mb-3 container">
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
@@ -156,7 +156,7 @@
 
                                         <button type="submit"
                                             class="btn btn-primary md d-flex align-items-center justify-content-center"
-                                            style="background-color: #042d89;font-weight: 100%; height:40px;width:70%; border-radius: 20px;">
+                                            style="background-color: #F59C1C;font-weight: 100%; height:40px;width:70%; border-radius: 20px;">
                                             <span style="color:white; font-size: 1em;">INICIAR SESIÓN</span>
                                         </button>
 
@@ -170,7 +170,7 @@
 
                                             <input class="form-check-input" type="checkbox" name="remember"
                                                 id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                            <span style="color: #042d89;font-size:12px">Recordarme</span>
+                                            <span style="color: #F59C1C;font-size:12px">Recordarme</span>
 
 
                                         </div>
@@ -180,7 +180,7 @@
                                         <p></p>
                                         @if (Route::has('password.request'))
                                             <a class="login-box-msg"
-                                                href="{{ route('password.request') }}"style="color:#042d89;font-size:13px">
+                                                href="{{ route('password.request') }}"style="color:#F59C1C;font-size:13px">
                                                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                                 &nbsp;¿Olvidaste tu Contraseña?
                                             </a>

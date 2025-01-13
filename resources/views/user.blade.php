@@ -21,7 +21,7 @@
     </section>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-        onclick="New();$('#user')[0].reset();user.fotografia.src='https://via.placeholder.com/150';">
+        onclick="New();$('#user')[0].reset();user.fotografia.src='https://placehold.co/300x300';">
         Agregar
     </button>
     <p></p>
@@ -126,7 +126,7 @@
                             </div>
                             <div class="size-100">
                                 <br>
-                                <img id="blah" name="fotografia" src="https://via.placeholder.com/150" alt="Tu imagen"
+                                <img id="blah" name="fotografia" src="https://placehold.co/300x300" alt="Tu imagen"
                                     class="img-bordered" width="100%">
                             </div>
                         </div>
@@ -135,7 +135,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <input type="button" value="Nuevo" class="btn btn-warning" onclick="New();$('#user')[0].reset(); user.fotografia.src='https://via.placeholder.com/150';"
+                    <input type="button" value="Nuevo" class="btn btn-warning" onclick="New();$('#user')[0].reset(); user.fotografia.src='https://placehold.co/300x300';"
                         name="new">
                     <input type="button" value="Guardar" class="btn btn-success" onclick="userStore()" id="create">
                     <input type="button" value="Modificar" class="btn btn-danger" onclick="userUpdate();" id="update">

@@ -84,7 +84,7 @@
                                                 <div class="col-sm-2"></div>
                                                 <div class="col-sm-8">
                                                     <br>
-                                                    <img id="blah" src="https://via.placeholder.com/150" alt="Tu imagen"
+                                                    <img id="blah" src="https://placehold.co/300x300" alt="Tu imagen"
                                                         class="img-bordered" width="200">
                                                 </div>
                                             </div> --}}

@@ -39,9 +39,7 @@
 
 
                                        {{ $survey_details->survey->detail }}
-                                       <p>&nbsp; </p>
-                                       <p>&nbsp; </p>
-                                       <p>&nbsp; </p>
+                                
                                        @php
                                            $date_now= \Carbon\Carbon::now('America/Lima')->format('Y-m-d H:i:s');
                                        @endphp
@@ -253,7 +251,7 @@
 
 
        <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
-           <img width="100%" src="{{ asset('logo_anthonycode.png')}}" alt="" srcset="">
+      
            {{-- <h3 class="text-primary"><i class="fas fa-paint-brush"></i> AdminLTE v3</h3>
                             <p class="text-muted">Raw denim you probably haven't heard of them jean shorts Austin.
                                 Nesciunt

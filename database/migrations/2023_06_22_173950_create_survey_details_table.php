@@ -13,16 +13,18 @@ return new class extends Migration
     {
         Schema::create('survey_details', function (Blueprint $table) {
             $table->id();
-                        $table->bigInteger('survey_id')->unsigned();
+            $table->bigInteger('survey_id')->unsigned();
             $table->foreign('survey_id')->references('id')->on('surveys');
 
-               $table->bigInteger('selection_id')->unsigned()->nullable();
+            $table->bigInteger('selection_id')->unsigned()->nullable();
             $table->foreign('selection_id')->references('id')->on('selections');
-
-                   $table->string('question');
-                   $table->string('type');
-                     $table->json('option')->nullable();
-                    $table->string('requerid')->nullable();
+            $table->string('front_page')->nullable();
+            $table->string('image')->nullable();
+            $table->string('post')->nullable();
+            $table->string('question');
+            $table->string('type');
+            $table->json('option')->nullable();
+            $table->string('requerid')->nullable();
             $table->string('state')->nullable();
             $table->timestamps();
         });

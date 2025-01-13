@@ -5,13 +5,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Encuestas</h1>
+                    <h1>Formularios</h1>
                     {{ session('success') }}
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                        <li class="breadcrumb-item active">Encuestas</li>
+                        <li class="breadcrumb-item active">Formularios</li>
                     </ol>
                 </div>
             </div>
@@ -19,7 +19,7 @@
     </section>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-        onclick="New();$('#survey')[0].reset();">
+        onclick="New();$('#survey')[0].reset();reset_textarea()">
         Agregar
     </button>
     <p></p>
@@ -32,9 +32,9 @@
 
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Mantenimiento</h5>
@@ -46,12 +46,41 @@
                     <form action="" method="post" role="form" id="survey" name="form">
                         <input type="hidden" name="id" id="id">
                         {{ csrf_field() }}
-                        Descripción : <input type="text" name="description" id="description" class="form-control">
+                        Título : <input type="text" name="title" id="title" class="form-control">
                         Tipo
                         <select name="type" id="type" class="form-control">
-                            <option value="encuesta">Encuesta</option>
+                            {{-- <option value="encuesta">Encuesta</option> --}}
                             <option value="ficha">Ficha</option>
                         </select>
+                        <p></p>
+                        <div class="container align-content-center">
+                            <div class="form-group row">
+                                <p></p>
+                                Portada
+                                <div class="col-6">
+                                    <div class="btn btn-default btn-file col-9">
+                                        <i class="fas fa-paperclip"></i> Subir
+                                        <input type='file' id="imgInp" name="front_page" onchange="readImage(this);">
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="size-100 container">
+                                        <br>
+                                        <img id="blah" name="fotografia" src="https://placehold.co/300x300" alt="Tu imagen"
+                                            class="img-bordered" width="100%">
+                                    </div>
+                                </div>
+                             
+
+
+                            </div>
+                            
+                        </div>
+                        Descripción : 
+                        <textarea id="my-textarea"style="height:'900px'" name="description">
+                 
+                        </textarea>
+                     
                          Elija visibilidad
                         <select name="state" id="state" class="form-control">
                             <option value="public">Público</option>
@@ -69,7 +98,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <input type="button" value="Nuevo" class="btn btn-warning" onclick="New();$('#survey')[0].reset();"
+                    <input type="button" value="Nuevo" class="btn btn-warning" onclick="New();$('#survey')[0].reset();reset_textarea()"
                         name="new">
                     <input type="button" value="Guardar" class="btn btn-success"id="create" onclick="surveyStore()"
                         name="create">

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AnthonyCode</title>
+    <title>ComexLat</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -87,7 +87,7 @@
     {{-- <script src="{{asset('dist/js/pages/dashboard.js')}}"></script> --}}
     <!-- AdminLTE for demo purposes -->
     <script src="{{ asset('dist/js/demo.js') }}"></script>
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css" rel="stylesheet">
 
 
 
@@ -102,7 +102,7 @@
     <div class="wrapper">
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand"style="background-color: #00bf6f">
+        <nav class="main-header navbar navbar-expand"style="background-color:  #F59C1C">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
@@ -115,8 +115,8 @@
             <div class="row">
                 <div class="col col-lg-7">
 
-                    <a class="navbar-brand" href="{{ url('Administrador') }}">
-                   Anthony Code    
+                    <a class="navbar-brand text-white" href="{{ url('Administrador') }}">
+                  {{Auth::user()->roles[0]->name}}    
                     </a>
 
                 </div>
@@ -134,7 +134,7 @@
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #042d89;color:white">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4"style="background: linear-gradient(95deg,black  , black); color: white;color:white">
             <!-- Brand Logo -->
             <a href="" class="brand-link">
                
@@ -422,7 +422,7 @@
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
                                                <img src="{{ asset('formularioss.png') }}" alt="" srcset=""
                                                 width="30px">
-                                            <p>ENCUESTAS</p>
+                                            <p>Formularios</p>
                                         </a>
                                     </li>
                                      <li class="nav-item">
@@ -808,6 +808,44 @@
     </script>
 
 
+<script>
+    $(document).ready(function() {
+        // Inicializar el editor Summernote extendido
+        $('#my-textarea').summernote({
+            height: 400, // Altura del editor
+            placeholder: 'Escribe algo aquí...',
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript',
+                    'subscript', 'clear'
+                ]],
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video', 'hr']],
+                ['view', ['fullscreen', 'codeview', 'help']],
+                ['history', ['undo', 'redo']]
+            ],
+            fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Helvetica', 'Impact',
+                'Tahoma', 'Times New Roman', 'Verdana', 'Manrope', 'Montserrat', 'Montserrat-Bold',
+                'Montserrat-SemiBold', 'Montserrat-Regular'
+            ], // Agrega Montserrat aquí
+            fontNamesIgnoreCheck: ['Montserrat', 'Montserrat-Regular', 'Montserrat-Bold',
+                'Montserrat-SemiBold'
+            ] // Ignora el chequeo para la fuente personalizada
+
+
+        });
+    });
+</script>
+<script>
+    function reset_textarea() {
+
+        document.getElementsByClassName('note-editable')[0].innerHTML = "";
+    }
+</script>
     <script>
         function datatable_load() {
             $("#example1").DataTable({

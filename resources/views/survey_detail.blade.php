@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
 
-                    <h3>ID : {{ $survey->description }} </h3>
+                    <h3>ID : {{ $survey->title }} </h3>
                     <h4>
                         Inicio : {{ $survey->date_start }} - Fin : {{ $survey->date_end }}
                     </h4>

@@ -7,14 +7,19 @@ use App\Http\Requests\StoreSurveyRequest;
 use App\Http\Requests\UpdateSurveyRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+
 class SurveyController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-            $survey = Survey::orderBy('id','DESC')->get();
+        $survey = Survey::orderBy('id', 'DESC')->get();
         return view("survey", compact("survey"));
     }
 
@@ -23,7 +28,7 @@ class SurveyController extends Controller
      */
     public function create()
     {
-                 $survey = Survey::orderBy('id','DESC')->get();
+        $survey = Survey::orderBy('id', 'DESC')->get();
         return view("surveytable", compact("survey"));
     }
 
@@ -32,14 +37,21 @@ class SurveyController extends Controller
      */
     public function store(Request $request)
     {
-           $survey = new Survey;
+        $survey = new Survey;
+        $survey->title = $request->title;
+         //photo
+         if ($request->file('front_page') != null) {
+            $request->front_page = photoStore($request->file('front_page'), "imageusers");
+            $survey->front_page = $request->front_page;
+        }
+
         $survey->description = $request->description;
         $survey->detail = $request->detail;
-                $survey->date_start = $request->date_start;
-                        $survey->date_end = $request->date_end;
+        $survey->date_start = $request->date_start;
+        $survey->date_end = $request->date_end;
         $survey->url = $request->url;
-         $survey->type = $request->type;
-               $survey->state = $request->state;
+        $survey->type = $request->type;
+        $survey->state = $request->state;
         $survey->save();
         return $this->create();
     }
@@ -57,7 +69,7 @@ class SurveyController extends Controller
      */
     public function edit(Request $request)
     {
-       $survey = Survey::find($request->id);
+        $survey = Survey::find($request->id);
         return $survey;
     }
 
@@ -66,13 +78,21 @@ class SurveyController extends Controller
      */
     public function update(Request $request)
     {
-           $survey = survey::find($request->id);
+        $survey = survey::find($request->id);
+        $survey->title = $request->title;
+         //photo
+         if ($request->file('front_page') != null) {
+            $request->front_page = photoStore($request->file('front_page'), "imageusers");
+            $survey->front_page = $request->front_page;
+        }
+
         $survey->description = $request->description;
         $survey->detail = $request->detail;
-             $survey->date_start = $request->date_start;
-                        $survey->date_end = $request->date_end;
-                               $survey->type = $request->type;
-                        $survey->state = $request->state;
+        $survey->date_start = $request->date_start;
+        $survey->date_end = $request->date_end;
+        $survey->url = $request->url;
+        $survey->type = $request->type;
+        $survey->state = $request->state;
         $survey->save();
         return $this->create();
     }
@@ -85,9 +105,8 @@ class SurveyController extends Controller
         Survey::find($request->id)->delete();
         return $this->create();
     }
-        public function survey_detail(Request $request)
+    public function survey_detail(Request $request)
     {
-       return Session::put('survey_id',$request->id);
-
+        return Session::put('survey_id', $request->id);
     }
 }

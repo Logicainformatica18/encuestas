@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 
-    <title>AnthonyCode Encuestas</title>
+    <title>ComexLat Encuestas</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -53,7 +53,7 @@
 </head>
 
 <body class="pos-relative">
-    <nav class="navbar navbar-expand-md  shadow-sm"style="background-color: #042d89">
+    <nav class="navbar navbar-expand-md  shadow-sm"style="background-color: #F59C1C">
         <div class="row">
             <div class="col col-lg-4">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -81,7 +81,7 @@
             <div class="card">
                 <div class="card-header">
                     <h1 class="card-title">
-                        <b>{{ $survey->description }}</b>
+                        <b>{{ $survey->title }}</b>
                     </h1>
                     <div class="card-tools">
                         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">

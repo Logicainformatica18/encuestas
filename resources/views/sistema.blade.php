@@ -91,7 +91,7 @@
                 <div class="row">
 
                     <div class="col-md-6">
-                        <h5 style="color:#042d89"><b>Información básica</b></h5>
+                        <h5 style="color:#F59C1C"><b>Información básica</b></h5>
                         <!-- Profile Image -->
                         <div class="card card-primary card-outline" id="mycontent">
                             <div class="card-body box-profile" style="font-size: 12px">
@@ -132,7 +132,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <h5 style="color:#042d89"><b>Información adicional</b></h5>
+                        <h5 style="color:#F59C1C"><b>Información adicional</b></h5>
                         <!-- Profile Image -->
                         <div class="card card-primary card-outline" id="mycontent">
                             <div class="card-body box-profile" style="font-size: 12px">
@@ -171,7 +171,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <h5 style="color:#042d89"><b>Información laboral</b></h5>
+                        <h5 style="color:#F59C1C"><b>Información laboral</b></h5>
                         <!-- Profile Image -->
                         <div class="card card-primary card-outline" id="mycontent">
                             <div class="card-body box-profile" style="font-size: 12px">
@@ -229,7 +229,7 @@
                                                 <div class="col-sm-2"></div>
                                                 <div class="col-sm-8">
                                                     <br>
-                                                    <img id="blah" src="https://via.placeholder.com/150"
+                                                    <img id="blah" src="https://placehold.co/300x300"
                                                         alt="Tu imagen" class="img-bordered" width="200">
                                                 </div>
                                             </div>

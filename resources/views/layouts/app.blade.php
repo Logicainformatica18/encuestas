@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/jpg" href="{{ asset('dist/img/favicon.png') }}" />
-    <title>AnthonyCode</title>
+    <title>ComexLat</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -194,7 +194,7 @@
                         <h3><b>Anthony Code</b> </h3>
                         <p></p>
                         <p class="text-justify">
-                            AnthonyCode Encuestas hace más de 6 años nuestra organización inicio sus actividades en respuesta a
+                            Nuestra organización inicio sus actividades en respuesta a
                             las
                             necesidades de capacitación percibidas en áreas analíticas y ciencia de datos. Nuestros
                             programas, cursos y certificaciones de especialización se caracterizan por el método de
