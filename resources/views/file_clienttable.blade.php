@@ -133,6 +133,15 @@
 
 
                                        <p></p>
+                                       @elseif($survey_details->type == 'file')
+                                       <input type="file" name="answer" id="answer" class="form-control">
+
+                                      
+
+
+
+
+                                       <p></p>
                                    @elseif($survey_details->type == 'selection')
                                        @if ($survey_details->selection->state == '0')
                                            <select name="selection_detail_id" id="selection_detail_id"
