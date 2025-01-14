@@ -168,18 +168,18 @@
                 font-size: 40px;
             }
         </style>
-
+{{-- 
         <!-- Botón flotante de WhatsApp -->
         <div class="whatsapp-btn">
             <a href="https://api.whatsapp.com/send/?phone=51939929383&text=Buen+día+SDC+me+gustaria+recibir+información+sobre+los+Cursos+y+Certificaciones+que+disponga.+Gracias"
                 target="_blank" title="Enviar mensaje por WhatsApp">
                 <i class="fab fa-whatsapp"></i>
             </a>
-        </div>
+        </div> --}}
 
         <br>
 
-        <footer class="main-footer" style="background-color:#003399;color:white">
+        <footer class="main-footer" style="background-color:#000000;color:white">
 
 
 
@@ -230,7 +230,7 @@
                             &nbsp;
                             &nbsp;
                         </p>
-                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLogicainformatica2020&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=859285638195545" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                      
                     </div>
                 </div>
 
