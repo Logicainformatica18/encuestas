@@ -47,9 +47,9 @@
                                         <input type="hidden" value="true" name="date_end" id="date_end">          
                                         @endif 
 
-                                       <button id="next" class="btn btn-danger btn-lg"
+                                       <button id="next" class="btn  btn-lg" style="background-color: #f49a1a;color:rgb(255, 255, 255)"
                                            onclick="clientStore(); return false;">Responder
-                                           Formulario</button>
+                                           Formulario ></button>
                                        @if ($survey_details->survey->state == 'public')
                                          
                                            <input type="hidden" value="public" name="state" id="state">

@@ -91,7 +91,7 @@
                 <div class="row">
 
                     <div class="col-md-6">
-                        <h5 style="color:#F59C1C"><b>Información básica</b></h5>
+                        <h6 style="color:#F59C1C"><b>Información básica</b></h6>
                         <!-- Profile Image -->
                         <div class="card card-primary card-outline" id="mycontent">
                             <div class="card-body box-profile" style="font-size: 12px">
@@ -132,7 +132,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <h5 style="color:#F59C1C"><b>Información adicional</b></h5>
+                        <h6 style="color:#F59C1C"><b>Información adicional</b></h6>
                         <!-- Profile Image -->
                         <div class="card card-primary card-outline" id="mycontent">
                             <div class="card-body box-profile" style="font-size: 12px">
@@ -171,7 +171,7 @@
                     </div>
 
                     <div class="col-md-6">
-                        <h5 style="color:#F59C1C"><b>Información laboral</b></h5>
+                        <h6 style="color:#F59C1C"><b>Información laboral</b></h6>
                         <!-- Profile Image -->
                         <div class="card card-primary card-outline" id="mycontent">
                             <div class="card-body box-profile" style="font-size: 12px">
