@@ -139,7 +139,7 @@
             <a href="" class="brand-link">
                
                 <span class="brand-text font-weight-light center">
-  <img src="{{ asset('logo_anthonycode.png')}}" alt="AdminLTE Logo" class="" width="200px"                 style="">
+  <img src="{{ asset('logo.png')}}" alt="AdminLTE Logo" class="" width="200px"  style="filter: brightness(0) invert(1);">
                 </span>
                 <p></p>
             </a>

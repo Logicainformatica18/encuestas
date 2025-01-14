@@ -83,13 +83,13 @@
 <body>
 
     <div id="app">
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light"style="background-color: #00bf6f">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light"style="background-color: black">
             <!-- Logo en la izquierda -->
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a href="{{ url('/') }}" class="nav-link">
-                        <img src="{{ asset('logo_anthonycode.png') }}" alt="Logo"
-                            class="brand-image img-circle elevation-3"  width="50px">
+                        <img src="{{ asset('logo.png') }}" alt="Logo"style="filter: brightness(0) invert(1);"
+                            class="brand-image img-circle elevation-3"  width="100px">
                         <span class="brand-text font-weight-light"></span>
                     </a>
                 </li>

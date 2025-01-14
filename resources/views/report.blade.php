@@ -57,7 +57,7 @@
         <div class="row">
             <div class="col col-lg-4">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('logo-sdcre-corto-blanco.png') }}" alt="" width="150%">
+                    <img src="{{ asset('logo.png') }}" alt="" width="150px"style="filter: brightness(0) invert(1);" >
                 </a>
 
             </div>

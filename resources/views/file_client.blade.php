@@ -52,15 +52,15 @@
 </head>
 
 <body class="pos-relative">
-    <nav class="navbar navbar-expand-md  shadow-sm"style="background-color: #F59C1C">
+    <nav class="navbar navbar-expand-md  shadow-sm"style="background-color: black">
         <div class="row">
             <div class="col col-lg-4">
 
             </div>
             <div class="col col-lg-4">
                 <a class="navbar-brand text-white" href="{{ url('/') }}">
-                    ComexLat
-                    {{-- <img src="{{ asset('logo_anthonycode.png') }}" alt="" width="50px"> --}}
+            
+                    <img src="{{ asset('logo.png') }}" alt="" width="150px"style="filter: brightness(0) invert(1);">
                 </a>
 
             </div>

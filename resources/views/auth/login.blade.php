@@ -101,9 +101,9 @@
 
 
                             <div class="login-logo">
-                                <img src="{{ asset('logo_anthonycode.png') }}" alt="" srcset=""width="30%">
+                                <img src="{{ asset('logo.png') }}" alt="" srcset=""width="90%">
                            
-                                <h1 style="font-weight: bold;font-size:50px; color: #F59C1C;"><b>Encuestas</b>
+                                <h1 style="font-weight: bold;font-size:20px; color: #F59C1C;"><b>Encuestas</b>
                                 </h1>
                             </div>
                             <p class="login-box-msg" style="color:#F59C1C;">Ingrese sus datos para iniciar sesión</p>
