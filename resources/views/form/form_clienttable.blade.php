@@ -171,8 +171,28 @@
                                 @endif
 
                                 @if ($loop->last)
+
+                                <div class="form-check text-start">
+                                    <input class="form-check-input" type="checkbox" id="txtTratamientoDatos" name="data_aprobed_1" value="true"requerid>
+                                    <label class="form-check-label fs-3" for="txtTratamientoDatos">
+                                        <span class="fs-2">He leído </span>
+                                        <a class="text-warning fs-2" data-bs-toggle="modal" data-bs-target="#bs-example-modal-xlg" style="cursor: pointer;">
+                                             y acepto la Política de Privacidad.
+                                        </a>
+                                    </label>
+                                </div>
+                                <div class="form-check text-start">
+                                    <input class="form-check-input" type="checkbox" id="txtTratamientoDatos" name="data_aprobed_1" value="true"requerid>
+                                    <label class="form-check-label fs-3" for="txtTratamientoDatos">
+                                        <span class="fs-2">He leído la autorización y acepto el </span><br>
+                                        <a class="text-warning fs-2" data-bs-toggle="modal" data-bs-target="#bs-example-modal-xlg2" style="cursor: pointer;">
+                                            Tratamiento de mis datos personales según lo especificado en la misma.
+                                        </a>
+                                    </label>
+                                </div>
+                                <br>
                                     <button class="btn btn-warning granulated-background fs-5"
-                                        onclick="survey_clientStore('{{ $enumeracion }}');return false;">Finalizar</button>
+                                        onclick="survey_clientStore('{{ $enumeracion }}');return false;">Enviar mis datos</button>
                                 @endif
                             </form>
                         </div>
