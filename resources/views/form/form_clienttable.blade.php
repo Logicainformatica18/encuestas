@@ -173,8 +173,8 @@
                                 @if ($loop->last)
 
                                 <div class="form-check text-start">
-                                    <input class="form-check-input" type="checkbox" id="txtTratamientoDatos" name="data_aprobed_1" value="true"requerid>
-                                    <label class="form-check-label fs-3" for="txtTratamientoDatos">
+                                    <input class="form-check-input" type="checkbox" id="txtTratamientoDatos1" name="data_aprobed_1" value="true"requerid>
+                                    <label class="form-check-label fs-3" for="txtTratamientoDatos1">
                                         <span class="fs-2">He leído </span>
                                         <a class="text-warning fs-2" data-bs-toggle="modal" data-bs-target="#bs-example-modal-xlg" style="cursor: pointer;">
                                              y acepto la Política de Privacidad.
@@ -182,8 +182,8 @@
                                     </label>
                                 </div>
                                 <div class="form-check text-start">
-                                    <input class="form-check-input" type="checkbox" id="txtTratamientoDatos" name="data_aprobed_1" value="true"requerid>
-                                    <label class="form-check-label fs-3" for="txtTratamientoDatos">
+                                    <input class="form-check-input" type="checkbox" id="txtTratamientoDatos2" name="data_aprobed_1" value="true"requerid>
+                                    <label class="form-check-label fs-3" for="txtTratamientoDatos2">
                                         <span class="fs-2">He leído la autorización y acepto el </span><br>
                                         <a class="text-warning fs-2" data-bs-toggle="modal" data-bs-target="#bs-example-modal-xlg2" style="cursor: pointer;">
                                             Tratamiento de mis datos personales según lo especificado en la misma.

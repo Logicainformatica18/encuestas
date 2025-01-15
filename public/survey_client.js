@@ -3,9 +3,20 @@ function survey_clientStore(formCount) {
 
   for (let i = 1; i <= formCount; i++) {
       let formData = new FormData(document.getElementById("survey_client" + i));
+
+      let txtTratamientoDatos1=  document.getElementById("txtTratamientoDatos1");
+      let txtTratamientoDatos2=  document.getElementById("txtTratamientoDatos2");
+      
+
       let requeridValue = formData.get("requerid");
       let answerValue = formData.get("answer");
       let optionValue = formData.get("option");
+
+      if (!txtTratamientoDatos1.checked || !txtTratamientoDatos2.checked) {
+        alert("Debe aceptar la política de tratamiento de datos");
+        return;
+      }
+      
 
       if (requeridValue === "yes" && !answerValue) {
           alert(`Debe responder la pregunta ${i}`);
