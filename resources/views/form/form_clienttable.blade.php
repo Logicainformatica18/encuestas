@@ -58,9 +58,9 @@
                                     <input type="hidden" value="{{ $survey_details->requerid }}" name="requerid">
 
                                 {{ csrf_field() }}
-                                <h4>
+                                <h6>
                                     {{ $enumeracion = $enumeracion + 1 }}
-                                    {{ '. ' . $survey_details->question }}</h4>
+                                    {{ '. ' . $survey_details->question }}</h6>
                                 <span> {{ $survey_details->detail }}</span>
 
                                 @if ($survey_details->type == 'short_answer')

@@ -69,7 +69,7 @@
         </header>
     </div>
     
-    <div class="container-fluid py-1">
+    <div class="container-fluid">
         <div class="row">
             <!-- Primera Columna -->
             <div class="col-12 col-md-11 col-lg-11 col-xl-6" style="background-color: #ffffff;">
@@ -95,7 +95,7 @@
             <!-- Segunda Columna -->
             <div class="d-none   d-xl-block col-lg-12 col-xl-6  ">
                 <div class="sticky-container">
-                    <img src="{{ asset('baner.jpg') }}" alt="Imagen" class="img-fluid" style="border-radius: 0px;">
+                    <img src="{{ asset('baner.jpg') }}" alt="Imagen" class="img-fluid" style="border-radius: 0px;border-left:solid 5px black" >
                 </div>
             </div>
             <div class=" d-block d-md-block d-lg-block d-sm-block   col-12   d-xl-none col-lg-12 col-xl-6  ">
@@ -120,10 +120,10 @@
     
         .sticky-container img {
             max-width: 100%; /* Ajusta el ancho máximo al 90% del contenedor */
-            height: 101%; /* Mantiene la proporción de la imagen */
+            height: 100%; /* Mantiene la proporción de la imagen */
             object-fit: contain; /* Escala la imagen sin distorsión */
             margin-right: -15px;
-            margin-top: -4px;
+            
             
         }
     
