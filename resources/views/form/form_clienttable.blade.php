@@ -30,7 +30,7 @@
 
                                     <button id="next" class="btn  btn-warning granulated-background fs-5"
                                      style=" color:rgb(0, 0, 0);font-family:Montserrat-Bold;margin-top:-50px"
-                                        onclick="clientStore(); return false;">Postularme ></button>
+                                        onclick="clientStore();this.style.display='none'; return false;">Postularme ></button>
                                     @if ($survey_details->survey->state == 'public')
                                       
                                         <input type="hidden" value="public" name="state" id="state">
@@ -121,7 +121,7 @@
                                     @if ($survey_details->requerid=='yes')
                                     is-invalid
                                     @endif
-                                    "requerid>
+                                    "requerid accept=".pdf">
                                     <p></p>
                                 @elseif($survey_details->type == 'selection')
                                     @if ($survey_details->selection->state == '0')
@@ -165,14 +165,14 @@
                                 @if (!$loop->last)
                                     {{-- <button id="prev" class="btn btn-warning btn-lg"
                                         onclick="prevPage()">atras</button> --}}
-                                    <button id="next" class="btn btn-warning btn-lg"
+                                    {{-- <button id="next" class="btn btn-warning btn-lg"
                                         onclick="survey_clientStore('{{ $enumeracion }}'); return false;">Siguiente</button>
-                                    <p></p>
+                                    <p></p> --}}
                                 @endif
 
                                 @if ($loop->last)
-                                    <button class="btn btn-warning btn-lg"
-                                        onclick="survey_clientStore('{{ $enumeracion }}'); refresh();return false;">Finalizar</button>
+                                    <button class="btn btn-warning granulated-background fs-5"
+                                        onclick="survey_clientStore('{{ $enumeracion }}');return false;">Finalizar</button>
                                 @endif
                             </form>
                         </div>
@@ -191,21 +191,27 @@
         var pages = document.getElementsByClassName('page');
 
         function showPage(index) {
-            if (index < 0 || index >= pages.length) {
-                return; // No hace nada si el índice está fuera de los límites
-            }
-
-            // Oculta la página actual
-            if (currentPage < pages.length) {
-                pages[currentPage].style.display = 'none';
-            }
-
-            // Muestra la página solicitada
-            pages[index].style.display = 'block';
-
-            // Actualiza la página actual
-            currentPage = index;
+    // Mostrar todas las páginas si el índice es mayor o igual a 1
+    if (index >= 1) {
+        for (let i = 1; i < pages.length; i++) {
+            pages[i].style.display = 'block'; // Mostrar todas las páginas desde la segunda
         }
+    } else {
+        // Oculta todas las páginas primero
+        for (let i = 0; i < pages.length; i++) {
+            pages[i].style.display = 'none';
+        }
+        // Mostrar solo la primera página
+        if (index < pages.length) {
+            pages[index].style.display = 'block';
+        }
+    }
+    currentPage = index; // Actualiza la página actual
+}
+
+// Muestra la primera página al cargar la página
+showPage(0);
+
 
         function nextPage() {
             showPage(currentPage + 1);
@@ -215,8 +221,7 @@
             showPage(currentPage - 1);
         }
 
-        // Muestra la primera página al cargar la página
-        showPage(0);
+       
     </script>
 
 

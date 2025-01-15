@@ -1,44 +1,47 @@
-function survey_clientStore(form) {
+function survey_clientStore(formCount) {
+  let completedRequests = 0; // Contador para las solicitudes completadas
 
+  for (let i = 1; i <= formCount; i++) {
+      let formData = new FormData(document.getElementById("survey_client" + i));
+      let requeridValue = formData.get("requerid");
+      let answerValue = formData.get("answer");
+      let optionValue = formData.get("option");
 
-var formData = new FormData(document.getElementById("survey_client" + form));
-var requeridValue = formData.get("requerid");
-var answerValue = formData.get("answer");
-  var optionValue = formData.get("option");
-  
-  if (requeridValue === "yes" && answerValue==="") {
+      if (requeridValue === "yes" && !answerValue) {
+          alert(`Debe responder la pregunta ${i}`);
+          return; // Termina la función si hay un campo obligatorio vacío
+      } else if (optionValue === "no_respondido") {
+          alert(`Debe marcar una opción en la pregunta ${i}`);
+          return; // Termina la función si no se marcó una opción
+      }
 
-
-    alert("Debe realizar alguna respuesta");
-  } else if (optionValue === "no_respondido") {
-    alert("Debe marcar una opción");
-   }
-  
-  else{
-  axios({
-    method: "post",
-    url: "../survey_clientStore",
-    data: formData,
-    headers: {
-      "Content-Type": "multipart/form-data"
-    }
-  })
-    .then(function(response) {
-      // handle success
-      //var contentdiv = document.getElementById("mycontent");
-      nextPage();
-      
-    //  contentdiv.innerHTML = response.data;
-    })
-    .catch(function(error) {
-      // handle error
-      console.log(error);
-    });
+      // Enviar los datos del formulario actual
+      axios({
+          method: "post",
+          url: "../survey_clientStore",
+          data: formData,
+          headers: {
+              "Content-Type": "multipart/form-data",
+          },
+      })
+          .then(function (response) {
+              //console.log(`Pregunta ${i} enviada con éxito`);
+              completedRequests++;
+              
+              // Verificar si esta es la última solicitud
+              if (completedRequests == formCount) {
+                  alert("Muchas Gracias por la participacion, un mensaje se le ha enviado a su correo.");
+                  window.location.reload();
+              }
+          })
+          .catch(function (error) {
+              console.error(`Error en la pregunta ${i}:`, error);
+          });
+  }
 }
 
 
 
-}
 function refresh() {
   alert("¡Muchas Gracias por completar el cuestionario!");
   window.location.reload();

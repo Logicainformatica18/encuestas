@@ -69,50 +69,76 @@
         </header>
     </div>
     
-
-    <div class="row  ">
-        <div class="col-6" style="background-color:#ffffff">
-            <div class="container text-center">
-                <p></p>
-                <img width="60%" src="../imageusers/{{ $survey->front_page }}" alt=""
-                    style="border-radius:30px; ">
-
-                <h3 class="pt-4 fs-9"><b>{{ $survey->title }}</b></h3>
-            </div>
-            <hr>
-            <div class="container"style="padding-left:50px; ">
-
-
-                @php
-                    echo $survey->description;
-                @endphp
-                <div id="mycontent"style="margin-top:-30px" class="">
-
-                    @include('form.form_clienttable')
-
+    <div class="container-fluid py-1">
+        <div class="row">
+            <!-- Primera Columna -->
+            <div class="col-12 col-md-11 col-lg-11 col-xl-6" style="background-color: #ffffff;">
+                <div class="container text-center pt-3">
+                    <p></p>
+                    <img width="60%" src="../imageusers/{{ $survey->front_page }}" alt=""
+                        style="border-radius: 30px;">
+    
+                    <h3 class="pt-4 fs-7"><b>{{ $survey->title }}</b></h3>
                 </div>
-
+                <hr>
+                <div class="container" style="padding-left: 50px;">
+                    @php
+                        echo $survey->description;
+                    @endphp
+                    <div id="mycontent" style="margin-top: -30px;" class="">
+                        @include('form.form_clienttable')
+                    </div>
+                </div>
+                <p>&nbsp;</p>
             </div>
-            <p>&nbsp </p>
-
-        </div>
-        <div class="d-none  d-lg-block d-xl-block col-lg-6   col-xl-6" style="">
-            <img src="{{ asset('baner.jpg') }}" alt="" srcset=""width="100%" height="100%">
+    
+            <!-- Segunda Columna -->
+            <div class="d-none   d-xl-block col-lg-12 col-xl-6  ">
+                <div class="sticky-container">
+                    <img src="{{ asset('baner.jpg') }}" alt="Imagen" class="img-fluid" style="border-radius: 0px;">
+                </div>
+            </div>
+            <div class=" d-block d-md-block d-lg-block d-sm-block   col-12   d-xl-none col-lg-12 col-xl-6  ">
+           
+                    <img src="{{ asset('baner.jpg') }}"  style="width:100%">
+            
+            </div>
         </div>
     </div>
-
+    
     <style>
-        .granulated-background {
-
-            background-color: #F59C1C;
+        .sticky-container {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: right;
+            justify-content: right;
+     
+        }
+    
+        .sticky-container img {
+            max-width: 100%; /* Ajusta el ancho máximo al 90% del contenedor */
+            height: 101%; /* Mantiene la proporción de la imagen */
+            object-fit: contain; /* Escala la imagen sin distorsión */
+            margin-right: -15px;
+            margin-top: -4px;
             
-            ;
-            /* Color dominante */
-            background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1%, transparent 1%);
-            background-size: 5px 5px;
-            /* Tamaño del grano */
+        }
+    
+        .granulated-background {
+            border: solid 1px black;
+            /* background: linear-gradient(to right, #F59C1C, black); */
+            background-size: 5px 5px; /* Tamaño del patrón */
         }
     </style>
+    
+
+
+ 
+
+
 
 
 
@@ -140,21 +166,11 @@
                 <li class="nav-item mt-3">
                     <a class="nav-link fs-3 text-dark active" aria-current="page" href="{{ url('/') }}">Inicio</a>
                 </li>
-                <li class="nav-item mt-3">
-                    <a class="nav-link fs-3 text-dark active" aria-current="page"
-                        href="{{ url('nosotros') }}">Nosotros</a>
-                </li>
-                <li class="nav-item mt-3">
-                    <a class="nav-link fs-3 text-dark active" aria-current="page"
-                        href="{{ url('proyectos') }}">Proyectos</a>
-                </li>
-                <li class="nav-item mt-3">
-                    <a class="nav-link fs-3 text-dark active" aria-current="page"
-                        href="{{ url('blog') }}">Blogs</a>
-                </li>
+            
+               
                 {{-- <li class="nav-item mt-3"><a class="nav-link fs-3 text-dark" href="#">Pages</a></li> --}}
             </ul>
-            <a href="{{ url('login') }}" class="btn btn-primary w-100 py-2">Administrar</a>
+           
             <br>
             <a href="{{ url('logout') }}" class="btn btn-secondary w-100 py-2">Salir</a>
             {{-- <form class="d-flex mt-3" role="search">
