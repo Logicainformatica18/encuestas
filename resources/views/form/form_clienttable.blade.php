@@ -117,12 +117,14 @@
 
                                     <p></p>
                                     @elseif($survey_details->type == 'file')
-                                    <input type="file" name="answer" id="answer" class="form-control
+                                    <input type="file" name="answer" id="answer_" class="form-control
                                     @if ($survey_details->requerid=='yes')
                                     is-invalid
                                     @endif
-                                    "requerid accept=".pdf">
-                                    <p></p>
+                                " required accept=".pdf" onchange="limitFile(this, document.getElementById('fileError'))">
+                                <div id="fileError" style="color: red; display: none;">El archivo excede el tamaño máximo de 2 MB.</div>
+                                <p></p>
+                                
                                 @elseif($survey_details->type == 'selection')
                                     @if ($survey_details->selection->state == '0')
                                         <select name="selection_detail_id" id="selection_detail_id"
@@ -262,7 +264,26 @@ inputsTexto.forEach(input => {
 });
 
 
+
  
+
+        function limitFile(fileInput, fileError) {
+            // Verificar si se seleccionó un archivo
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const maxSize = 2 * 1024 * 1024; // 2 MB en bytes
+
+                if (file.size > maxSize) {
+                    // Mostrar mensaje de error si el archivo excede 2 MB
+                    fileError.style.display = 'block';
+                    fileInput.value = ''; // Limpiar el input
+                } else {
+                    // Ocultar mensaje de error si el archivo es válido
+                    fileError.style.display = 'none';
+                }
+            }
+        
+        }
 </script>
     <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
    
