@@ -2,10 +2,13 @@ function survey_clientStore(form) {
 
 
 var formData = new FormData(document.getElementById("survey_client" + form));
+var requeridValue = formData.get("requerid");
 var answerValue = formData.get("answer");
   var optionValue = formData.get("option");
   
-  if (answerValue === "") {
+  if (requeridValue === "yes" && answerValue==="") {
+
+
     alert("Debe realizar alguna respuesta");
   } else if (optionValue === "no_respondido") {
     alert("Debe marcar una opción");

@@ -40,7 +40,7 @@ Route::get('encuesta/{survey_id}',[App\Http\Controllers\SurveyClientController::
    Route::post('survey_clientDestroy',[App\Http\Controllers\SurveyClientController::class, 'destroy']);
    Route::post('survey_clientShow',[App\Http\Controllers\SurveyClientController::class, 'show']);
 
-   Route::post('clientStore',[App\Http\Controllers\ClientController::class, 'store']);
+   Route::post('clientStore',[App\Http\Controllers\ClientController::class, 'store'])->middleware('throttle:15,1440');
 
 
 

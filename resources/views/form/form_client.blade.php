@@ -38,113 +38,94 @@
 <body>
     <!-- Preloader #f49a1a-->
     <div class="preloader"><img src="{{ asset('ayba/1.png') }}" alt="loader" class="lds-ripple img-fluid" /></div>
-    <div style="background-color: #000000; height: 10px;margin-bottom: -10px;"
-        class="container-fluid  ">    
-    </div>
+    <nav class="navbar navbar-expand-lg" style="height: 50px">
+        <div class="container-fluid" style="background: linear-gradient(95deg, #F9DD6A 5%, #F59C1C 90%); height: 50px; padding: 0;" >
+            <a class="text-start position-relative navbar-brand me-0 py-0 m-2" href="{{ url('/') }}">
+                <img src="{{ asset('logo.png') }}" alt="img-fluid"
+                    width="120px" style="margin-left: 0;  ">
+            </a>
+
+            <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <i class="ti ti-menu-2 fs-9"></i>
+            </button>
+            <button class="navbar-toggler border-0 p-0 shadow-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <i class="ti ti-menu-2 fs-9"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav align-items-center mb-2 mb-lg-0 mx-auto" style="letter-spacing: 1px;">
+                    <li class="nav-item">
+                        <!-- Nav items -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div id="main-wrapper flex-column">
-        <header class="header" >
-            <nav class="navbar navbar-expand-lg"style="background-color: #F59C1C;">
-                <div class=" ">
-
-                    <a class="text-start position-relative navbar-brand me-0 py-0 m-2 " href="{{ url('/') }}"> <img
-                            src="{{asset('logo.png')}}" alt="img-fluid" width="150px"style="margin-left:0%;filter: brightness(0) invert(1);">
-                    </a>
-
-
-
-                    <button class="navbar-toggler d-none" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="ti ti-menu-2 fs-9"></i>
-                    </button>
-                    <button class="navbar-toggler border-0 p-0 shadow-none" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <i class="ti ti-menu-2 fs-9"></i>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav align-items-center mb-2 mb-lg-0 mx-auto" style="letter-spacing: 1px; ">
-                            <li class="nav-item ">
-                            
-                            </li>
-                         
-                            
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            
-        </header>
-
-
-<div class="row">
-    <div class="col-6" style="background-color:#ffffff">
-        <div class="container text-center">
-            <p></p>
-            <img width="80%" 
-            src="../imageusers/{{$survey->front_page}}" 
-            alt="" 
-            style="border-radius:30px; border:solid 2px black; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);">
-       
-            <h3 class="pt-4 fs-9"><b>{{$survey->title}}</b></h3>
-        </div>
-        <hr>
-        <div class="container"style="padding-left:50px;padding-right:50px">
-           
-            
-            @php
-                    echo $survey->description;
-            @endphp
-            <div id="mycontent"style="margin-top:-30px" class="">
-
-                @include('file_clienttable')
-                
-            </div>
+        <header class="header">
           
-        </div>
-        <p>&nbsp </p>
-        
+        </header>
     </div>
-    <div class="col-6" style="background-color:#1a1a1a;border-top-left-radius:20px">
-        www
-    </div>
-</div>
+    
 
-       
+    <div class="row  ">
+        <div class="col-6" style="background-color:#ffffff">
+            <div class="container text-center">
+                <p></p>
+                <img width="60%" src="../imageusers/{{ $survey->front_page }}" alt=""
+                    style="border-radius:30px; ">
 
-     
-
-
-        <footer class="footer-part pt-4 pb-3 py-2" style="background-color:#000000;">
-
-            <div class="container">
-                <div class="justify-content-center">
-
-                    <div class="text-center">
+                <h3 class="pt-4 fs-9"><b>{{ $survey->title }}</b></h3>
+            </div>
+            <hr>
+            <div class="container"style="padding-left:50px; ">
 
 
-                        <p class="mb-0 text-white">
-                            <a class="d-none d-sm-none d-sm-block d-md-block d-lg-block  d-xl-block display-1 fs-4 text-white text-hover-primary  border-primary"
-                                href="https://anthonycode.com/" target="_blank">
-                                Copyright 2025, ComexLat&nbsp;&nbsp; | &nbsp;&nbsp; Todos los Derechos reservados
-                            </a>
-                            <a class="d-sm-none  display-1 fs-2 text-center text-white text-hover-primary  border-primary"
-                                href="https://anthonycode.com/" target="_blank">
-                                Copyright 2025, ComexLat <br> Todos los Derechos reservados
-                            </a>
-                        </p>
-                    </div>
+                @php
+                    echo $survey->description;
+                @endphp
+                <div id="mycontent"style="margin-top:-30px" class="">
+
+                    @include('form.form_clienttable')
 
                 </div>
+
             </div>
-        </footer>
-        <div class="offcanvas offcanvas-start matdash-lp-offcanvas" tabindex="-1" id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header p-4">
-                <img src="{{ asset('ayba/1.png') }}" alt="matdash-img" class="img-fluid" width="150" />
-            </div>
-            <div class="offcanvas-body p-4">
-                <ul class="navbar-nav justify-content-end flex-grow-1">
-                    {{-- <li class="nav-item dropdown">
+            <p>&nbsp </p>
+
+        </div>
+        <div class="d-none  d-lg-block d-xl-block col-lg-6   col-xl-6" style="">
+            <img src="{{ asset('baner.jpg') }}" alt="" srcset=""width="100%" height="100%">
+        </div>
+    </div>
+
+    <style>
+        .granulated-background {
+
+            background-color: #F59C1C;
+            
+            ;
+            /* Color dominante */
+            background-image: radial-gradient(circle, rgba(0, 0, 0, 0.05) 1%, transparent 1%);
+            background-size: 5px 5px;
+            /* Tamaño del grano */
+        }
+    </style>
+
+
+
+
+
+    <div class="offcanvas offcanvas-start matdash-lp-offcanvas" tabindex="-1" id="offcanvasNavbar"
+        aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header p-4">
+            <img src="{{ asset('ayba/1.png') }}" alt="matdash-img" class="img-fluid" width="150" />
+        </div>
+        <div class="offcanvas-body p-4">
+            <ul class="navbar-nav justify-content-end flex-grow-1">
+                {{-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle d-flex align-items-center justify-content-between fs-3 text-dark"
                             href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Usuarios <i class="ti ti-chevron-down fs-14"></i>
@@ -156,47 +137,67 @@
                         </ul>
                     </li> --}}
 
-                    <li class="nav-item mt-3">
-                        <a class="nav-link fs-3 text-dark active" aria-current="page"
-                            href="{{ url('/') }}">Inicio</a>
-                    </li>
-                    <li class="nav-item mt-3">
-                        <a class="nav-link fs-3 text-dark active" aria-current="page"
-                            href="{{ url('nosotros') }}">Nosotros</a>
-                    </li>
-                    <li class="nav-item mt-3">
-                        <a class="nav-link fs-3 text-dark active" aria-current="page"
-                            href="{{ url('proyectos') }}">Proyectos</a>
-                    </li>
-                    <li class="nav-item mt-3">
-                        <a class="nav-link fs-3 text-dark active" aria-current="page"
-                            href="{{ url('blog') }}">Blogs</a>
-                    </li>
-                    {{-- <li class="nav-item mt-3"><a class="nav-link fs-3 text-dark" href="#">Pages</a></li> --}}
-                </ul>
-                <a href="{{ url('login') }}" class="btn btn-primary w-100 py-2">Administrar</a>
-                <br>
-                <a href="{{ url('logout') }}" class="btn btn-secondary w-100 py-2">Salir</a>
-                {{-- <form class="d-flex mt-3" role="search">
+                <li class="nav-item mt-3">
+                    <a class="nav-link fs-3 text-dark active" aria-current="page" href="{{ url('/') }}">Inicio</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a class="nav-link fs-3 text-dark active" aria-current="page"
+                        href="{{ url('nosotros') }}">Nosotros</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a class="nav-link fs-3 text-dark active" aria-current="page"
+                        href="{{ url('proyectos') }}">Proyectos</a>
+                </li>
+                <li class="nav-item mt-3">
+                    <a class="nav-link fs-3 text-dark active" aria-current="page"
+                        href="{{ url('blog') }}">Blogs</a>
+                </li>
+                {{-- <li class="nav-item mt-3"><a class="nav-link fs-3 text-dark" href="#">Pages</a></li> --}}
+            </ul>
+            <a href="{{ url('login') }}" class="btn btn-primary w-100 py-2">Administrar</a>
+            <br>
+            <a href="{{ url('logout') }}" class="btn btn-secondary w-100 py-2">Salir</a>
+            {{-- <form class="d-flex mt-3" role="search">
                     <a href="main/authentication-login2.html" class="btn btn-primary w-100 py-2">Login</a>
                 </form> --}}
-            </div>
         </div>
-
-
-
-
-
-    
-
-
-
     </div>
 
 
 
 
- 
+
+
+
+
+
+
+
+    <footer class="footer-part pt-4 pb-3 py-2" style="background-color:#000000;">
+
+        <div class="container">
+            <div class="justify-content-center">
+
+                <div class="text-center">
+
+
+                    <p class="mb-0 text-white">
+                        <a class="d-none d-sm-none d-sm-block d-md-block d-lg-block  d-xl-block display-1 fs-4 text-white text-hover-primary  border-primary"
+                            href="https://anthonycode.com/" target="_blank">
+                            Copyright 2025, ComexLat&nbsp;&nbsp; | &nbsp;&nbsp; Todos los Derechos reservados
+                        </a>
+                        <a class="d-sm-none  display-1 fs-2 text-center text-white text-hover-primary  border-primary"
+                            href="https://anthonycode.com/" target="_blank">
+                            Copyright 2025, ComexLat <br> Todos los Derechos reservados
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
     <div class="dark-transparent sidebartoggler"></div>
     <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
     <!-- Import Js Files -->

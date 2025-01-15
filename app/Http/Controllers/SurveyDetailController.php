@@ -119,6 +119,7 @@ foreach ($options as $option) {
            $survey_detail->detail_3 = $request->detail_3_edit;
            $survey_detail->correct = $request->correct_edit;
            $survey_detail->evaluate = $request->evaluate_edit;
+           $survey_detail->requerid = $request->requerid_edit;
            $survey_detail->point = $request->point_edit;
            $survey_detail->title = $request->title_edit;
                   $survey_detail->category = $request->category_edit;

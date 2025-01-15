@@ -41,9 +41,3 @@ function clientStore() {
     });
 }
 
-
-function refresh() {
-    alert('Registrado Correctamente');
-    window.location.reload();
-
-}

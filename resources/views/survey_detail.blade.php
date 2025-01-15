@@ -342,6 +342,11 @@
                             <option value="not">No</option>
                             <option value="yes">Sí</option>
                         </select>
+                        ¿Requerido?:
+                        <select name="requerid_edit" id="requerid_edit"class="form-control">
+                            <option value="not">No</option>
+                            <option value="yes">Sí</option>
+                        </select>
                         Título:
                         <input type="text" class="form-control" name="title_edit" id="title_edit">
                         Detalle 1:
