@@ -21,6 +21,8 @@
     <script src="{{ asset('survey_client.js') }}"></script>
     <script src="{{ asset('client.js') }}"></script>
     <script src="{{ asset('associate.js') }}"></script>
+    <!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <style>
@@ -35,28 +37,24 @@
     }
 </style>
 
-<body>
+<body id="targetDiv">
     <!-- Preloader #f49a1a-->
-     
+
     <nav class="navbar navbar-expand-lg" style="height: 50px;">
-        <div class="container-fluid" style="background: linear-gradient(95deg, #F9DD6A 5%, #F59C1C 90%); height: 50px; padding: 0;margin-top:-5px" >
+        <div class="container-fluid"
+            style="background: linear-gradient(95deg, #F9DD6A 5%, #F59C1C 90%); height: 50px; padding: 0;margin-top:-5px">
             <a class="text-start position-relative navbar-brand me-0 py-0 m-2" href="#">
-                <img src="{{ asset('logo.png') }}" alt="img-fluid"
-                    width="120px" style="margin-left: 0;  ">
+                <img src="{{ asset('logo.png') }}" alt="img-fluid" width="120px" style="margin-left: 0;  ">
             </a>
 
-          
-            
-            
+
+
+
         </div>
     </nav>
-    <div id="main-wrapper flex-column">
-        <header class="header">
-          
-        </header>
-    </div>
-    
-    <div class="container-fluid">
+ 
+
+    <div class="container-fluid py-1">
         <div class="row">
             <!-- Primera Columna -->
             <div class="col-12 col-md-11 col-lg-11 col-xl-6" style="background-color: #ffffff;">
@@ -64,7 +62,7 @@
                     <p></p>
                     <img width="60%" src="../imageusers/{{ $survey->front_page }}" alt=""
                         style="border-radius: 30px;">
-    
+
                     <h3 class="pt-4 fs-7"><b>{{ $survey->title }}</b></h3>
                 </div>
                 <hr>
@@ -78,21 +76,22 @@
                 </div>
                 <p>&nbsp;</p>
             </div>
-    
+
             <!-- Segunda Columna -->
             <div class="d-none   d-xl-block col-lg-12 col-xl-6  ">
                 <div class="sticky-container">
-                    <img src="{{ asset('baner.jpg') }}" alt="Imagen" class="img-fluid" style="border-radius: 0px;border-left:solid 5px black" >
+                    <img src="{{ asset('baner.jpg') }}" alt="Imagen" class="img-fluid"
+                        style="border-radius: 0px;border-left:solid 5px black">
                 </div>
             </div>
             <div class=" d-block d-md-block d-lg-block d-sm-block   col-12   d-xl-none col-lg-12 col-xl-6  ">
-           
-                    <img src="{{ asset('baner.jpg') }}"  style="width:100%">
-            
+
+                <img src="{{ asset('baner.jpg') }}" style="width:100%">
+
             </div>
         </div>
     </div>
-    
+
     <style>
         .sticky-container {
             position: sticky;
@@ -102,40 +101,33 @@
             display: flex;
             align-items: right;
             justify-content: right;
-     
+
         }
-    
+
         .sticky-container img {
-            max-width: 100%; /* Ajusta el ancho máximo al 90% del contenedor */
-            height: 100%; /* Mantiene la proporción de la imagen */
-            object-fit: contain; /* Escala la imagen sin distorsión */
+            max-width: 100%;
+            /* Ajusta el ancho máximo al 90% del contenedor */
+            height: 100%;
+            /* Mantiene la proporción de la imagen */
+            object-fit: contain;
+            /* Escala la imagen sin distorsión */
             margin-right: -15px;
-            
-            
+            margin-top: -6px; 
+
         }
-    
+
         .granulated-background {
             border: solid 1px black;
             /* background: linear-gradient(to right, #F59C1C, black); */
-            background-size: 5px 5px; /* Tamaño del patrón */
+            background-size: 5px 5px;
+            /* Tamaño del patrón */
         }
+
+
     </style>
-    
 
 
- 
-
-
-
-
-
-
-
-     
-
-
-
-
+  
 
 
 
@@ -183,56 +175,130 @@
                                 <div class="card shadow-sm">
                                     <div class="card-body">
                                         <h2 class="fs-4 mb-3">1. Introducción</h2>
-                                        <p>La presente Política de Privacidad tiene por finalidad informarle sobre cómo LA EMPRESA con RUC Nº 20613359550 y con domicilio en Av. Circunvalación Nro. 669 Interior 402, Distrito de Santiago De Surco, Provincia y Departamento de Lima, Lima; realiza el tratamiento de Datos Personales que recopila en forma independiente por medio de los distintos formularios físicos, electrónicos disponibles en el sitio Web, aplicaciones y demás entornos electrónicos que disponga LA EMPRESA incluyendo los consentimientos otorgados vía telefónica u otras formas de comunicación en las que se haga referencia a esta Política de Privacidad.</p>
-                    
+                                        <p>La presente Política de Privacidad tiene por finalidad informarle sobre cómo
+                                            LA EMPRESA con RUC Nº 20613359550 y con domicilio en Av. Circunvalación Nro.
+                                            669 Interior 402, Distrito de Santiago De Surco, Provincia y Departamento de
+                                            Lima, Lima; realiza el tratamiento de Datos Personales que recopila en forma
+                                            independiente por medio de los distintos formularios físicos, electrónicos
+                                            disponibles en el sitio Web, aplicaciones y demás entornos electrónicos que
+                                            disponga LA EMPRESA incluyendo los consentimientos otorgados vía telefónica
+                                            u otras formas de comunicación en las que se haga referencia a esta Política
+                                            de Privacidad.</p>
+
                                         <h2 class="fs-4 mb-3">2. Objetivo y Finalidad</h2>
-                                        <p>En LA EMPRESA sabemos de la importancia y de la elevada consideración que tiene la privacidad de nuestros clientes y de todas aquellas personas que se interesan por nuestros productos y servicios como los potenciales clientes (en adelante “Usuarios”). Siendo consecuentes con esta consideración tenemos el compromiso de respetar su privacidad y proteger la confidencialidad de su información privada y datos personales. Y es por ello que el objetivo de esta política de privacidad es dar a conocer a nuestros Usuarios la manera en que se recogen, se tratan y se protegen los datos personales, definida según la Ley N° 29733 Ley de Protección de Datos Personales. La finalidad del sitio Web es dar a conocer los productos y servicios que comercializa LA EMPRESA y dar información sobre los mismos, así como facilitar otro tipo de información que creamos que puede ser de interés y crear un espacio de comunicación para los Usuarios.</p>
-                    
+                                        <p>En LA EMPRESA sabemos de la importancia y de la elevada consideración que
+                                            tiene la privacidad de nuestros clientes y de todas aquellas personas que se
+                                            interesan por nuestros productos y servicios como los potenciales clientes
+                                            (en adelante “Usuarios”). Siendo consecuentes con esta consideración tenemos
+                                            el compromiso de respetar su privacidad y proteger la confidencialidad de su
+                                            información privada y datos personales. Y es por ello que el objetivo de
+                                            esta política de privacidad es dar a conocer a nuestros Usuarios la manera
+                                            en que se recogen, se tratan y se protegen los datos personales, definida
+                                            según la Ley N° 29733 Ley de Protección de Datos Personales. La finalidad
+                                            del sitio Web es dar a conocer los productos y servicios que comercializa LA
+                                            EMPRESA y dar información sobre los mismos, así como facilitar otro tipo de
+                                            información que creamos que puede ser de interés y crear un espacio de
+                                            comunicación para los Usuarios.</p>
+
                                         <h2 class="fs-4 mb-3">3. Legislación</h2>
-                                        <p>Esta política está regulada por la Legislación peruana y en particular por:</p>
+                                        <p>Esta política está regulada por la Legislación peruana y en particular por:
+                                        </p>
                                         <ul>
                                             <li>Ley N° 29733 - Ley de Protección de Datos Personales.</li>
-                                            <li>Decreto Supremo N° 003-2013-JUS, que aprueba el Reglamento de la Ley N° 29733.</li>
-                                            <li>Directiva de Seguridad de la Información, aprobada por la Resolución Directoral N° 019-2013-JUS/DGPDP.</li>
+                                            <li>Decreto Supremo N° 003-2013-JUS, que aprueba el Reglamento de la Ley N°
+                                                29733.</li>
+                                            <li>Directiva de Seguridad de la Información, aprobada por la Resolución
+                                                Directoral N° 019-2013-JUS/DGPDP.</li>
                                         </ul>
-                    
+
                                         <h2 class="fs-4 mb-3">4. Uso Autorizado de Datos Personales</h2>
-                                        <p>Con la finalidad de brindar productos y servicios, LA EMPRESA informa a los Usuarios que, bajo las normas vigentes (Ley N° 29733 y su reglamento), se encuentra autorizada para tratar aquellos datos personales otorgados de forma física o digital por el Usuario o a los que LA EMPRESA accede de manera legítima sobre su información personal. Esto incluye los datos personales proporcionados a futuro por los Usuarios, o los que sean generados por LA EMPRESA bajo la prestación de los servicios.</p>
-                                        <p>En ese sentido, LA EMPRESA requiere del consentimiento libre, previo, expreso, inequívoco e informado del titular de los datos personales para el tratamiento de estos, salvo en los casos de excepción expresamente establecidos por Ley. Por ello, LA EMPRESA no requiere consentimiento para tratar la información del Usuario obtenida de fuentes accesibles al público, gratuitas o no; asimismo, podrá usar sus datos personales de fuentes no públicas, siempre que dichas fuentes cuenten con el consentimiento del Usuario para tratar y transferir dichos datos personales.</p>
-                    
-                                        <h2 class="fs-4 mb-3">5. Finalidad de los Tratamientos de la Información Personal</h2>
-                                        <p>LA EMPRESA tratará la información proporcionada por el Usuario con la finalidad de ejecutar cualquier relación contractual, comercial y/o de cualquier índole, que mantenga y/o mantendrá con el Usuario, para realizar venta de inmuebles y gestión de transacciones comerciales, cobranza y facturación del servicio contratado, atención a través de telemarketing o presencial; así como cumplir con las obligaciones contractuales y legales.</p>
-                                        <p>Para el desarrollo de las finalidades mencionadas en el párrafo anterior, LA EMPRESA puede transferir sus datos personales a proveedores a nivel nacional y/o a empresas subsidiaria. En caso no tenga un vínculo contractual con LA EMPRESA, los Datos Personales de los Usuarios serán tratados con la finalidad de gestionar los datos personales de potenciales clientes para fines comerciales.</p>
-                    
+                                        <p>Con la finalidad de brindar productos y servicios, LA EMPRESA informa a los
+                                            Usuarios que, bajo las normas vigentes (Ley N° 29733 y su reglamento), se
+                                            encuentra autorizada para tratar aquellos datos personales otorgados de
+                                            forma física o digital por el Usuario o a los que LA EMPRESA accede de
+                                            manera legítima sobre su información personal. Esto incluye los datos
+                                            personales proporcionados a futuro por los Usuarios, o los que sean
+                                            generados por LA EMPRESA bajo la prestación de los servicios.</p>
+                                        <p>En ese sentido, LA EMPRESA requiere del consentimiento libre, previo,
+                                            expreso, inequívoco e informado del titular de los datos personales para el
+                                            tratamiento de estos, salvo en los casos de excepción expresamente
+                                            establecidos por Ley. Por ello, LA EMPRESA no requiere consentimiento para
+                                            tratar la información del Usuario obtenida de fuentes accesibles al público,
+                                            gratuitas o no; asimismo, podrá usar sus datos personales de fuentes no
+                                            públicas, siempre que dichas fuentes cuenten con el consentimiento del
+                                            Usuario para tratar y transferir dichos datos personales.</p>
+
+                                        <h2 class="fs-4 mb-3">5. Finalidad de los Tratamientos de la Información
+                                            Personal</h2>
+                                        <p>LA EMPRESA tratará la información proporcionada por el Usuario con la
+                                            finalidad de ejecutar cualquier relación contractual, comercial y/o de
+                                            cualquier índole, que mantenga y/o mantendrá con el Usuario, para realizar
+                                            venta de inmuebles y gestión de transacciones comerciales, cobranza y
+                                            facturación del servicio contratado, atención a través de telemarketing o
+                                            presencial; así como cumplir con las obligaciones contractuales y legales.
+                                        </p>
+                                        <p>Para el desarrollo de las finalidades mencionadas en el párrafo anterior, LA
+                                            EMPRESA puede transferir sus datos personales a proveedores a nivel nacional
+                                            y/o a empresas subsidiaria. En caso no tenga un vínculo contractual con LA
+                                            EMPRESA, los Datos Personales de los Usuarios serán tratados con la
+                                            finalidad de gestionar los datos personales de potenciales clientes para
+                                            fines comerciales.</p>
+
                                         <h2 class="fs-4 mb-3">6. Finalidades Opcionales</h2>
-                                        <p>De manera opcional, sus datos personales podrán ser utilizados por LA EMPRESA para las siguientes finalidades:</p>
+                                        <p>De manera opcional, sus datos personales podrán ser utilizados por LA EMPRESA
+                                            para las siguientes finalidades:</p>
                                         <ul>
-                                            <li>Ofrecimiento de productos o servicios y promociones por parte de LA EMPRESA.</li>
-                                            <li>Ofrecimiento de productos o servicios y promociones de subsidiarias.</li>
+                                            <li>Ofrecimiento de productos o servicios y promociones por parte de LA
+                                                EMPRESA.</li>
+                                            <li>Ofrecimiento de productos o servicios y promociones de subsidiarias.
+                                            </li>
                                         </ul>
-                                        <p>El Usuario podrá en todo momento revocar el consentimiento otorgado expresamente.</p>
-                    
+                                        <p>El Usuario podrá en todo momento revocar el consentimiento otorgado
+                                            expresamente.</p>
+
                                         <h2 class="fs-4 mb-3">7. Ejercicio de los Derechos</h2>
-                                        <p>Los Usuarios podrán dirigir su solicitud de ejercicio de los derechos en los términos que establece el Reglamento de la Ley N° 29733, enviándonos un correo electrónico a la siguiente dirección: <a href="mailto:administración@comexlat.com">administración@comexlat.com</a> adjuntando los siguientes documentos:</p>
+                                        <p>Los Usuarios podrán dirigir su solicitud de ejercicio de los derechos en los
+                                            términos que establece el Reglamento de la Ley N° 29733, enviándonos un
+                                            correo electrónico a la siguiente dirección: <a
+                                                href="mailto:administración@comexlat.com">administración@comexlat.com</a>
+                                            adjuntando los siguientes documentos:</p>
                                         <ul>
                                             <li>Solicitud de derechos ARCO, debidamente completada y firmada.</li>
                                             <li>Copia simple y legible de su Documento Nacional de Identidad.</li>
-                                            <li>En caso de actuar mediante un representante, adjuntar Carta poder con firma legalizada notarialmente no mayor a 30 días y copia de Documento Nacional de Identidad del representante.</li>
-                                            <li>Otros, en caso considere necesario agregar más información para el sustento de su solicitud.</li>
+                                            <li>En caso de actuar mediante un representante, adjuntar Carta poder con
+                                                firma legalizada notarialmente no mayor a 30 días y copia de Documento
+                                                Nacional de Identidad del representante.</li>
+                                            <li>Otros, en caso considere necesario agregar más información para el
+                                                sustento de su solicitud.</li>
                                         </ul>
-                    
+
                                         <h2 class="fs-4 mb-3">8. Videovigilancia</h2>
-                                        <p>LA EMPRESA cuenta con un sistema de videovigilancia en sus instalaciones a nivel nacional, para la seguridad de estas. La administración de nuestro sistema de videovigilancia cumple con la normativa de protección de datos personales y está regido por las disposiciones de esta Política, en cuanto le sean aplicables. Asimismo, LA EMPRESA ha adoptado los niveles de seguridad y de protección de datos personales legalmente requeridos, y ha instalado todos los medios y medidas técnicas a su alcance.</p>
-                                        <p>La información captada mediante nuestros sistemas de videovigilancia se conservará durante un plazo de 30 días y serán gestionadas en el banco de datos de LA EMPRESA, inscrito en el Registro Nacional de Protección de Datos Personales con la denominación “Videovigilancia”.</p>
-                    
-                                        <h2 class="fs-4 mb-3">9. Vigencia y Modificación de la Presente Política de Privacidad</h2>
-                                        <p>La Política de privacidad Web de LA EMPRESA se reserva el derecho a modificar su Política de Privacidad Web en el supuesto de que exista un cambio en la legislación vigente, doctrinal, jurisprudencial o por criterios propios empresariales. Si se introdujera algún cambio en esta Política, el nuevo texto se publicará en este mismo sitio Web, por lo que se recomienda a los Usuarios revisarla periódicamente.</p>
+                                        <p>LA EMPRESA cuenta con un sistema de videovigilancia en sus instalaciones a
+                                            nivel nacional, para la seguridad de estas. La administración de nuestro
+                                            sistema de videovigilancia cumple con la normativa de protección de datos
+                                            personales y está regido por las disposiciones de esta Política, en cuanto
+                                            le sean aplicables. Asimismo, LA EMPRESA ha adoptado los niveles de
+                                            seguridad y de protección de datos personales legalmente requeridos, y ha
+                                            instalado todos los medios y medidas técnicas a su alcance.</p>
+                                        <p>La información captada mediante nuestros sistemas de videovigilancia se
+                                            conservará durante un plazo de 30 días y serán gestionadas en el banco de
+                                            datos de LA EMPRESA, inscrito en el Registro Nacional de Protección de Datos
+                                            Personales con la denominación “Videovigilancia”.</p>
+
+                                        <h2 class="fs-4 mb-3">9. Vigencia y Modificación de la Presente Política de
+                                            Privacidad</h2>
+                                        <p>La Política de privacidad Web de LA EMPRESA se reserva el derecho a modificar
+                                            su Política de Privacidad Web en el supuesto de que exista un cambio en la
+                                            legislación vigente, doctrinal, jurisprudencial o por criterios propios
+                                            empresariales. Si se introdujera algún cambio en esta Política, el nuevo
+                                            texto se publicará en este mismo sitio Web, por lo que se recomienda a los
+                                            Usuarios revisarla periódicamente.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn bg-danger-subtle text-danger  waves-effect text-start"
@@ -262,24 +328,43 @@
                     <div class="container mt-5">
                         <div class="row justify-content-justify">
                             <div class="col-lg-12">
-                                <h1 class="text-center mb-4">Declaración del Titular sobre el Tratamiento de sus Datos Personales y su Consentimiento</h1>
+                                <h1 class="text-center mb-4">Declaración del Titular sobre el Tratamiento de sus Datos
+                                    Personales y su Consentimiento</h1>
                                 <div class="card shadow-sm">
                                     <div class="card-body">
                                         <p>
-                                            Con mi firma manuscrita, mi huella biométrica y/o mi firma electrónica o digital (pudiendo ser esta mediante mi voz, claves, clic en páginas web y/o plataformas digitales y/o cualquier factor de autenticación o combinación que permita dejar constancia de mi aceptación), declaro que he sido informado en forma libre, previa, expresa, informada e inequívoca respecto a que mis datos personales, así como aquellos datos sensibles, que proporcione a LA EMPRESA en este formulario, serán incorporados en su banco de datos personales y serán tratados con todas las medidas de seguridad y confidencialidad establecidas en la Ley, su Reglamento y demás normas complementarias y sustitutorias.
+                                            Con mi firma manuscrita, mi huella biométrica y/o mi firma electrónica o
+                                            digital (pudiendo ser esta mediante mi voz, claves, clic en páginas web y/o
+                                            plataformas digitales y/o cualquier factor de autenticación o combinación
+                                            que permita dejar constancia de mi aceptación), declaro que he sido
+                                            informado en forma libre, previa, expresa, informada e inequívoca respecto a
+                                            que mis datos personales, así como aquellos datos sensibles, que proporcione
+                                            a LA EMPRESA en este formulario, serán incorporados en su banco de datos
+                                            personales y serán tratados con todas las medidas de seguridad y
+                                            confidencialidad establecidas en la Ley, su Reglamento y demás normas
+                                            complementarias y sustitutorias.
                                         </p>
                                         <p>
-                                            LA EMPRESA ha informado previamente al titular de los datos personales en forma detallada, sencilla, expresa e inequívoca de los alcances, que los datos aquí captados serán tratados para contactarse con el titular de los datos y cumplir con los fines detallados en el formulario.
+                                            LA EMPRESA ha informado previamente al titular de los datos personales en
+                                            forma detallada, sencilla, expresa e inequívoca de los alcances, que los
+                                            datos aquí captados serán tratados para contactarse con el titular de los
+                                            datos y cumplir con los fines detallados en el formulario.
                                         </p>
                                         <p>
-                                            Asimismo, con la aceptación del presente formulario declaro conocer y estar de acuerdo con el tratamiento de mis datos personales según lo informado en este formulario y en la Política de Privacidad publicada en la página web, teniendo pleno conocimiento que, para las finalidades descritas en este formulario, inclusive en los supuestos de encargo y transferencia de datos a favor de empresas subsidiarias y/o flujo transfronterizo, no se requiere de mi consentimiento expreso.
+                                            Asimismo, con la aceptación del presente formulario declaro conocer y estar
+                                            de acuerdo con el tratamiento de mis datos personales según lo informado en
+                                            este formulario y en la Política de Privacidad publicada en la página web,
+                                            teniendo pleno conocimiento que, para las finalidades descritas en este
+                                            formulario, inclusive en los supuestos de encargo y transferencia de datos a
+                                            favor de empresas subsidiarias y/o flujo transfronterizo, no se requiere de
+                                            mi consentimiento expreso.
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn bg-danger-subtle text-danger  waves-effect text-start"

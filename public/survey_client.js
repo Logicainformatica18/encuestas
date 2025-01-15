@@ -41,9 +41,22 @@ function survey_clientStore(formCount) {
               
               // Verificar si esta es la última solicitud
               if (completedRequests == formCount) {
-                  alert("Muchas Gracias por la participacion, un mensaje se le ha enviado a su correo.");
-                  window.location.reload();
-              }
+                // Seleccionar el div con el ID específico
+                const targetDiv = document.getElementById("targetDiv");
+            
+                // Reemplazar su contenido con el mensaje de agradecimiento
+                targetDiv.innerHTML = `
+                    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center gradient-background"style="background: linear-gradient(95deg, #F9DD6A 5%, #F59C1C 90%);">
+                        <div class="text-center text-black">
+                            <h1 class="mb-4 text-black">🎉 Gracias por postular a una convocatoria de ComexLat 🎉</h1>
+                            <p class="fs-5">Estamos emocionados de recibir tu solicitud. 😊</p>
+                        </div>
+                    </div>
+                `;
+            
+               
+            }
+            
           })
           .catch(function (error) {
               console.error(`Error en la pregunta ${i}:`, error);
