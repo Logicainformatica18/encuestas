@@ -9,7 +9,7 @@
     <link rel="icon" type="image/jpg" href="{{ asset('logo.png') }}" />
     <!-- Core Css -->
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}" />
-    <title>ComexLat</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="{{ asset('assets/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/libs/aos/dist/aos.css') }}" />
