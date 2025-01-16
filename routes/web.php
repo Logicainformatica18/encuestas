@@ -67,25 +67,25 @@ Route::get('encuesta/{survey_id}',[App\Http\Controllers\SurveyClientController::
 
 
 
-Route::resource('Estudiante', App\Http\Controllers\StudentController::class);
-
-
-
-
-
-
-
-
-
-
-Route::resource('Mis-certificados', App\Http\Controllers\CertificationStudentController::class);
- Route::resource('Docente', App\Http\Controllers\TeacherController::class);
-
 
 Route::get('/Administrador', [App\Http\Controllers\HomeController::class, 'sistema'])->name('sistema');
 /////////////////////////////////////////
 
 Route::group(['middleware' => ['role:Administrador']], function () {
+
+
+
+    
+    Route::get('ajustes',[App\Http\Controllers\SettingController::class, 'index']);
+    Route::post('settingStore',[App\Http\Controllers\SettingController::class, 'store']);
+    Route::post('settingEdit',[App\Http\Controllers\SettingController::class, 'edit']);
+    Route::post('settingUpdate',[App\Http\Controllers\SettingController::class, 'update']);
+    Route::get('settingDestroy',[App\Http\Controllers\SettingController::class, 'destroy']);
+    Route::post('settingShow',[App\Http\Controllers\SettingController::class, 'show']);
+
+
+
+
 
        Route::post('reportDestroy',[App\Http\Controllers\ReportController::class, 'destroy']);
         Route::post('reportEdit',[App\Http\Controllers\ReportController::class, 'edit']);
@@ -162,67 +162,6 @@ Route::group(['middleware' => ['role:Administrador']], function () {
    Route::post('survey_detailDestroy',[App\Http\Controllers\SurveyDetailController::class, 'destroy']);
 
 
-
-
-
-   Route::resource("cursos", App\Http\Controllers\CourseController::class);
-   Route::post('courseStore',[App\Http\Controllers\CourseController::class, 'store']);
-   Route::post('courseEdit',[App\Http\Controllers\CourseController::class, 'edit']);
-   Route::post('courseUpdate',[App\Http\Controllers\CourseController::class, 'update']);
-   Route::post('courseDestroy',[App\Http\Controllers\CourseController::class, 'destroy']);
-   Route::post('courseShow',[App\Http\Controllers\CourseController::class, 'show']);
-
-   Route::resource("horarios", App\Http\Controllers\ScheduleController::class);
-   Route::post('scheduleStore',[App\Http\Controllers\ScheduleController::class, 'store']);
-   Route::post('scheduleEdit',[App\Http\Controllers\ScheduleController::class, 'edit']);
-   Route::post('scheduleUpdate',[App\Http\Controllers\ScheduleController::class, 'update']);
-   Route::post('scheduleDestroy',[App\Http\Controllers\ScheduleController::class, 'destroy']);
-   Route::post('scheduleShow',[App\Http\Controllers\ScheduleController::class, 'show']);
-
-   Route::resource("registros", App\Http\Controllers\RegistryController::class);
-   Route::post('registryStore',[App\Http\Controllers\RegistryController::class, 'store']);
-   Route::post('registryEdit',[App\Http\Controllers\RegistryController::class, 'edit']);
-   Route::post('registryUpdate',[App\Http\Controllers\RegistryController::class, 'update']);
-   Route::post('registryDestroy',[App\Http\Controllers\RegistryController::class, 'destroy']);
-   Route::post('registryShow',[App\Http\Controllers\RegistryController::class, 'show']);
-
-   Route::post('registry_detail',[App\Http\Controllers\RegistryDetailController::class, 'registry_detail']);
-
-   Route::resource("registros_mantenimiento", App\Http\Controllers\RegistryDetailController::class);
-   Route::post('registry_detailStore',[App\Http\Controllers\RegistryDetailController::class, 'store']);
-   Route::post('registry_detailEdit',[App\Http\Controllers\RegistryDetailController::class, 'edit']);
-   Route::post('registry_detailUpdate',[App\Http\Controllers\RegistryDetailController::class, 'update']);
-   Route::post('registry_detailDestroy',[App\Http\Controllers\RegistryDetailController::class, 'destroy']);
-   Route::post('registry_detailShow',[App\Http\Controllers\RegistryDetailController::class, 'show']);
-
-
-
-
-
-   Route::post('certificationStore',[App\Http\Controllers\CertificationController::class, 'store']);
-   Route::post('certificationEdit',[App\Http\Controllers\CertificationController::class, 'edit']);
-   Route::post('certificationUpdate',[App\Http\Controllers\CertificationController::class, 'update']);
-   Route::post('certificationDestroy',[App\Http\Controllers\CertificationController::class, 'destroy']);
-   Route::post('certificationShow',[App\Http\Controllers\CertificationController::class, 'show']);
-
-
-
-   //Route::get('certificationSavePhoto',[App\Http\Controllers\CertificationController::class, 'savePhoto']);
-
-  Route::post('certificaciones/certificationSavePhoto',[App\Http\Controllers\CertificationController::class, 'savePhoto']);
-
-
-
-   Route::resource("estudiantes", App\Http\Controllers\StudentController::class);
-   Route::post('studentStore',[App\Http\Controllers\StudentController::class, 'store']);
-   Route::post('studentEdit',[App\Http\Controllers\StudentController::class, 'edit']);
-   Route::post('studentUpdate',[App\Http\Controllers\StudentController::class, 'update']);
-   Route::post('studentDestroy',[App\Http\Controllers\StudentController::class, 'destroy']);
-   Route::post('studentShow',[App\Http\Controllers\StudentController::class, 'show']);
-
-// Route::get('qrcode', function () {
-//      return QrCode::size(300)->generate('https://certificados.socialdata-peru.com/');
-//  });
 
 });
 

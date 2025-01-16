@@ -429,7 +429,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ url('setting') }}" class="nav-link">
+                                        <a href="{{ url('ajustes') }}" class="nav-link">
                                             <img src="{{ asset('categorias.png') }}" alt="" srcset=""
                                                 width="30px">
                                             <p>Ajustes</p>

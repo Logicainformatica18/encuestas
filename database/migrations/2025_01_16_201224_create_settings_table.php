@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->string('description')->nullable();
+            $table->string('logo')->nullable();
+            $table->string('color_1')->nullable();
+            $table->string('color_2')->nullable();
+            $table->string('color_3')->nullable();
+            $table->string('color_4')->nullable();
+            $table->string('color_5')->nullable();
+            $table->string('color_6')->nullable();
+            $table->string('color_7')->nullable();
+            $table->string('color_8')->nullable();
+            $table->string('color_9')->nullable();
+            $table->string('color_10')->nullable();
+
             $table->timestamps();
         });
     }
