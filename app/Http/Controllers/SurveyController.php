@@ -39,8 +39,8 @@ class SurveyController extends Controller
     {
         $survey = new Survey;
         $survey->title = $request->title;
-         //photo
-         if ($request->file('front_page') != null) {
+        //photo
+        if ($request->file('front_page') != null) {
             $request->front_page = photoStore($request->file('front_page'), "imageusers");
             $survey->front_page = $request->front_page;
         }
@@ -80,8 +80,8 @@ class SurveyController extends Controller
     {
         $survey = survey::find($request->id);
         $survey->title = $request->title;
-         //photo
-         if ($request->file('front_page') != null) {
+        //photo
+        if ($request->file('front_page') != null) {
             $request->front_page = photoStore($request->file('front_page'), "imageusers");
             $survey->front_page = $request->front_page;
         }

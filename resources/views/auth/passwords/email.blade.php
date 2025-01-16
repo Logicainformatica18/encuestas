@@ -37,7 +37,7 @@
                     <div class="col-lg-11">
                       <div class="card-body">
                         <a href="../../index.html" class="text-nowrap logo-img d-block mb-4 w-100 text-center">
-                          <img src="{{asset('ayba/1.png')}}"width="50px" class="dark-logo" alt="Logo-Dark" />
+                          <img src="{{asset('logo.png')}}"width="100px" class="dark-logo" alt="Logo-Dark" />
                         </a>
                         <p class="text-muted">Por favor ingrese la dirección de correo electrónico asociada con su cuenta y le enviaremos un enlace para restablecer su contraseña.</p>
                     
