@@ -8,12 +8,20 @@ use App\Http\Requests\UpdateSettingRequest;
 
 class SettingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+         //
+         $setting = Setting::orderBy('id','DESC')->get();
+         return view("setting.setting", compact("setting"));
     }
 
     /**
