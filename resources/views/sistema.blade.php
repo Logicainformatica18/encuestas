@@ -111,9 +111,7 @@
                                     <li class="list-group-item">
                                         <b>DNI</b> <a class="float-right">{{ $users->dni }}</a>
                                     </li>
-                                    <li class="list-group-item">
-                                        <b>ID de estudiante</b> <a class="float-right">2023SDC00{{ $users->id }}</a>
-                                    </li>
+                                    
 
 
 
@@ -170,30 +168,7 @@
                         <!-- /.card -->
                     </div>
 
-                    <div class="col-md-6">
-                        <h6 style="color:#F59C1C"><b>Información laboral</b></h6>
-                        <!-- Profile Image -->
-                        <div class="card card-primary card-outline" id="mycontent">
-                            <div class="card-body box-profile" style="font-size: 12px">
-
-                                <ul class="list-group list-group-unbordered mb-3">
-                                    <li class="list-group-item">
-                                        <b>Cargo</b>
-                                        <a class="float-right">Estudiante</a>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <b>Experiencia</b> <a class="float-right">{{ $users->datebirth }}</a>
-                                    </li>
-
-
-                                </ul>
-                            </div>
-                            <!-- /.card-body -->
-                        </div>
-                        <!-- /.card -->
-                        <!-- /.card -->
-                    </div>
-
+                    
 
 
 

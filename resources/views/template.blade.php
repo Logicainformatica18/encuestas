@@ -26,7 +26,7 @@
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    {{-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> --}}
 
     <link rel="icon" type="image/jpg" href="{{ asset('dist/img/favicon.png') }}" />
 
@@ -102,7 +102,7 @@
     <div class="wrapper">
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand"style="background-color:  #F59C1C">
+        <nav class="main-header navbar navbar-expand" style="background-color:  #F59C1C">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
@@ -115,7 +115,7 @@
             <div class="row">
                 <div class="col col-lg-7">
 
-                    <a class="navbar-brand text-white" href="{{ url('Administrador') }}">
+                    <a class=" navbar-brand text-white"  href="{{ url('Administrador') }}">
                   {{Auth::user()->roles[0]->name}}    
                     </a>
 
@@ -160,7 +160,7 @@
                         @endif
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{ Auth::user()->names }}</a><br>
+                        <a href="#" class="d-block"style="font-size:20px">{{ Auth::user()->names }}</a><br>
                     </div>
                 </div>
 
@@ -400,15 +400,10 @@
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
                                             <img src="{{ asset('usuario.png') }}" alt="" srcset=""
                                                 width="30px">
-                                            <p>USUARIOS</p>
+                                            <p>Usuarios</p>
                                         </a>
                                     </li>
-                                    {{-- <li class="nav-item">
-                                        <a href="{{ route('categorias.index') }}" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Categorías</p>
-                                        </a>
-                                    </li> --}}
+                               
 
 
                                     {{-- <li class="nav-item">
@@ -430,16 +425,17 @@
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
                                                <img src="{{ asset('listas.png') }}" alt="" srcset=""
                                                 width="30px">
-                                            <p>LISTAS</p>
+                                            <p>Listas</p>
                                         </a>
                                     </li>
-                                @elseif('Encuestador')
                                     <li class="nav-item">
-                                        <a href="{{ route('Mis-certificados.index') }}" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Mis Certificados</p>
+                                        <a href="{{ url('setting') }}" class="nav-link">
+                                            <img src="{{ asset('categorias.png') }}" alt="" srcset=""
+                                                width="30px">
+                                            <p>Ajustes</p>
                                         </a>
                                     </li>
+                            
                                 @endrole
 
 
@@ -750,11 +746,15 @@
 
                 </div>
                 
-                  <div class="user-panel pl-5 mt-3 pb-3 mb-3 d-flex">
-
-
-                    <img src="{{ asset('CERRAR-SESION-BLANCO.png') }}" alt="" width="10%">
-                    <a href="{{ route('logout') }}" style="color: white;">Cerrar Sesión</a>
+                  <div class="user-panel pl-2 mt-3 pb-3 mb-3 d-flex">
+                    <a href="{{ route('logout') }}"class="d-block" style="color: white;">
+                    <img src="{{ asset('CERRAR-SESION-BLANCO.png') }}" alt="" width="100%">
+                    <div class="info">
+                        
+                            Cerrar Sesión</a>
+                    </div>
+                     
+                   
 
 
                 </div>
@@ -781,10 +781,10 @@
                 </div>
             </div>
             <!-- /.content-wrapper -->
-           <footer class="main-footer">
+           <footer class="main-footer"style="background-color: black">
                 <span
-                    style="background-image: linear-gradient(45deg, rgb(255, 0, 149), red); -webkit-background-clip: text; color: transparent;">
-                  <a href="https://anthonycode.com"target="_blank">Copyright © 2023 Dev. AnthonyCode</a></span>
+                    style="background-image: linear-gradient(45deg, rgb(0, 0, 0), red); -webkit-background-clip: text; color: transparent;">
+                  <a href="https://anthonycode.com"target="_blank">Copyright © 2025 Dev. AnthonyCode</a></span>
                 <div class="float-right d-none d-sm-inline-block">
                 </div>
             </footer>

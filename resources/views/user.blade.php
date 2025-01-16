@@ -25,10 +25,7 @@
         Agregar
     </button>
     <p></p>
-    Buscar
-    <form name="for" id="show">
-        <input type="text" name="show" class="form-control" style="width: 50%" onkeydown="userShow();">
-    </form>
+  
   <!-- /.content -->
   {{-- {{ $user->onEachSide(1)->links() }} --}}
     <p></p>

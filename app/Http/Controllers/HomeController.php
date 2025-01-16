@@ -26,10 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-       $users= Auth::user();
-
-      //  return $users->roles_;
-      return view('home',compact("users"));
+      return redirect('Administrador');
     }
     public function sistema()
     {
