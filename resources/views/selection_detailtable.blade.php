@@ -1,4 +1,4 @@
-       
+      
        @if (optional($selection->associate)->selection_detail == '')
        @else
        Asociar con:
@@ -20,7 +20,7 @@
                @php
                    $enumeracion = 0;
                @endphp
-               {{-- {{$selection_detail->selection_detail}} --}}
+             
                @foreach ($selection->selection_detail as $item)
                    <tr>
                        <td>
@@ -33,7 +33,7 @@
                            {{ optional($item->associate_detail)->description }}
                        </td>
                        <td>
-                           <!-- Button trigger modal -->
+                          
                            <button type="button"
                                onclick="selection_detailDestroy('{{ $item->id }}',{{ $item->selection->id }});"
                                class="btn btn-danger">
@@ -45,4 +45,4 @@
                @endforeach
 
            </tbody>
-       </table>
+       </table> 

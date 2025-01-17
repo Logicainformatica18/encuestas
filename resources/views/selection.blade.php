@@ -107,7 +107,7 @@
 
 
                         <div id="mycontent_detail">
-                            @if (isset($selection->selection_detail) == null)
+                            @if (isset($selection->id) == null)
                             @else
                                 @include('selection_detailtable')
                             @endif

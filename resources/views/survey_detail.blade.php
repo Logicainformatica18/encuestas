@@ -370,7 +370,7 @@
                         </select>
                         Enumeración:
                         <select name="enumeration_edit" id="enumeration_edit" class="form-control">
-                            @for ($i = 1; $i <= 54; $i++)
+                            @for ($i = 0; $i <= 54; $i++)
                                 <option value="{{ $i }}">{{ $i }}</option>
                             @endfor
                         </select>

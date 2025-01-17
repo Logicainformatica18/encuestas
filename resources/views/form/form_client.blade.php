@@ -146,11 +146,11 @@
                     <p class="mb-0 text-white">
                         <a class="d-none d-sm-none d-sm-block d-md-block d-lg-block  d-xl-block display-1 fs-4 text-white text-hover-primary  border-primary"
                             href="#" target="_blank">
-                            Copyright 2025, ComexLat - AnthonyCode | &nbsp;&nbsp; Todos los Derechos reservados
+                            Copyright 2025, ComexLat - &nbsp;| &nbsp;&nbsp; Todos los Derechos reservados
                         </a>
                         <a class="d-sm-none  display-1 fs-2 text-center text-white text-hover-primary  border-primary"
                             href="#" target="_blank">
-                            Copyright 2025, ComexLat - AnthonyCode<br> Todos los Derechos reservados
+                            Copyright 2025, ComexLat - <br> Todos los Derechos reservados
                         </a>
                     </p>
                 </div>
