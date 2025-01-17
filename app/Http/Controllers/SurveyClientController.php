@@ -32,7 +32,10 @@ class SurveyClientController extends Controller
 
         if ($survey->type == "encuesta") {
             return view('survey_client', compact("survey_detail", "survey", "survey_count"));
-        } else {
+        } elseif($survey->type == "postulation") {
+            return view('postulation.postulation_client', compact("survey_detail", "survey", "survey_count"));
+        }
+        else{
             return view('form.form_client', compact("survey_detail", "survey", "survey_count"));
         }
     }

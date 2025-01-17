@@ -1,25 +1,24 @@
-<p class="py-3"></p>
-<div class="row">
-    <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
+
  
         <div class="row">
-            <div class="col-12">
-            
-                <div class="post">
-               
+        
                     @php
                         $enumeracion = 0;
                     @endphp
                     @foreach ($survey_detail as $survey_details)
+                    <div class="col-xl-3">
+            
+                      
+                       
                         @if ($loop->first)
                             <div class="page" style="display: none;">
-                                <p>&nbsp; </p>
+                      
 
                                 <form action="" name="client" id="client">
 
 
 
-                                    {{ $survey_details->survey->detail }}
+                                   <span class=""style="color:red"> {{ $survey_details->survey->detail }}</span>
                              
                                     @php
                                         $date_now= \Carbon\Carbon::now('America/Lima')->format('Y-m-d H:i:s');
@@ -29,7 +28,7 @@
                                      @endif 
 
                                     <button id="next" class="btn  btn-warning granulated-background fs-5"
-                                     style=" color:rgb(0, 0, 0);font-family:Montserrat-Bold;margin-top:-50px"
+                                     style=" color:rgb(0, 0, 0);font-family:Montserrat-Bold;margin-top:-0px"
                                         onclick="clientStore();this.style.display='none'; return false;">Postularme ></button>
                                     @if ($survey_details->survey->state == 'public')
                                       
@@ -58,11 +57,12 @@
                                     <input type="hidden" value="{{ $survey_details->requerid }}" name="requerid">
 
                                 {{ csrf_field() }}
-                                <h6>
+                                <h6 style="color:#13434d">
                                     {{ $enumeracion = $enumeracion + 1 }}
                                     {{ '. ' . $survey_details->question }}</h6>
-                                <span> {{ $survey_details->detail }}</span>
-
+                                  &nbsp;  <span class="text-primary fs-3 ">{{ $survey_details->detail }}</span>
+                                    
+                                    <br>
                                 @if ($survey_details->type == 'short_answer')
                                
                                     <input id="answer" name="answer" class="form-control" required>
@@ -129,6 +129,7 @@
                                     @if ($survey_details->selection->state == '0')
                                         <select name="selection_detail_id" id="selection_detail_id"
                                             class="form-control">
+                                            <option value="0">- Elija una Opción -</option>
                                             @foreach ($survey_details->selection->selection_detail as $item)
                                                 <option value="{{ $item->id . '-' . $item->description }}">
                                                     {{ $item->description }} </option>
@@ -177,13 +178,15 @@
                                 <div class="form-check text-start">
                                     <input class="form-check-input" type="checkbox" id="txtTratamientoDatos1" name="data_aprobed_1" value="true"requerid>
                                     <label class="form-check-label fs-3" for="txtTratamientoDatos1">
-                                        <span class="fs-2">He leído </span>
+                                        <span class="fs-2">Nota: Certifico que la información aquí suministrada es verdadera y podrá ser verificada en cualquier momento por la empresa.
+                                            </span>
                                         <a class="text-warning fs-2" data-bs-toggle="modal" data-bs-target="#bs-example-modal-xlg" style="cursor: pointer;">
-                                             y acepto la Política de Privacidad.
+                                             Así mismo estoy dispuesto a brindar una ampliación de cualquier aspecto de los datos
+                                            registrados.
                                         </a>
                                     </label>
                                 </div>
-                                <div class="form-check text-start">
+                                {{-- <div class="form-check text-start">
                                     <input class="form-check-input" type="checkbox" id="txtTratamientoDatos2" name="data_aprobed_1" value="true"requerid>
                                     <label class="form-check-label fs-3" for="txtTratamientoDatos2">
                                         <span class="fs-2">He leído la autorización y acepto el </span><br>
@@ -191,21 +194,22 @@
                                             Tratamiento de mis datos personales según lo especificado en la misma.
                                         </a>
                                     </label>
-                                </div>
+                                </div> --}}
                                 <br>
                                     <button class="btn btn-warning granulated-background fs-5"
                                         onclick="survey_clientStore('{{ $enumeracion }}');return false;">Enviar mis datos</button>
                                 @endif
                             </form>
                         </div>
-                    @endforeach
+                
                 </div>
-            </div>
+                    @endforeach
+          
         </div>
 
 
 
-    </div>
+
 
 
     <script>
@@ -285,8 +289,5 @@ inputsTexto.forEach(input => {
         
         }
 </script>
-    <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
-   
-      
-    </div>
-</div>
+
+

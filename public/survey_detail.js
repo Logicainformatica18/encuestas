@@ -15,8 +15,8 @@ function survey_detailStore() {
       //carga pdf- csv - excel
       datatable_load();
       
-      alert("Registrado Correctamente");
-
+      //alert("Registrado Correctamente");
+      window.location.reload();
     })
     .catch(function(response) {
       //handle error

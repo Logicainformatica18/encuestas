@@ -38,9 +38,11 @@
             <form action="" method="post" role="form" id="survey_detail" name="survey_detail">
                 <input type="hidden" name="id" id="id">
                 {{ csrf_field() }}
-                <h2>Pregunta</h2>
+                <h6>Título</h6>
+                <input type="text"name="title"class="form-control">
+                <h6>Pregunta</h6>
                 <textarea type="text" name="question" id="question" class="form-control" rows="2px"> </textarea>
-                <h2>Detalle</h2>
+                <h6>Detalle</h6>
                 <textarea type="text" name="detail" id="detail" class="form-control" rows="2px"> </textarea>
         </div>
         <p></p>
@@ -48,7 +50,7 @@
             <p></p>
         </div>
         <div class="col col-md-3">
-            <h2>Tipo de Pregunta</h2>
+            <h6>Tipo de Pregunta</h6>
             <select name="type" id="type" class="form-control">
                 <option value="short_answer">Eligir Tipo de Pregunta</option>
                 <option value="short_answer">Respuesta Corta</option>

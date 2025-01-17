@@ -51,6 +51,7 @@
                         <select name="type" id="type" class="form-control">
                             {{-- <option value="encuesta">Encuesta</option> --}}
                             <option value="ficha">Ficha</option>
+                            <option value="postulation">Postulación</option>
                         </select>
                         <p></p>
                         <div class="container align-content-center">

@@ -42,7 +42,7 @@
 
     <nav class="navbar navbar-expand-lg" style="height: 50px;">
         <div class="container-fluid"
-            style="background: linear-gradient(95deg, #F9DD6A 5%, #F59C1C 90%); height: 50px; padding: 0;margin-top:-5px">
+            style="background: linear-gradient(95deg, #1f6370 5%, #13434d 90%); height: 50px; padding: 0;margin-top:-5px">
             <a class="text-start position-relative navbar-brand me-0 py-0 m-2" href="#">
                 <img src="{{ asset('logo.png') }}" alt="img-fluid" width="120px" style="margin-left: 0;  ">
             </a>
@@ -55,9 +55,12 @@
  
 
     <div class="container-fluid py-1">
-        <div class="row">
+        <div id="mycontent" class="p-5">
+            @include('postulation.postulation_clienttable')
+        </div>
+        {{-- <div class="row">
             <!-- Primera Columna -->
-            <div class="col-12 col-md-11 col-lg-11 col-xl-6" style="background-color: #ffffff;">
+            <div class="col-12 col-md-12 col-lg-12 col-xl-12" style="background-color: #ffffff;">
                 <div class="container text-center pt-3">
                     <p></p>
                     <img width="60%" src="../imageusers/{{ $survey->front_page }}" alt=""
@@ -70,14 +73,11 @@
                     @php
                         echo $survey->description;
                     @endphp
-                    <div id="mycontent" style="margin-top: -30px;" class="">
-                        @include('form.form_clienttable')
-                    </div>
+                    
                 </div>
                 <p>&nbsp;</p>
             </div>
-
-            <!-- Segunda Columna -->
+ 
             <div class="d-none   d-xl-block col-lg-12 col-xl-6  ">
                 <div class="sticky-container">
                     <img src="{{ asset('baner.jpg') }}" alt="Imagen" class="img-fluid"
@@ -89,7 +89,7 @@
                 <img src="{{ asset('baner.jpg') }}" style="width:100%">
 
             </div>
-        </div>
+        </div> --}}
     </div>
 
     <style>
@@ -146,11 +146,11 @@
                     <p class="mb-0 text-white">
                         <a class="d-none d-sm-none d-sm-block d-md-block d-lg-block  d-xl-block display-1 fs-4 text-white text-hover-primary  border-primary"
                             href="#" target="_blank">
-                            Copyright 2025, ComexLat - AnthonyCode | &nbsp;&nbsp; Todos los Derechos reservados
+                            Copyright 2025, ComexLat | &nbsp;&nbsp; Todos los Derechos reservados
                         </a>
                         <a class="d-sm-none  display-1 fs-2 text-center text-white text-hover-primary  border-primary"
                             href="#" target="_blank">
-                            Copyright 2025, ComexLat - AnthonyCode<br> Todos los Derechos reservados
+                            Copyright 2025, ComexLat - <br> Todos los Derechos reservados
                         </a>
                     </p>
                 </div>
