@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -202,25 +203,25 @@ Route::get('/auth/google/callback', function () {
                 //if the user exists, login and show dashboard
                 Auth::login($finduser);
                 return redirect('/home');
-            }else{
-                //user is not yet created, so create first
-                $newUser = User::create([
-                    'names' => $user->name,
-                     'firstname' => '',
-                      'lastname' => '',
-                    'email' => $user->email,
-                    'google_id'=> $user->id,
-                    'password' => Hash::make('encuestador123')
-                ]);
+            // }else{
+            //     //user is not yet created, so create first
+            //     $newUser = User::create([
+            //         'names' => $user->name,
+            //          'firstname' => '',
+            //           'lastname' => '',
+            //         'email' => $user->email,
+            //         'google_id'=> $user->id,
+            //         'password' => Hash::make('encuestador123')
+            //     ]);
               
-                $newUser->save();
-                //login as the new user
-                Auth::login($newUser);
-                $newUser->assignRole('Encuestador');
-                //
-              //  $newUser->createToken(request()->device_name)->plainTextToken ;
-                // go to the dashboard
-                return redirect('/home');
+            //     $newUser->save();
+            //     //login as the new user
+            //     Auth::login($newUser);
+            //     $newUser->assignRole('Encuestador');
+            //     //
+            //   //  $newUser->createToken(request()->device_name)->plainTextToken ;
+            //     // go to the dashboard
+            //     return redirect('/home');
             }
             //catch exceptions
         } catch (Exception $e) {
