@@ -54,7 +54,7 @@
     </nav>
  
 
-    <div class="container-fluid py-1">
+    <div class="container-fluid py-1" >
         <div class="row">
             <!-- Primera Columna -->
             <div class="col-12 col-md-11 col-lg-11 col-xl-6" style="background-color: #ffffff;">
@@ -81,7 +81,7 @@
             <div class="d-none   d-xl-block col-lg-12 col-xl-6  ">
                 <div class="sticky-container">
                     <img src="{{ asset('baner.jpg') }}" alt="Imagen" class="img-fluid"
-                        style="border-radius: 0px;border-left:solid 5px black">
+                        style="border-radius: 0px;border-left:solid 2px black">
                 </div>
             </div>
             <div class=" d-block d-md-block d-lg-block d-sm-block   col-12   d-xl-none col-lg-12 col-xl-6  ">
@@ -90,8 +90,31 @@
 
             </div>
         </div>
+        
     </div>
+    <footer class="footer-part pt-4 pb-2" style="background-color:#000000">
 
+        <div class="container">
+            <div class="justify-content-center">
+
+                <div class="text-center">
+
+
+                    <p class="mb-0 text-white">
+                        <a class="d-none d-sm-none d-sm-block d-md-block d-lg-block  d-xl-block display-1 fs-4 text-white text-hover-primary  border-primary"
+                            href="#" target="_blank">
+                            Copyright 2025, ComexLat &nbsp;| &nbsp;&nbsp; Todos los Derechos reservados
+                        </a>
+                        <a class="d-sm-none  display-1 fs-2 text-center text-white text-hover-primary  border-primary"
+                            href="#" target="_blank">
+                            Copyright 2025, ComexLat - <br> Todos los Derechos reservados
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
     <style>
         .sticky-container {
             position: sticky;
@@ -101,6 +124,7 @@
             display: flex;
             align-items: right;
             justify-content: right;
+            margin-bottom: -10px;
 
         }
 
@@ -135,29 +159,7 @@
 
 
 
-    <footer class="footer-part pt-4 pb-3 py-2" style="background-color:#000000;">
-
-        <div class="container">
-            <div class="justify-content-center">
-
-                <div class="text-center">
-
-
-                    <p class="mb-0 text-white">
-                        <a class="d-none d-sm-none d-sm-block d-md-block d-lg-block  d-xl-block display-1 fs-4 text-white text-hover-primary  border-primary"
-                            href="#" target="_blank">
-                            Copyright 2025, ComexLat - &nbsp;| &nbsp;&nbsp; Todos los Derechos reservados
-                        </a>
-                        <a class="d-sm-none  display-1 fs-2 text-center text-white text-hover-primary  border-primary"
-                            href="#" target="_blank">
-                            Copyright 2025, ComexLat - <br> Todos los Derechos reservados
-                        </a>
-                    </p>
-                </div>
-
-            </div>
-        </div>
-    </footer>
+   
     <!-- sample modal content -->
     <div class="modal fade" id="bs-example-modal-xlg" tabindex="-1" aria-labelledby="bs-example-modal-lg"
         aria-hidden="true">
