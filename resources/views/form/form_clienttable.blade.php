@@ -78,6 +78,17 @@
                                     <input type="email" id="answer" name="answer"  class="form-control" required>
                                    
                                     <p></p>
+                                    @elseif ($survey_details->type == 'number')
+                               
+                                    <input id="answer"type="number" name="answer" class="form-control" required>
+                                    <div class="invalid-feedback">
+                                        Este campo es obligatorio.
+                                    </div>
+                                    {{-- @error('answer')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror --}}
+
+                                    <p></p>
                                 @elseif($survey_details->type == 'multiple_option')
                                     <?php
                                     $array = json_decode($survey_details->option);

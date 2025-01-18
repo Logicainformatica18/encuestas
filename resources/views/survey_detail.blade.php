@@ -7,9 +7,9 @@
                 <div class="col-sm-12">
 
                     <h3>ID : {{ $survey->title }} </h3>
-                    <h4>
+                    <h6>
                         Inicio : {{ $survey->date_start }} - Fin : {{ $survey->date_end }}
-                    </h4>
+                    </h6>
                     {{ session('success') }}
                 </div>
                 {{-- <div class="col-sm-3">
@@ -57,6 +57,8 @@
                 <option value="multiple_option">Varias Opciones</option>
                 <option value="selection">Selección</option>
                 <option value="date">Fecha</option>
+                <option value="number">Número</option>
+                
                 <option value="code">Código</option>
                 <option value="file">File</option>
                 <option value="email">Email</option>
@@ -69,23 +71,23 @@
 
 
         <div class="col col-md-2">
-            <h4>Requerido</h4>
+            <h6>Requerido</h6>
             <input type="radio" name="requerid" id="requerid" value="yes" checked> &nbsp;&nbsp;Sí &nbsp;&nbsp;
             <input type="radio" name="requerid" id="requerid"value="not"> &nbsp;&nbsp;No
         </div>
 
         <div class="col col-md-2">
-            <h4>Evaluado</h4>
+            <h6>Evaluado</h6>
             <input type="radio" name="evaluate" id="evaluated" value="yes" checked> &nbsp;&nbsp;Sí &nbsp;&nbsp;
             <input type="radio" name="evaluate" id="evaluated"value="not" checked> &nbsp;&nbsp;No
         </div>
         <div class="col col-md-2">
-            <h4>Alternativa correcta</h4>
+            <h6>Alternativa correcta</h6>
             <input type="number" value="1" class="form-control">
 
         </div>
         <div class="col col-md-2">
-            <h4>Puntaje o valor dado :</h4>
+            <h6>Puntaje o valor dado :</h6>
 
             <input type="text" name="point" id="point" class="form-control">
         </div>
@@ -194,6 +196,12 @@
                 </div>
 
             </div>
+            <div id="numberContainer" style="display: none;">
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control"placeholder="Numérico" disabled>
+                </div>
+
+            </div>
         </div>
 
 
@@ -250,7 +258,9 @@
         const dateContainer = document.getElementById('dateContainer');
         const codeContainer = document.getElementById('codeContainer');
         const emailContainer = document.getElementById('emailContainer');
+        const numberContainer = document.getElementById('numberContainer');
         const textContainer = document.getElementById('textContainer');
+     
         const fileContainer = document.getElementById('fileContainer');
         const selectionContainer = document.getElementById('selectionContainer');
         // const radio_option = document.getElementById('radio_option');
@@ -270,6 +280,12 @@
                 //New();$('#survey_detail')[0].reset()
             } else {
                 textContainer.style.display = 'none';
+            }
+            if (selectElement.value === 'number') {
+                numberContainer.style.display = 'block';
+                //New();$('#survey_detail')[0].reset()
+            } else {
+                numberContainer.style.display = 'none';
             }
             if (selectElement.value === 'selection') {
                 selectionContainer.style.display = 'block';
@@ -301,11 +317,42 @@
             } else {
                 emailContainer.style.display = 'none';
             }
+            
         });
 
         // radio_option.addEventListener('keydown', function() {
 
         // });
+        $(document).ready(function() {
+        // Inicializar el editor Summernote extendido
+        $('#question').summernote({
+            height: 100, // Altura del editor
+            placeholder: 'Escribe algo aquí...',
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript',
+                    'subscript', 'clear'
+                ]],
+                ['fontname', ['fontname']],
+                ['fontsize', ['fontsize']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video', 'hr']],
+                ['view', ['fullscreen', 'codeview', 'help']],
+                ['history', ['undo', 'redo']]
+            ],
+            fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Helvetica', 'Impact',
+                'Tahoma', 'Times New Roman', 'Verdana', 'Manrope', 'Montserrat', 'Montserrat-Bold',
+                'Montserrat-SemiBold', 'Montserrat-Regular'
+            ], // Agrega Montserrat aquí
+            fontNamesIgnoreCheck: ['Montserrat', 'Montserrat-Regular', 'Montserrat-Bold',
+                'Montserrat-SemiBold'
+            ] // Ignora el chequeo para la fuente personalizada
+
+
+        });
+    });
     </script>
 
 

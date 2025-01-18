@@ -57,15 +57,33 @@
                                     <input type="hidden" value="{{ $survey_details->requerid }}" name="requerid">
 
                                 {{ csrf_field() }}
-                                <h6 style="color:#13434d">
-                                    {{ $enumeracion = $enumeracion + 1 }}
-                                    {{ '. ' . $survey_details->question }}</h6>
+                                <h6 style="color:#13434d">{{ $enumeracion = $enumeracion + 1 .'. ' }}
+                                
+                                    @php
+                                    echo $survey_details->question;
+                                    @endphp
+                                 </h6>
                                   &nbsp;  <span class="text-primary fs-3 ">{{ $survey_details->detail }}</span>
                                     
                                     <br>
                                 @if ($survey_details->type == 'short_answer')
                                
                                     <input id="answer" name="answer" class="form-control" required>
+                                    <div class="invalid-feedback">
+                                        Este campo es obligatorio.
+                                    </div>
+                                    {{-- @error('answer')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror --}}
+
+                                    <p></p>
+                                      @elseif($survey_details->type == 'email')
+                                    <input type="email" id="answer" name="answer"  class="form-control" required>
+                                   
+                                    <p></p>
+                                    @elseif ($survey_details->type == 'number')
+                               
+                                    <input id="answer"type="number" name="answer" class="form-control" required>
                                     <div class="invalid-feedback">
                                         Este campo es obligatorio.
                                     </div>
