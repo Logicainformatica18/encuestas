@@ -784,7 +784,7 @@
            <footer class="main-footer"style="background-color: black">
                 <span
                     style="background-image: linear-gradient(45deg, rgb(0, 0, 0), red); -webkit-background-clip: text; color: transparent;">
-                  <a href="https://anthonycode.com"target="_blank">Copyright © 2025 Dev. AnthonyCode</a></span>
+                  <a href="https://anthonycode.com"target="_blank">Copyright © 2025</a></span>
                 <div class="float-right d-none d-sm-inline-block">
                 </div>
             </footer>
