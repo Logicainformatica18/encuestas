@@ -203,7 +203,9 @@ Route::get('/auth/google/callback', function () {
                 //if the user exists, login and show dashboard
                 Auth::login($finduser);
                 return redirect('/home');
-            // }else{
+        }else{
+            return redirect('/login');
+
             //     //user is not yet created, so create first
             //     $newUser = User::create([
             //         'names' => $user->name,
