@@ -171,128 +171,45 @@
                     <div class="container mt-5">
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
-                                <h1 class="text-center mb-4">Política de Privacidad</h1>
-                                <div class="card shadow-sm">
-                                    <div class="card-body">
-                                        <h2 class="fs-4 mb-3">1. Introducción</h2>
-                                        <p>La presente Política de Privacidad tiene por finalidad informarle sobre cómo
-                                            LA EMPRESA con RUC Nº 20613359550 y con domicilio en Av. Circunvalación Nro.
-                                            669 Interior 402, Distrito de Santiago De Surco, Provincia y Departamento de
-                                            Lima, Lima; realiza el tratamiento de Datos Personales que recopila en forma
-                                            independiente por medio de los distintos formularios físicos, electrónicos
-                                            disponibles en el sitio Web, aplicaciones y demás entornos electrónicos que
-                                            disponga LA EMPRESA incluyendo los consentimientos otorgados vía telefónica
-                                            u otras formas de comunicación en las que se haga referencia a esta Política
-                                            de Privacidad.</p>
-
-                                        <h2 class="fs-4 mb-3">2. Objetivo y Finalidad</h2>
-                                        <p>En LA EMPRESA sabemos de la importancia y de la elevada consideración que
-                                            tiene la privacidad de nuestros clientes y de todas aquellas personas que se
-                                            interesan por nuestros productos y servicios como los potenciales clientes
-                                            (en adelante “Usuarios”). Siendo consecuentes con esta consideración tenemos
-                                            el compromiso de respetar su privacidad y proteger la confidencialidad de su
-                                            información privada y datos personales. Y es por ello que el objetivo de
-                                            esta política de privacidad es dar a conocer a nuestros Usuarios la manera
-                                            en que se recogen, se tratan y se protegen los datos personales, definida
-                                            según la Ley N° 29733 Ley de Protección de Datos Personales. La finalidad
-                                            del sitio Web es dar a conocer los productos y servicios que comercializa LA
-                                            EMPRESA y dar información sobre los mismos, así como facilitar otro tipo de
-                                            información que creamos que puede ser de interés y crear un espacio de
-                                            comunicación para los Usuarios.</p>
-
-                                        <h2 class="fs-4 mb-3">3. Legislación</h2>
-                                        <p>Esta política está regulada por la Legislación peruana y en particular por:
-                                        </p>
-                                        <ul>
-                                            <li>Ley N° 29733 - Ley de Protección de Datos Personales.</li>
-                                            <li>Decreto Supremo N° 003-2013-JUS, que aprueba el Reglamento de la Ley N°
-                                                29733.</li>
-                                            <li>Directiva de Seguridad de la Información, aprobada por la Resolución
-                                                Directoral N° 019-2013-JUS/DGPDP.</li>
-                                        </ul>
-
-                                        <h2 class="fs-4 mb-3">4. Uso Autorizado de Datos Personales</h2>
-                                        <p>Con la finalidad de brindar productos y servicios, LA EMPRESA informa a los
-                                            Usuarios que, bajo las normas vigentes (Ley N° 29733 y su reglamento), se
-                                            encuentra autorizada para tratar aquellos datos personales otorgados de
-                                            forma física o digital por el Usuario o a los que LA EMPRESA accede de
-                                            manera legítima sobre su información personal. Esto incluye los datos
-                                            personales proporcionados a futuro por los Usuarios, o los que sean
-                                            generados por LA EMPRESA bajo la prestación de los servicios.</p>
-                                        <p>En ese sentido, LA EMPRESA requiere del consentimiento libre, previo,
-                                            expreso, inequívoco e informado del titular de los datos personales para el
-                                            tratamiento de estos, salvo en los casos de excepción expresamente
-                                            establecidos por Ley. Por ello, LA EMPRESA no requiere consentimiento para
-                                            tratar la información del Usuario obtenida de fuentes accesibles al público,
-                                            gratuitas o no; asimismo, podrá usar sus datos personales de fuentes no
-                                            públicas, siempre que dichas fuentes cuenten con el consentimiento del
-                                            Usuario para tratar y transferir dichos datos personales.</p>
-
-                                        <h2 class="fs-4 mb-3">5. Finalidad de los Tratamientos de la Información
-                                            Personal</h2>
-                                        <p>LA EMPRESA tratará la información proporcionada por el Usuario con la
-                                            finalidad de ejecutar cualquier relación contractual, comercial y/o de
-                                            cualquier índole, que mantenga y/o mantendrá con el Usuario, para realizar
-                                            venta de inmuebles y gestión de transacciones comerciales, cobranza y
-                                            facturación del servicio contratado, atención a través de telemarketing o
-                                            presencial; así como cumplir con las obligaciones contractuales y legales.
-                                        </p>
-                                        <p>Para el desarrollo de las finalidades mencionadas en el párrafo anterior, LA
-                                            EMPRESA puede transferir sus datos personales a proveedores a nivel nacional
-                                            y/o a empresas subsidiaria. En caso no tenga un vínculo contractual con LA
-                                            EMPRESA, los Datos Personales de los Usuarios serán tratados con la
-                                            finalidad de gestionar los datos personales de potenciales clientes para
-                                            fines comerciales.</p>
-
-                                        <h2 class="fs-4 mb-3">6. Finalidades Opcionales</h2>
-                                        <p>De manera opcional, sus datos personales podrán ser utilizados por LA EMPRESA
-                                            para las siguientes finalidades:</p>
-                                        <ul>
-                                            <li>Ofrecimiento de productos o servicios y promociones por parte de LA
-                                                EMPRESA.</li>
-                                            <li>Ofrecimiento de productos o servicios y promociones de subsidiarias.
-                                            </li>
-                                        </ul>
-                                        <p>El Usuario podrá en todo momento revocar el consentimiento otorgado
-                                            expresamente.</p>
-
-                                        <h2 class="fs-4 mb-3">7. Ejercicio de los Derechos</h2>
-                                        <p>Los Usuarios podrán dirigir su solicitud de ejercicio de los derechos en los
-                                            términos que establece el Reglamento de la Ley N° 29733, enviándonos un
-                                            correo electrónico a la siguiente dirección: <a
-                                                href="mailto:administración@comexlat.com">administración@comexlat.com</a>
-                                            adjuntando los siguientes documentos:</p>
-                                        <ul>
-                                            <li>Solicitud de derechos ARCO, debidamente completada y firmada.</li>
-                                            <li>Copia simple y legible de su Documento Nacional de Identidad.</li>
-                                            <li>En caso de actuar mediante un representante, adjuntar Carta poder con
-                                                firma legalizada notarialmente no mayor a 30 días y copia de Documento
-                                                Nacional de Identidad del representante.</li>
-                                            <li>Otros, en caso considere necesario agregar más información para el
-                                                sustento de su solicitud.</li>
-                                        </ul>
-
-                                        <h2 class="fs-4 mb-3">8. Videovigilancia</h2>
-                                        <p>LA EMPRESA cuenta con un sistema de videovigilancia en sus instalaciones a
-                                            nivel nacional, para la seguridad de estas. La administración de nuestro
-                                            sistema de videovigilancia cumple con la normativa de protección de datos
-                                            personales y está regido por las disposiciones de esta Política, en cuanto
-                                            le sean aplicables. Asimismo, LA EMPRESA ha adoptado los niveles de
-                                            seguridad y de protección de datos personales legalmente requeridos, y ha
-                                            instalado todos los medios y medidas técnicas a su alcance.</p>
-                                        <p>La información captada mediante nuestros sistemas de videovigilancia se
-                                            conservará durante un plazo de 30 días y serán gestionadas en el banco de
-                                            datos de LA EMPRESA, inscrito en el Registro Nacional de Protección de Datos
-                                            Personales con la denominación “Videovigilancia”.</p>
-
-                                        <h2 class="fs-4 mb-3">9. Vigencia y Modificación de la Presente Política de
-                                            Privacidad</h2>
-                                        <p>La Política de privacidad Web de LA EMPRESA se reserva el derecho a modificar
-                                            su Política de Privacidad Web en el supuesto de que exista un cambio en la
-                                            legislación vigente, doctrinal, jurisprudencial o por criterios propios
-                                            empresariales. Si se introdujera algún cambio en esta Política, el nuevo
-                                            texto se publicará en este mismo sitio Web, por lo que se recomienda a los
-                                            Usuarios revisarla periódicamente.</p>
+                                <h5 class="text-warning text-center" style="font-size: 1.65rem">TRATAMIENTOS DE DATOS PERSONALES</h5>
+                                <p></p>
+                                <p style="text-align: justify; font-size: 15px;">
+                                    Declaro haber sido informado, conforme a Ley N° 29733 - Ley de Protección de Datos Personales
+                                    (“la Ley”) y al Decreto Supremo 003-2013/JUS - Reglamento de la Ley (“el Reglamento)”, doy mi
+                                    consentimiento libre, previo , informado, expreso e inequívoco para que <strong>AYBAR S.A.C.
+                                    </strong> realice el tratamiento de mis datos personales que le proporcione
+                                    de manera física o digital , con la finalidad de ejecutar cualquier relación contractual que
+                                    mantengo
+                                    y/o mantendré con la misma, contactarme y para fines estadísticos y/o analíticos.
+                                    <br><br>
+                                    Declaro mi derecho de revocar este consentimiento en cualquier momento.
+                                    Los datos personales entregados a <strong>AYBAR S.A.C.</strong> serán almacenados mientras dure mi
+                                    relación contractual, comercial y/o de cualquier índole con <strong>AYBAR S.A.C.</strong> y hasta
+                                    por 10
+                                    años de culminada la misma en el banco de datos de su titularidad, con RUC 20603865813 y con
+                                    domicilio en Av. Circunvalación del Golf Los Incas N° 134 (Torre B Piso 19) Distrito de Santiago de
+                                    Surco, Provincia y Departamento de Lima.
+                                    <br><br>
+                                    <strong>AYBAR S.A.C.</strong> podrá transferir sus datos personales a nivel nacional y/o
+                                    internacional.
+                                    sujetándose todos estos a las mismas obligaciones y medidas de seguridad, técnicas y legales
+                                    descritas en la Ley y el Reglamento.
+                                    <br><br>
+                                    De igual modo, la información podrá ser transferida a las autoridades o terceros autorizados
+                                    por ley bajo la regulación nacional y/o internacional vigente, incluyendo la Ley No. 29733,
+                                    su reglamento y aquellas que las modifiquen o sustituyan, así como las vinculadas a las autoridades
+                                    que fiscalizan la labor de <strong>AYBAR S.A.C.</strong><br><br>
+                                    Declaro conocer mi derecho a solicitar acceso a mis datos personales y conocer su tratamiento,
+                                    así como, solicitar su actualización, inclusión, rectificación, cancelación y supresión, pudiendo
+                                    oponerme a su uso o divulgación, pudiendo dirigir mi solicitud de ejercicio de los derechos a través
+                                    de la dirección especificada en la página web de <strong>AYBAR S.A.C.</strong>, teniendo a salvo
+                                    además el
+                                    ejercicio de la tutela de sus derechos ante la Autoridad Nacional de Protección de Datos Personales
+                                    en vía de reclamación o ante el Poder Judicial mediante la acción de hábeas data.
+                                    <br><br> Los datos personales
+                                    recolectados por <strong>AYBAR S.A.C.</strong> son obligatorios, la negativa a suministrarlos
+                                    supondrá la imposibilidad de concretar el fin previsto.
+                                </p>
                                     </div>
                                 </div>
                             </div>

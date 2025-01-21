@@ -163,7 +163,13 @@ Route::group(['middleware' => ['role:Administrador']], function () {
    Route::post('survey_detailDestroy',[App\Http\Controllers\SurveyDetailController::class, 'destroy']);
 
 
-
+   Route::get('recursos', [App\Http\Controllers\ResourceController::class, 'index']);
+   Route::post('ResourceStore', [App\Http\Controllers\ResourceController::class, 'store']);
+   Route::post('ResourceDestroy', [App\Http\Controllers\ResourceController::class, 'destroy']);
+   Route::post('ResourceEdit', [App\Http\Controllers\ResourceController::class, 'edit']);
+   Route::post('ResourceUpdate', [App\Http\Controllers\ResourceController::class, 'update']);
+ 
+   Route::post('ResourceDestroyAll', [App\Http\Controllers\ResourceController::class, 'destroyAll']);
 });
 
 

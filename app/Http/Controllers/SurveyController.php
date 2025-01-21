@@ -41,7 +41,7 @@ class SurveyController extends Controller
         $survey->title = $request->title;
         //photo
         if ($request->file('front_page') != null) {
-            $request->front_page = photoStore($request->file('front_page'), "imageusers");
+            $request->front_page = fileStore($request->file('front_page'), "imageusers");
             $survey->front_page = $request->front_page;
         }
 
@@ -82,7 +82,7 @@ class SurveyController extends Controller
         $survey->title = $request->title;
         //photo
         if ($request->file('front_page') != null) {
-            $request->front_page = photoStore($request->file('front_page'), "imageusers");
+            $request->front_page = fileStore($request->file('front_page'), "imageusers");
             $survey->front_page = $request->front_page;
         }
 

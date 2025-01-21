@@ -325,7 +325,7 @@
         // });
         $(document).ready(function() {
         // Inicializar el editor Summernote extendido
-        $('#question').summernote({
+        $('#detail').summernote({
             height: 100, // Altura del editor
             placeholder: 'Escribe algo aquí...',
             toolbar: [
@@ -371,7 +371,7 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Mantenimiento</h5>
@@ -399,7 +399,8 @@
                         Título:
                         <input type="text" class="form-control" name="title_edit" id="title_edit">
                         Detalle 1:
-                        <input type="text" class="form-control" name="detail_edit"id="detail_edit">
+                        <textarea class="form-control" name="detail_edit"id="my-textarea"></textarea>
+                    
                         Detalle 2:
                         <input type="text" class="form-control" name="detail_2_edit"id="detail_3_edit">
                         Detalle 3:

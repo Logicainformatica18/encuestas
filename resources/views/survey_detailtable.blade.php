@@ -26,7 +26,7 @@
                                     <th class="sorting">Lista</th>
                                     <th class="sorting">Obligatorio</th>
                                     <th class="sorting">Título</th>
-                                    <th class="sorting">Detalle 1</th>
+                                   
                                     <th class="sorting">Detalle 2</th>
                                     <th class="sorting">Detalle 3</th>
                                     <th class="sorting">¿Evaluado?</th>
@@ -74,7 +74,7 @@
                                             <td>{{ $survey_details->selection->description }}</td>
                                             <td>{{ $survey_details->requerid }}</td>
                                             <td>{{ $survey_details->title }}</td>
-                                            <td>{{ $survey_details->detail }}</td>
+                                      
                                             <td>{{ $survey_details->detail_2 }}</td>
                                             <td>{{ $survey_details->detail_3 }}</td>
                                             <td>{{ $survey_details->evaluate }}</td>

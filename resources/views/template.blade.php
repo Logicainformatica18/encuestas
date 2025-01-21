@@ -44,6 +44,12 @@
 
     <script src="{{ asset('schedule.js') }}"></script>
     <script src="{{ asset('registry.js') }}"></script>
+
+
+    <script src="{{ asset('resource.js') }}"></script>
+
+
+
     <script src="{{ asset('certification.js') }}"></script>
 
     <script src="{{ asset('registry_detail.js') }}"></script>
@@ -128,7 +134,11 @@
                     <img src="{{ asset('CERRAR-SESION-BLANCO.png') }}" alt="" width="10%">
                     <a href="{{ route('logout') }}" style="color: white;">Cerrar Sesión</a>
                 </div> --}}
-
+                <div class="progress" >
+                    <div class="progress-bar text-bg-danger"id="progress_bar" style="width: 0%; height: 6px" role="progressbar">
+                    </div>
+                    
+                </div>
             </div>
         </nav>
         <!-- /.navbar -->
@@ -435,7 +445,13 @@
                                             <p>Ajustes</p>
                                         </a>
                                     </li>
-                            
+                                    <li class="nav-item">
+                                        <a href="{{ url('recursos') }}" class="nav-link">
+                                            <img src="{{ asset('categorias.png') }}" alt="" srcset=""
+                                                width="30px">
+                                            <p>Recursos</p>
+                                        </a>
+                                    </li>
                                 @endrole
 
 
@@ -813,7 +829,7 @@
         // Inicializar el editor Summernote extendido
         $('#my-textarea').summernote({
             height: 400, // Altura del editor
-            placeholder: 'Escribe algo aquí...',
+          
             toolbar: [
                 ['style', ['style']],
                 ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript',

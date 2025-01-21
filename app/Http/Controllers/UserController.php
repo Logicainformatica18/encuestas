@@ -62,7 +62,7 @@ class UserController extends Controller
             $user->cellphone = $request->cellphone;
             //photo
             if ($request->file('photo') != null) {
-                $request->photo = photoStore($request->file('photo'), "imageusers");
+                $request->photo = fileStore($request->file('photo'), "imageusers");
                 $user->photo = $request->photo;
             }
             $user->email = $request->email;
@@ -136,8 +136,8 @@ class UserController extends Controller
             $users->save();
         } else {
             $table = User::find($request["id"]);
-            photoDestroy($table->photo, "imageusers");
-            $request->photo = photoStore($request->file('photo'), "imageusers");
+            fileDestroy($table->photo, "imageusers");
+            $request->photo = fileStore($request->file('photo'), "imageusers");
             $users = User::find($request->id);
             $users->dni = $request->dni;
             $users->firstname = $request->firstname;
@@ -162,7 +162,7 @@ class UserController extends Controller
     public function destroy(Request $request)
     {
         $table = User::find($request["id"]);
-        photoDestroy($table->photo, "imageusers");
+        fileDestroy($table->photo, "imageusers");
         User::find($request["id"])->delete();
         return   $this->create();
     }
@@ -177,8 +177,8 @@ class UserController extends Controller
             $users->save();
         } else {
             $table = User::find($request["id"]);
-            photoDestroy($table->photo, "imageusers");
-            $request->photo = photoStore($request->file('photo'), "imageusers");
+            fileDestroy($table->photo, "imageusers");
+            $request->photo = fileStore($request->file('photo'), "imageusers");
             $users = User::find($request->id);
             $users->datebirth = $request->datebirth;
             $users->cellphone = $request->cellphone;

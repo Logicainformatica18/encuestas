@@ -6,7 +6,7 @@
                         $enumeracion = 0;
                     @endphp
                     @foreach ($survey_detail as $survey_details)
-                    <div class="col-xl-3">
+                    <div class="col-xl-12">
             
                       
                        
@@ -57,13 +57,17 @@
                                     <input type="hidden" value="{{ $survey_details->requerid }}" name="requerid">
 
                                 {{ csrf_field() }}
-                                <h6 style="color:#13434d">{{ $enumeracion = $enumeracion + 1 .'. ' }}
+                                <h6 style="color:#13434d">{{ $enumeracion = $enumeracion + 1}} .
                                 
                                     @php
                                     echo $survey_details->question;
                                     @endphp
                                  </h6>
-                                  &nbsp;  <span class="text-primary fs-3 ">{{ $survey_details->detail }}</span>
+                                  &nbsp; 
+                                  @php
+                                  echo $survey_details->detail;
+                                  @endphp
+                                 
                                     
                                     <br>
                                 @if ($survey_details->type == 'short_answer')
@@ -192,7 +196,7 @@
                                 @endif
 
                                 @if ($loop->last)
-
+                                    
                                 <div class="form-check text-start">
                                     <input class="form-check-input" type="checkbox" id="txtTratamientoDatos1" name="data_aprobed_1" value="true"requerid>
                                     <label class="form-check-label fs-3" for="txtTratamientoDatos1">

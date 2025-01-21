@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('survey_details', function (Blueprint $table) {
-             $table->longText('detail')->nullable();
+        Schema::create('resources', function (Blueprint $table) {
+            $table->id();
+            $table->string("title");
+            $table->string("description")->nullable();
+            $table->string("detail")->nullable();
+            $table->string("file");
+            $table->timestamps();
         });
     }
 
@@ -21,8 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('survey_details', function (Blueprint $table) {
-          $table->dropColumn('detail');
-        });
+        Schema::dropIfExists('resources');
     }
 };
