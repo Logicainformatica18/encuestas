@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Survey;
+use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
@@ -16,6 +17,11 @@ use Laravel\Sanctum\HasApiTokens;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+    }
     use HasApiTokens, Notifiable;
     use HasRoles;
     /**
@@ -25,7 +31,14 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::orderBy('id','DESC')->get();
+        $survey_ = Survey::where("type", "=", "postulation")
+        ->select("url", "id")
+        ->get();
+    // Almacenar en la sesión
+    Session::put('survey_', $survey_);
+
+    
+        $user = User::orderBy('id', 'DESC')->get();
         $roles = Role::all();
         return view('user', compact('user', 'roles'));
     }
@@ -37,7 +50,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $user = User::orderBy('id','DESC')->get();
+        $user = User::orderBy('id', 'DESC')->get();
         return view('usertable', compact('user'));
     }
 
@@ -68,7 +81,6 @@ class UserController extends Controller
             $user->email = $request->email;
             $user->sex = $request->sex;
             $user->save();
-
         } catch (\Exception $e) {
             // do task when error
             //   return  $e->getMessage();   // insert query
@@ -103,7 +115,7 @@ class UserController extends Controller
         //     $user->role_name=  $valor->name;
         // }
 
-            return $user;
+        return $user;
     }
 
     /**
@@ -168,30 +180,30 @@ class UserController extends Controller
     }
     public function updateProfile(Request $request)
     {
-           //  $request->datebirth = datebirth($request->day, $request->month, $request->year);
-     //  if ($request->photo == "") {
+        //  $request->datebirth = datebirth($request->day, $request->month, $request->year);
+        //  if ($request->photo == "") {
         $users = User::find($request->id);
         $users->cellphone = $request->cellphone;
-            $users->names = $request->names;
-$users->firstname = $request->firstname;
-$users->lastname = $request->lastname;
+        $users->names = $request->names;
+        $users->firstname = $request->firstname;
+        $users->lastname = $request->lastname;
 
-$users->sex=   $request->sex;
+        $users->sex =   $request->sex;
 
-//      $users->datebirth = $request->datebirth;
-//      $users->cellphone = $request->cellphone;
+        //      $users->datebirth = $request->datebirth;
+        //      $users->cellphone = $request->cellphone;
 
-$users->save();
-//  } else {
-//      $table = User::find($request->id);
-//      fileDestroy($table->photo, "imageusers");
-//     $request->photo = fileStore($request->file('photo'), "imageusers");
-//      $users = User::find($request->id);
-//     $users->datebirth = $request->datebirth;
-//     $users->cellphone = $request->cellphone;
-//     $users->photo = $request->photo;
-//     $users->save();
-// }
+        $users->save();
+        //  } else {
+        //      $table = User::find($request->id);
+        //      fileDestroy($table->photo, "imageusers");
+        //     $request->photo = fileStore($request->file('photo'), "imageusers");
+        //      $users = User::find($request->id);
+        //     $users->datebirth = $request->datebirth;
+        //     $users->cellphone = $request->cellphone;
+        //     $users->photo = $request->photo;
+        //     $users->save();
+        // }
     }
 
     public function userRoleEdit(Request $request)
@@ -202,8 +214,8 @@ $users->save();
     }
     public function userRoleDestroy(Request $request)
     {
-       // return $request->id;
-        $user=User::find($request->id);
+        // return $request->id;
+        $user = User::find($request->id);
         try {
             $user->removeRole($request->role_name);
         } catch (\Exception $th) {
@@ -225,5 +237,4 @@ $users->save();
         $user = User::find($id);
         return view("user_roletable", compact("user"));
     }
-
 }

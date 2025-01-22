@@ -21,7 +21,8 @@
                                     
                                     <th class="sorting">Detalle</th>
                                         <th class="sorting">Tipo</th>
-                                    <th class="sorting">Url</th>
+                                    <th class="sorting">Url Client</th>
+                                    <th class="sorting">Url Menú</th>
                                     <th class="sorting">Reportes</th>
                                     <th class="sorting">Fecha Inicio</th>
                                     <th class="sorting">Fecha Fin</th>
@@ -41,6 +42,9 @@
                                                 <a target="_blank" href="{{url('encuesta/'.$surveys->id)}}"class="nav-link">
                                                     Ver Encuesta
                                                 </a>
+                                            </td> 
+                                            <td> 
+                                               {{$surveys->url}}
                                             </td> 
        <td> 
                                                 <a target="_blank" href="{{url('reportes/'.$surveys->id)}}"class="nav-link">

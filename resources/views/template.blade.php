@@ -8,27 +8,27 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bbootstrap 4 -->
-    <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
-    <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- JQVMap -->
-    <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="../plugins/jqvmap/jqvmap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="../dist/css/adminlte.min.css">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
-    <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
+    <link rel="stylesheet" href="../plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     {{-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> --}}
 
-    <link rel="shortcut icon" type="image/png" href="{{ asset('logo.png') }}" />
+    <link rel="shortcut icon" type="image/png" href="../{{ asset('logo.png') }}" />
 
     <script src="{{ asset('axios.min.js') }}"></script>
     <script src="{{ asset('category.js') }}"></script>
@@ -36,7 +36,7 @@
     <script src="{{ asset('user.js') }}"></script>
     <script src="{{ asset('role.js') }}"></script>
     <script src="{{ asset('type.js') }}"></script>
-
+    <script src="{{ asset('client.js') }}"></script>
     <script src="{{ asset('survey.js') }}"></script>
     <script src="{{ asset('survey_detail.js') }}"></script>
     <script src="{{ asset('selection.js') }}"></script>
@@ -44,6 +44,7 @@
 
     <script src="{{ asset('schedule.js') }}"></script>
     <script src="{{ asset('registry.js') }}"></script>
+    <script src="{{ asset('module.js') }}"></script>
 
 
     <script src="{{ asset('resource.js') }}"></script>
@@ -88,7 +89,7 @@
     <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('dist/js/adminlte.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('css/template.css') }}" />
+    <link rel="stylesheet" href="../{{ asset('css/template.css') }}" />
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     {{-- <script src="{{asset('dist/js/pages/dashboard.js')}}"></script> --}}
     <!-- AdminLTE for demo purposes -->
@@ -111,7 +112,7 @@
         <nav class="main-header navbar navbar-expand" style="background-color:  #023039">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                    <a class="nav-link" data-widget="pushmenu" href="../#" role="button"><i
                             class="fas fa-bars"></i></a>
                 </li>
 
@@ -121,7 +122,7 @@
             <div class="row">
                 <div class="col col-lg-7">
 
-                    <a class=" navbar-brand text-white" href="{{ url('perfil') }}">
+                    <a class=" navbar-brand text-white" href="../{{ url('perfil') }}">
                         {{ Auth::user()->roles[0]->name }}
                     </a>
 
@@ -132,7 +133,7 @@
                 {{-- 
                 <div class="col col-lg-4" style="justify-content: right; align-items: center; display: flex;">
                     <img src="{{ asset('CERRAR-SESION-BLANCO.png') }}" alt="" width="10%">
-                    <a href="{{ route('logout') }}" style="color: white;">Cerrar Sesión</a>
+                    <a href="../{{ route('logout') }}" style="color: white;">Cerrar Sesión</a>
                 </div> --}}
                 <div class="progress">
                     <div class="progress-bar text-bg-danger"id="progress_bar" style="width: 0%; height: 6px"
@@ -149,7 +150,7 @@
         <aside
             class="main-sidebar sidebar-dark-primary elevation-4"style="background: radial-gradient(circle, #023039,black); color: white">
             <!-- Brand Logo -->
-            <a href="" class="brand-link">
+            <a href="../" class="brand-link">
 
                 <span class="brand-text font-weight-light center">
                     <img src="{{ asset('logo.png') }}" alt="AdminLTE Logo" class="" width="200px"
@@ -179,7 +180,7 @@
 
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block"style="font-size:20px">{{ Auth::user()->names }}</a><br>
+                        <a href="../#" class="d-block"style="font-size:20px">{{ Auth::user()->names }}</a><br>
                     </div>
                 </div>
 
@@ -190,7 +191,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         {{-- <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link active">
+                            <a href="../#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Tablero
@@ -199,19 +200,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                  <li class="nav-item">
-                                    <a href="./index.html" class="nav-link active">
+                                    <a href=".././index.html" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Dashboard v1</p>
                                     </a>
                                 </li>
                                  <li class="nav-item">
-                                    <a href="./index2.html" class="nav-link">
+                                    <a href=".././index2.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Dashboard v2</p>
                                     </a>
                                 </li>
                                <li class="nav-item">
-                                    <a href="./index3.html" class="nav-link">
+                                    <a href=".././index3.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Dashboard v3</p>
                                     </a>
@@ -219,7 +220,7 @@
                             </ul>
                         </li> --}}
                         {{-- <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="../pages/widgets.html" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Widgets
@@ -228,7 +229,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
                                 <p>
                                     Layout Options
@@ -238,43 +239,43 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/layout/top-nav.html" class="nav-link">
+                                    <a href="../pages/layout/top-nav.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Top Navigation</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                    <a href="../pages/layout/top-nav-sidebar.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Top Navigation + Sidebar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/boxed.html" class="nav-link">
+                                    <a href="../pages/layout/boxed.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Boxed</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+                                    <a href="../pages/layout/fixed-sidebar.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Fixed Sidebar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/fixed-topnav.html" class="nav-link">
+                                    <a href="../pages/layout/fixed-topnav.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Fixed Navbar</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/fixed-footer.html" class="nav-link">
+                                    <a href="../pages/layout/fixed-footer.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Fixed Footer</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
+                                    <a href="../pages/layout/collapsed-sidebar.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Collapsed Sidebar</p>
                                     </a>
@@ -282,7 +283,7 @@
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Charts
@@ -291,19 +292,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">
+                                    <a href="../pages/charts/chartjs.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>ChartJS</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="../pages/charts/flot.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Flot</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
+                                    <a href="../pages/charts/inline.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Inline</p>
                                     </a>
@@ -311,7 +312,7 @@
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon fas fa-tree"></i>
                                 <p>
                                     UI Elements
@@ -320,49 +321,49 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/UI/general.html" class="nav-link">
+                                    <a href="../pages/UI/general.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>General</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/icons.html" class="nav-link">
+                                    <a href="../pages/UI/icons.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Icons</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/buttons.html" class="nav-link">
+                                    <a href="../pages/UI/buttons.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Buttons</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/sliders.html" class="nav-link">
+                                    <a href="../pages/UI/sliders.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Sliders</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/modals.html" class="nav-link">
+                                    <a href="../pages/UI/modals.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Modals & Alerts</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/navbar.html" class="nav-link">
+                                    <a href="../pages/UI/navbar.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Navbar & Tabs</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/timeline.html" class="nav-link">
+                                    <a href="../pages/UI/timeline.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Timeline</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/UI/ribbons.html" class="nav-link">
+                                    <a href="../pages/UI/ribbons.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Ribbons</p>
                                     </a>
@@ -370,7 +371,7 @@
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon fas fa-edit"></i>
                                 <p>
                                     Forms
@@ -379,25 +380,25 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/forms/general.html" class="nav-link">
+                                    <a href="../pages/forms/general.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>General Elements</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/forms/advanced.html" class="nav-link">
+                                    <a href="../pages/forms/advanced.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Advanced Elements</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/forms/editors.html" class="nav-link">
+                                    <a href="../pages/forms/editors.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Editors</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/forms/validation.html" class="nav-link">
+                                    <a href="../pages/forms/validation.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Validation</p>
                                     </a>
@@ -406,7 +407,7 @@
                         </li> --}}
                         @role('Administrador|Administrador')
                             <li class="nav-item has-treeview menu-open">
-                                <a href="#" class="nav-link" style="background-color: #00bf6f;color:black">
+                                <a href="../#" class="nav-link" style="background-color: #00bf6f;color:black">
                                     <i class="nav-icon fas fa-table"></i>
                                     <p>
                                         Módulos
@@ -416,7 +417,7 @@
                                 <ul class="nav nav-treeview">
 
                                     <li class="nav-item">
-                                        <a href="{{ route('usuarios.index') }}" class="nav-link">
+                                        <a href="../{{ route('usuarios.index') }}" class="nav-link">
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
                                             <img src="{{ asset('usuario.png') }}" alt="" srcset=""
                                                 width="30px">
@@ -427,13 +428,13 @@
 
 
                                     {{-- <li class="nav-item">
-                                        <a href="{{ route('tipos.index') }}" class="nav-link">
+                                        <a href="../{{ route('tipos.index') }}" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
                                             <p>Tipos</p>
                                         </a>
                                     </li> --}}
                                     <li class="nav-item">
-                                        <a href="{{ route('encuestas.index') }}" class="nav-link">
+                                        <a href="../{{ route('encuestas.index') }}" class="nav-link">
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
                                             <img src="{{ asset('formularioss.png') }}" alt="" srcset=""
                                                 width="30px">
@@ -441,7 +442,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ route('seleccion.index') }}" class="nav-link">
+                                        <a href="../{{ route('seleccion.index') }}" class="nav-link">
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
                                             <img src="{{ asset('listas.png') }}" alt="" srcset=""
                                                 width="30px">
@@ -449,14 +450,14 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ url('ajustes') }}" class="nav-link">
+                                        <a href="../{{ url('ajustes') }}" class="nav-link">
                                             <img src="{{ asset('categorias.png') }}" alt="" srcset=""
                                                 width="30px">
                                             <p>Ajustes</p>
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="{{ url('recursos') }}" class="nav-link">
+                                        <a href="../{{ url('recursos') }}" class="nav-link">
                                             <img src="{{ asset('categorias.png') }}" alt="" srcset=""
                                                 width="30px">
                                             <p>Recursos</p>
@@ -470,13 +471,13 @@
 
 
                                     {{-- <li class="nav-item">
-                                    <a href="pages/tables/data.html" class="nav-link">
+                                    <a href="../pages/tables/data.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>DataTables</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/tables/jsgrid.html" class="nav-link">
+                                    <a href="../pages/tables/jsgrid.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>jsGrid</p>
                                     </a>
@@ -486,7 +487,7 @@
                         @endrole
                         {{-- <li class="nav-header">EXAMPLES</li>
                         <li class="nav-item">
-                            <a href="pages/calendar.html" class="nav-link">
+                            <a href="../pages/calendar.html" class="nav-link">
                                 <i class="nav-icon far fa-calendar-alt"></i>
                                 <p>
                                     Calendar
@@ -495,7 +496,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="../pages/gallery.html" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Gallery
@@ -503,7 +504,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
                                     Mailbox
@@ -512,19 +513,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                    <a href="../pages/mailbox/mailbox.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Inbox</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/mailbox/compose.html" class="nav-link">
+                                    <a href="../pages/mailbox/compose.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Compose</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/mailbox/read-mail.html" class="nav-link">
+                                    <a href="../pages/mailbox/read-mail.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Read</p>
                                     </a>
@@ -532,7 +533,7 @@
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon fas fa-book"></i>
                                 <p>
                                     Pages
@@ -541,49 +542,49 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/examples/invoice.html" class="nav-link">
+                                    <a href="../pages/examples/invoice.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Invoice</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/profile.html" class="nav-link">
+                                    <a href="../pages/examples/profile.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Profile</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/e-commerce.html" class="nav-link">
+                                    <a href="../pages/examples/e-commerce.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>E-commerce</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/projects.html" class="nav-link">
+                                    <a href="../pages/examples/projects.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Projects</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/project-add.html" class="nav-link">
+                                    <a href="../pages/examples/project-add.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Project Add</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/project-edit.html" class="nav-link">
+                                    <a href="../pages/examples/project-edit.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Project Edit</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/project-detail.html" class="nav-link">
+                                    <a href="../pages/examples/project-detail.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Project Detail</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/contacts.html" class="nav-link">
+                                    <a href="../pages/examples/contacts.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Contacts</p>
                                     </a>
@@ -591,7 +592,7 @@
                             </ul>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon far fa-plus-square"></i>
                                 <p>
                                     Extras
@@ -600,73 +601,73 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/examples/login.html" class="nav-link">
+                                    <a href="../pages/examples/login.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Login</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/register.html" class="nav-link">
+                                    <a href="../pages/examples/register.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Register</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/forgot-password.html" class="nav-link">
+                                    <a href="../pages/examples/forgot-password.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Forgot Password</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/recover-password.html" class="nav-link">
+                                    <a href="../pages/examples/recover-password.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Recover Password</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/lockscreen.html" class="nav-link">
+                                    <a href="../pages/examples/lockscreen.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Lockscreen</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/legacy-user-menu.html" class="nav-link">
+                                    <a href="../pages/examples/legacy-user-menu.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Legacy User Menu</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/language-menu.html" class="nav-link">
+                                    <a href="../pages/examples/language-menu.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Language Menu</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/404.html" class="nav-link">
+                                    <a href="../pages/examples/404.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Error 404</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/500.html" class="nav-link">
+                                    <a href="../pages/examples/500.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Error 500</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/pace.html" class="nav-link">
+                                    <a href="../pages/examples/pace.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Pace</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/examples/blank.html" class="nav-link">
+                                    <a href="../pages/examples/blank.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Blank Page</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="starter.html" class="nav-link">
+                                    <a href="../starter.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Starter Page</p>
                                     </a>
@@ -682,13 +683,13 @@
                         </li>
                         <li class="nav-header">MULTI LEVEL EXAMPLE</li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="fas fa-circle nav-icon"></i>
                                 <p>Level 1</p>
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon fas fa-circle"></i>
                                 <p>
                                     Level 1
@@ -697,13 +698,13 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="../#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Level 2</p>
                                     </a>
                                 </li>
                                 <li class="nav-item has-treeview">
-                                    <a href="#" class="nav-link">
+                                    <a href="../#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>
                                             Level 2
@@ -712,19 +713,19 @@
                                     </a>
                                     <ul class="nav nav-treeview">
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a href="../#" class="nav-link">
                                                 <i class="far fa-dot-circle nav-icon"></i>
                                                 <p>Level 3</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a href="../#" class="nav-link">
                                                 <i class="far fa-dot-circle nav-icon"></i>
                                                 <p>Level 3</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link">
+                                            <a href="../#" class="nav-link">
                                                 <i class="far fa-dot-circle nav-icon"></i>
                                                 <p>Level 3</p>
                                             </a>
@@ -732,7 +733,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="../#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Level 2</p>
                                     </a>
@@ -740,26 +741,26 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="fas fa-circle nav-icon"></i>
                                 <p>Level 1</p>
                             </a>
                         </li>
                         <li class="nav-header">LABELS</li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon far fa-circle text-danger"></i>
                                 <p class="text">Important</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon far fa-circle text-warning"></i>
                                 <p>Warning</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../#" class="nav-link">
                                 <i class="nav-icon far fa-circle text-info"></i>
                                 <p>Informational</p>
                             </a>
@@ -769,7 +770,7 @@
                   @endphp
                         @role('Postulante')
                         <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link" style="background-color: #00bf6f;color:black">
+                            <a href="../#" class="nav-link" style="background-color: #00bf6f;color:black">
                                 <i class="nav-icon fas fa-table"></i>
                                 <p>
                                     Personal
@@ -781,7 +782,7 @@
                                
                                 @foreach ($survey_ as $item)
                                     <li class="nav-item">
-                                        <a href="encuesta/{{ $item->id }}" class="nav-link">
+                                        <a href="../#" class="nav-link" onclick="module('{{$item->id}}')">
                                             <img src="{{ asset('categorias.png') }}" alt="" srcset="" width="30px">
                                             <p class=""style=""> {{ $item->url }}</p>
                                         </a>
@@ -814,7 +815,7 @@
                 </div>
 
                 <div class="user-panel pl-2 mt-3 pb-3 mb-3 d-flex">
-                    <a href="{{ route('logout') }}"class="d-block" style="color: white;">
+                    <a href="../{{ route('logout') }}"class="d-block" style="color: white;">
                         <img src="{{ asset('CERRAR-SESION-BLANCO.png') }}" alt="" width="100%">
                         <div class="info">
 

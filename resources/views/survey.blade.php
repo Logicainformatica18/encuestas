@@ -96,6 +96,7 @@
                         Hora Fin :
                         <input type="time" name="hour_end" id="hour_end" class="form-control"value="22:00:00">
                         Detalle : <input type="text" name="detail" id="detail" class="form-control">
+                        Url Menú : <input type="text" name="url" id="url" class="form-control">
 
                 </div>
                 <div class="modal-footer">

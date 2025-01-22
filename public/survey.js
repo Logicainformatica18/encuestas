@@ -44,6 +44,7 @@ function surveyEdit(id) {
          survey.date_start.value = response.data["date_start"];
          survey.date_end.value = response.data["date_end"];
             survey.type.value = response.data["type"];
+            survey.url.value = response.data["url"];
                   // JavaScript para establecer el contenido del textarea
       document.getElementsByClassName("note-editable")[0].innerHTML = response.data["description"];
     })

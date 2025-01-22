@@ -31,6 +31,7 @@ Route::get('/sistema', [App\Http\Controllers\HomeController::class, 'sistema'])-
  
 
 Route::get('encuesta/{survey_id}',[App\Http\Controllers\SurveyClientController::class, 'index']);
+Route::get('inscripcion/{survey_id}',[App\Http\Controllers\SurveyClientController::class, 'inscription']);
 
 
 

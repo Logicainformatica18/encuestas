@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Session;
 
 class SurveyController extends Controller
 {
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -19,6 +20,12 @@ class SurveyController extends Controller
      */
     public function index()
     {
+        $survey_ = Survey::where("type", "=", "postulation")
+            ->select("url", "id")
+            ->get();
+        // Almacenar en la sesión
+        Session::put('survey_', $survey_);
+
         $survey = Survey::orderBy('id', 'DESC')->get();
         return view("survey", compact("survey"));
     }
