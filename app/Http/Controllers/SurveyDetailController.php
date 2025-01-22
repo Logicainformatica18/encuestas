@@ -114,7 +114,7 @@ class SurveyDetailController extends Controller
     public function update(Request $request)
     {
         $survey_detail = SurveyDetail::find($request->id);
-        $survey_detail->question = $request->question_edit;
+        $survey_detail->question   =   Str::upper($request->question_edit);
         $survey_detail->detail = $request->detail_edit;
         $survey_detail->detail_2 = $request->detail_2_edit;
         $survey_detail->detail_3 = $request->detail_3_edit;

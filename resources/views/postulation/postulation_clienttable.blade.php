@@ -18,7 +18,7 @@
 
 
 
-                                   <span class=""style="color:red"> {{ $survey_details->survey->detail }}</span>
+                                   <span class=""style="color:red"> {{ $survey_details->survey->detail }}</span><p></p>
                              
                                     @php
                                         $date_now= \Carbon\Carbon::now('America/Lima')->format('Y-m-d H:i:s');
@@ -218,7 +218,7 @@
                                     </label>
                                 </div> --}}
                                 <br>
-                                    <button class="btn btn-warning granulated-background fs-5"
+                                    <button class="btn btn-warning granulated-background fs-5" type="button"
                                         onclick="survey_clientStore('{{ $enumeracion }}');return false;">Enviar mis datos</button>
                                 @endif
                             </form>

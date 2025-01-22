@@ -42,7 +42,7 @@
 
     <nav class="navbar navbar-expand-lg" style="height: 50px;">
         <div class="container-fluid"
-            style="background: linear-gradient(95deg, #F9DD6A 5%, #F59C1C 90%); height: 50px; padding: 0;margin-top:-5px">
+            style="background: linear-gradient(95deg, #F9DD6A 5%, #023039 90%); height: 50px; padding: 0;margin-top:-5px">
             <a class="text-start position-relative navbar-brand me-0 py-0 m-2" href="#">
                 <img src="{{ asset('logo.png') }}" alt="img-fluid" width="120px" style="margin-left: 0;  ">
             </a>

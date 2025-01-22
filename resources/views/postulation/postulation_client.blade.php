@@ -40,18 +40,7 @@
 <body id="targetDiv">
     <!-- Preloader #f49a1a-->
 
-    <nav class="navbar navbar-expand-lg" style="height: 50px;">
-        <div class="container-fluid"
-            style="background: linear-gradient(95deg, #1f6370 5%, #13434d 90%); height: 50px; padding: 0;margin-top:-5px">
-            <a class="text-start position-relative navbar-brand me-0 py-0 m-2" href="#">
-                <img src="{{ asset('logo.png') }}" alt="img-fluid" width="120px" style="margin-left: 0;  ">
-            </a>
-
-
-
-
-        </div>
-    </nav>
+   
  
 
     <div class="container-fluid py-1">
@@ -118,7 +107,7 @@
 
         .granulated-background {
             border: solid 1px black;
-            /* background: linear-gradient(to right, #F59C1C, black); */
+            /* background: linear-gradient(to right, #023039, black); */
             background-size: 5px 5px;
             /* Tamaño del patrón */
         }
@@ -135,7 +124,7 @@
 
 
 
-    <footer class="footer-part pt-4 pb-3 py-2" style="background-color:#000000;">
+    {{-- <footer class="footer-part pt-4 pb-3 py-2" style="background-color:#000000;">
 
         <div class="container">
             <div class="justify-content-center">
@@ -157,7 +146,7 @@
 
             </div>
         </div>
-    </footer>
+    </footer> --}}
     <!-- sample modal content -->
     <div class="modal fade" id="bs-example-modal-xlg" tabindex="-1" aria-labelledby="bs-example-modal-lg"
         aria-hidden="true">

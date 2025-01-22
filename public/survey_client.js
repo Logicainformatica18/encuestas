@@ -11,17 +11,19 @@ function survey_clientStore(formCount) {
       let requeridValue = formData.get("requerid");
       let answerValue = formData.get("answer");
       let optionValue = formData.get("option");
+      let typeValue = formData.get("type");
 
-      if (!txtTratamientoDatos1.checked || !txtTratamientoDatos2.checked) {
+      if (!txtTratamientoDatos1.checked ) {
         alert("Debe aceptar la política de tratamiento de datos");
         return;
       }
       
 
-      if (requeridValue === "yes" && !answerValue) {
+      if (requeridValue === "yes" && !answerValue && typeValue=="short_answer") {
           alert(`Debe responder la pregunta ${i}`);
           return; // Termina la función si hay un campo obligatorio vacío
-      } else if (optionValue === "no_respondido") {
+      } 
+       if (optionValue === "no_respondido") {
           alert(`Debe marcar una opción en la pregunta ${i}`);
           return; // Termina la función si no se marcó una opción
       }
@@ -29,7 +31,7 @@ function survey_clientStore(formCount) {
       // Enviar los datos del formulario actual
       axios({
           method: "post",
-          url: "../survey_clientStore",
+          url: "../../survey_clientStore",
           data: formData,
           headers: {
               "Content-Type": "multipart/form-data",
@@ -46,7 +48,7 @@ function survey_clientStore(formCount) {
             
                 // Reemplazar su contenido con el mensaje de agradecimiento
                 targetDiv.innerHTML = `
-                    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center gradient-background"style="background: linear-gradient(95deg, #F9DD6A 5%, #F59C1C 90%);">
+                    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center gradient-background"style="background: linear-gradient(95deg, #F9DD6A 5%, #023039 90%);">
                         <div class="text-center text-black">
                             <h1 class="mb-4 text-black">🎉 Gracias por postular a una convocatoria de ComexLat 🎉</h1>
                             <p class="fs-5">Estamos emocionados de recibir tu solicitud. 😊</p>

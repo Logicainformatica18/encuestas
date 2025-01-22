@@ -34,6 +34,8 @@ Route::get('encuesta/{survey_id}',[App\Http\Controllers\SurveyClientController::
 
 
 
+
+
    Route::resource("Encuestas_respuestas", App\Http\Controllers\CategoryController::class);
    Route::post('survey_clientStore',[App\Http\Controllers\SurveyClientController::class, 'store']);
    Route::post('survey_clientEdit',[App\Http\Controllers\SurveyClientController::class, 'edit']);
@@ -69,7 +71,7 @@ Route::get('encuesta/{survey_id}',[App\Http\Controllers\SurveyClientController::
 
 
 
-Route::get('/Administrador', [App\Http\Controllers\HomeController::class, 'sistema'])->name('sistema');
+Route::get('/perfil', [App\Http\Controllers\HomeController::class, 'sistema'])->name('sistema');
 /////////////////////////////////////////
 
 Route::group(['middleware' => ['role:Administrador']], function () {
@@ -210,26 +212,27 @@ Route::get('/auth/google/callback', function () {
                 Auth::login($finduser);
                 return redirect('/home');
         }else{
-            return redirect('/login');
+           // return redirect('/login');
 
-            //     //user is not yet created, so create first
-            //     $newUser = User::create([
-            //         'names' => $user->name,
-            //          'firstname' => '',
-            //           'lastname' => '',
-            //         'email' => $user->email,
-            //         'google_id'=> $user->id,
-            //         'password' => Hash::make('encuestador123')
-            //     ]);
+                //user is not yet created, so create first
+                $newUser = User::create([
+                    'names' => $user->name,
+                     'firstname' => '',
+                      'lastname' => '',
+                    'email' => $user->email,
+                    'google_id'=> $user->id,
+                    'photo'=> $user->avatar,
+                    'password' => Hash::make('postulante')
+                ]);
               
-            //     $newUser->save();
-            //     //login as the new user
-            //     Auth::login($newUser);
-            //     $newUser->assignRole('Encuestador');
-            //     //
-            //   //  $newUser->createToken(request()->device_name)->plainTextToken ;
-            //     // go to the dashboard
-            //     return redirect('/home');
+                $newUser->save();
+                //login as the new user
+                Auth::login($newUser);
+                $newUser->assignRole('Postulante');
+                //
+              //  $newUser->createToken(request()->device_name)->plainTextToken ;
+                // go to the dashboard
+                return redirect('/home');
             }
             //catch exceptions
         } catch (Exception $e) {

@@ -124,7 +124,7 @@
 
           <div class="col-lg-6 col-xl-7 col-xxl-8 position-relative overflow-hidden bg-dark   d-none d-md-block">
             {{-- <div class="circle-top"></div> --}}
-            {{-- <img src="ayba/f_login.png" height="100%" alt=""> --}}
+            <img src="portada.jpg" width="100%" height="100%" alt="">
             <div>
               
               {{-- <img src="../assets/images/logos/logo-icon.svg" class="circle-bottom" alt="Logo-Dark" /> --}}

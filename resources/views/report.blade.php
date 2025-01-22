@@ -53,7 +53,7 @@
 </head>
 
 <body class="pos-relative">
-    <nav class="navbar navbar-expand-md  shadow-sm"style="background-color: #F59C1C">
+    <nav class="navbar navbar-expand-md  shadow-sm"style="background-color: #023039">
         <div class="row">
             <div class="col col-lg-4">
                 <a class="navbar-brand" href="{{ url('/') }}">

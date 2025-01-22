@@ -28,7 +28,7 @@
     <!-- Google Font: Source Sans Pro -->
     {{-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> --}}
 
-    <link rel="shortcut icon" type="image/png" href="{{asset('logo.png')}}" />
+    <link rel="shortcut icon" type="image/png" href="{{ asset('logo.png') }}" />
 
     <script src="{{ asset('axios.min.js') }}"></script>
     <script src="{{ asset('category.js') }}"></script>
@@ -108,7 +108,7 @@
     <div class="wrapper">
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand" style="background-color:  #F59C1C">
+        <nav class="main-header navbar navbar-expand" style="background-color:  #023039">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
@@ -121,53 +121,62 @@
             <div class="row">
                 <div class="col col-lg-7">
 
-                    <a class=" navbar-brand text-white"  href="{{ url('Administrador') }}">
-                  {{Auth::user()->roles[0]->name}}    
+                    <a class=" navbar-brand text-white" href="{{ url('perfil') }}">
+                        {{ Auth::user()->roles[0]->name }}
                     </a>
 
                 </div>
                 <div class="col col-lg-1">
 
                 </div>
-{{-- 
+                {{-- 
                 <div class="col col-lg-4" style="justify-content: right; align-items: center; display: flex;">
                     <img src="{{ asset('CERRAR-SESION-BLANCO.png') }}" alt="" width="10%">
                     <a href="{{ route('logout') }}" style="color: white;">Cerrar Sesión</a>
                 </div> --}}
-                <div class="progress" >
-                    <div class="progress-bar text-bg-danger"id="progress_bar" style="width: 0%; height: 6px" role="progressbar">
+                <div class="progress">
+                    <div class="progress-bar text-bg-danger"id="progress_bar" style="width: 0%; height: 6px"
+                        role="progressbar">
                     </div>
-                    
+
                 </div>
             </div>
         </nav>
         <!-- /.navbar -->
 
         <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4"style="background: linear-gradient(95deg,black  , black); color: white;color:white">
+
+        <aside
+            class="main-sidebar sidebar-dark-primary elevation-4"style="background: radial-gradient(circle, #023039,black); color: white">
             <!-- Brand Logo -->
             <a href="" class="brand-link">
-               
+
                 <span class="brand-text font-weight-light center">
-  <img src="{{ asset('logo.png')}}" alt="AdminLTE Logo" class="" width="200px"  style="filter: brightness(0) invert(1);">
+                    <img src="{{ asset('logo.png') }}" alt="AdminLTE Logo" class="" width="200px"
+                        style="filter: brightness(0) invert(1);">
                 </span>
                 <p></p>
             </a>
 
             <!-- Sidebar -->
             <div class="sidebar">
-         <br>
+                <br>
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-1 pb-1 mb-3 d-flex">
                     <div class="image">
                         @if (Auth::user()->photo == '' && Auth::user()->sex == 'M')
-                            <img src="{{ asset('male.png') }}" class="img-circle elevation-2" alt="User Image">
-                        @elseif (Auth::user()->photo == '' && Auth::user()->sex == 'F')
-                            <img src="{{ asset('female.png') }}" class="img-circle elevation-2" alt="User Image">
+                            <img class="img-circle elevation-2" src="male.png" alt="User Avatar" id="blah">
+                        @elseif(Auth::user()->photo == '' && Auth::user()->sex == 'F')
+                            <img class="img-circle elevation-2" src="female.png" alt="User Avatar"id="blah">
+                        @elseif(Auth::user()->google_id != '' && Auth::user()->photo == '')
+                            <img src="{{ Auth::user()->photo }}" class="img-circle elevation-2"
+                                alt='User Avatar'id="blah">
                         @else
-                            <img src="{{ asset('imageusers/' . Auth::user()->photo) }}" class="img-circle elevation-2"
-                                alt="User Image">
+                            <img src="{{ Auth::user()->photo }}" class="img-circle elevation-2"
+                                alt='User Avatar'id="blah">
                         @endif
+
+
                     </div>
                     <div class="info">
                         <a href="#" class="d-block"style="font-size:20px">{{ Auth::user()->names }}</a><br>
@@ -395,16 +404,17 @@
                                 </li>
                             </ul>
                         </li> --}}
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link" style="background-color: #00bf6f;color:black">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Módulos
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                @role('Administrador|Administrador')
+                        @role('Administrador|Administrador')
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="#" class="nav-link" style="background-color: #00bf6f;color:black">
+                                    <i class="nav-icon fas fa-table"></i>
+                                    <p>
+                                        Módulos
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+
                                     <li class="nav-item">
                                         <a href="{{ route('usuarios.index') }}" class="nav-link">
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
@@ -413,7 +423,7 @@
                                             <p>Usuarios</p>
                                         </a>
                                     </li>
-                               
+
 
 
                                     {{-- <li class="nav-item">
@@ -425,15 +435,15 @@
                                     <li class="nav-item">
                                         <a href="{{ route('encuestas.index') }}" class="nav-link">
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
-                                               <img src="{{ asset('formularioss.png') }}" alt="" srcset=""
+                                            <img src="{{ asset('formularioss.png') }}" alt="" srcset=""
                                                 width="30px">
                                             <p>Formularios</p>
                                         </a>
                                     </li>
-                                     <li class="nav-item">
+                                    <li class="nav-item">
                                         <a href="{{ route('seleccion.index') }}" class="nav-link">
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
-                                               <img src="{{ asset('listas.png') }}" alt="" srcset=""
+                                            <img src="{{ asset('listas.png') }}" alt="" srcset=""
                                                 width="30px">
                                             <p>Listas</p>
                                         </a>
@@ -452,13 +462,14 @@
                                             <p>Recursos</p>
                                         </a>
                                     </li>
-                                @endrole
 
 
 
 
 
-                                {{-- <li class="nav-item">
+
+
+                                    {{-- <li class="nav-item">
                                     <a href="pages/tables/data.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>DataTables</p>
@@ -470,8 +481,9 @@
                                         <p>jsGrid</p>
                                     </a>
                                 </li> --}}
-                            </ul>
-                        </li>
+                                </ul>
+                            </li>
+                        @endrole
                         {{-- <li class="nav-header">EXAMPLES</li>
                         <li class="nav-item">
                             <a href="pages/calendar.html" class="nav-link">
@@ -752,8 +764,47 @@
                                 <p>Informational</p>
                             </a>
                         </li> --}}
+                  @php
+                  $survey_ = Session::get('survey_');
+                  @endphp
+                        @role('Postulante')
+                        <li class="nav-item has-treeview menu-open">
+                            <a href="#" class="nav-link" style="background-color: #00bf6f;color:black">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Personal
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+
+                               
+                                @foreach ($survey_ as $item)
+                                    <li class="nav-item">
+                                        <a href="encuesta/{{ $item->id }}" class="nav-link">
+                                            <img src="{{ asset('categorias.png') }}" alt="" srcset="" width="30px">
+                                            <p class=""style=""> {{ $item->url }}</p>
+                                        </a>
+                                    </li>
+                                @endforeach
+            
+                        
+
+
+            
+
+
+                            </ul>
+                        </li>
+                    @endrole
+                  
                     </ul>
                 </nav>
+
+
+
+
+               
                 <!-- /.sidebar-menu -->
                 <div class="user-panel pl-6 mt-3 pb-3 mb-3 d-flex">
 
@@ -761,56 +812,57 @@
 
 
                 </div>
-                
-                  <div class="user-panel pl-2 mt-3 pb-3 mb-3 d-flex">
+
+                <div class="user-panel pl-2 mt-3 pb-3 mb-3 d-flex">
                     <a href="{{ route('logout') }}"class="d-block" style="color: white;">
-                    <img src="{{ asset('CERRAR-SESION-BLANCO.png') }}" alt="" width="100%">
-                    <div class="info">
-                        
-                            Cerrar Sesión</a>
-                    </div>
-                     
-                   
+                        <img src="{{ asset('CERRAR-SESION-BLANCO.png') }}" alt="" width="100%">
+                        <div class="info">
 
-
+                            Cerrar Sesión
+                    </a>
                 </div>
+
+
+
+
             </div>
-            <!-- /.sidebar -->
-        </aside>
+    </div>
+    <!-- /.sidebar -->
+    </aside>
 
-        <!-- Main content -->
-        <section class="content">
-            <div class="container-fluid">
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
 
 
 
+            <!-- Main content -->
+            <div class="content-wrapper">
                 <!-- Main content -->
-                <div class="content-wrapper">
-                    <!-- Main content -->
-                    <section class="content">
-                        <div class="container-fluid">
-                            @yield('content')
+                <section class="content">
+                    <div class="container-fluid">
+                        @yield('content')
 
-                        </div>
-                    </section>
-                    <!-- /.content -->
-                </div>
+                    </div>
+                </section>
+                <!-- /.content -->
             </div>
-            <!-- /.content-wrapper -->
-           <footer class="main-footer"style="background-color: black">
-                <span
-                    style="background-image: linear-gradient(45deg, rgb(0, 0, 0), red); -webkit-background-clip: text; color: transparent;">
-                  <a href="https://anthonycode.com"target="_blank">Copyright © 2025</a></span>
-                <div class="float-right d-none d-sm-inline-block">
-                </div>
-            </footer>
-            <!-- Control Sidebar -->
-            <aside class="control-sidebar control-sidebar-dark">
-                <!-- Control sidebar content goes here -->
-            </aside>
-            <!-- /.control-sidebar -->
-        </section>
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer"style="background-color: #023039">
+            <span
+                style="background-image: linear-gradient(45deg, rgb(0, 0, 0), red); -webkit-background-clip: text; color: transparent;">
+                <a href="https://anthonycode.com"target="_blank"><b>Copyright © 2025</b> </a></span>
+            <div class="float-right d-none d-sm-inline-block">
+            </div>
+        </footer>
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
         <!-- /.control-sidebar -->
+    </section>
+    <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
     <!--  USO DE DATATABLE PARA GENERAR PDF - CSV  -->
@@ -824,44 +876,44 @@
     </script>
 
 
-<script>
-    $(document).ready(function() {
-        // Inicializar el editor Summernote extendido
-        $('#my-textarea').summernote({
-            height: 400, // Altura del editor
-          
-            toolbar: [
-                ['style', ['style']],
-                ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript',
-                    'subscript', 'clear'
-                ]],
-                ['fontname', ['fontname']],
-                ['fontsize', ['fontsize']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['table', ['table']],
-                ['insert', ['link', 'picture', 'video', 'hr']],
-                ['view', ['fullscreen', 'codeview', 'help']],
-                ['history', ['undo', 'redo']]
-            ],
-            fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Helvetica', 'Impact',
-                'Tahoma', 'Times New Roman', 'Verdana', 'Manrope', 'Montserrat', 'Montserrat-Bold',
-                'Montserrat-SemiBold', 'Montserrat-Regular'
-            ], // Agrega Montserrat aquí
-            fontNamesIgnoreCheck: ['Montserrat', 'Montserrat-Regular', 'Montserrat-Bold',
-                'Montserrat-SemiBold'
-            ] // Ignora el chequeo para la fuente personalizada
+    <script>
+        $(document).ready(function() {
+            // Inicializar el editor Summernote extendido
+            $('#my-textarea').summernote({
+                height: 400, // Altura del editor
+
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'italic', 'underline', 'strikethrough', 'superscript',
+                        'subscript', 'clear'
+                    ]],
+                    ['fontname', ['fontname']],
+                    ['fontsize', ['fontsize']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video', 'hr']],
+                    ['view', ['fullscreen', 'codeview', 'help']],
+                    ['history', ['undo', 'redo']]
+                ],
+                fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Helvetica', 'Impact',
+                    'Tahoma', 'Times New Roman', 'Verdana', 'Manrope', 'Montserrat', 'Montserrat-Bold',
+                    'Montserrat-SemiBold', 'Montserrat-Regular'
+                ], // Agrega Montserrat aquí
+                fontNamesIgnoreCheck: ['Montserrat', 'Montserrat-Regular', 'Montserrat-Bold',
+                    'Montserrat-SemiBold'
+                ] // Ignora el chequeo para la fuente personalizada
 
 
+            });
         });
-    });
-</script>
-<script>
-    function reset_textarea() {
+    </script>
+    <script>
+        function reset_textarea() {
 
-        document.getElementsByClassName('note-editable')[0].innerHTML = "";
-    }
-</script>
+            document.getElementsByClassName('note-editable')[0].innerHTML = "";
+        }
+    </script>
     <script>
         function datatable_load() {
             $("#example1").DataTable({
