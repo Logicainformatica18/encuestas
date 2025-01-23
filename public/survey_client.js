@@ -2,71 +2,64 @@ function survey_clientStore(formCount) {
   let completedRequests = 0; // Contador para las solicitudes completadas
 
   for (let i = 1; i <= formCount; i++) {
-      let formData = new FormData(document.getElementById("survey_client" + i));
+    let formData = new FormData(document.getElementById("survey_client" + i));
 
-      let txtTratamientoDatos1=  document.getElementById("txtTratamientoDatos1");
-      let txtTratamientoDatos2=  document.getElementById("txtTratamientoDatos2");
-      
+    let txtTratamientoDatos1 = document.getElementById("txtTratamientoDatos1");
+    let txtTratamientoDatos2 = document.getElementById("txtTratamientoDatos2");
 
-      let requeridValue = formData.get("requerid");
-      let answerValue = formData.get("answer");
-      let optionValue = formData.get("option");
-      let typeValue = formData.get("type");
+    let requeridValue = formData.get("requerid");
+    let answerValue = formData.get("answer");
+    let optionValue = formData.get("option");
+    let typeValue = formData.get("type");
 
-      if (!txtTratamientoDatos1.checked ) {
-        alert("Debe aceptar la política de tratamiento de datos");
-        return;
+    if (!txtTratamientoDatos1.checked) {
+      alert("Debe aceptar la política de tratamiento de datos");
+      return;
+    }
+
+    if (requeridValue === "yes" && !answerValue && typeValue == "short_answer") {
+      alert(`Debe responder la pregunta ${i}`);
+      return; // Termina la función si hay un campo obligatorio vacío
+    }
+    if (optionValue === "no_respondido") {
+      alert(`Debe marcar una opción en la pregunta ${i}`);
+      return; // Termina la función si no se marcó una opción
+    }
+
+    // Enviar los datos del formulario actual
+    axios({
+      method: "post",
+      url: "../../survey_clientStore",
+      data: formData,
+      headers: {
+        "Content-Type": "multipart/form-data"
       }
-      
+    })
+      .then(function(response) {
+        //console.log(`Pregunta ${i} enviada con éxito`);
+        completedRequests++;
 
-      if (requeridValue === "yes" && !answerValue && typeValue=="short_answer") {
-          alert(`Debe responder la pregunta ${i}`);
-          return; // Termina la función si hay un campo obligatorio vacío
-      } 
-       if (optionValue === "no_respondido") {
-          alert(`Debe marcar una opción en la pregunta ${i}`);
-          return; // Termina la función si no se marcó una opción
-      }
+        // Verificar si esta es la última solicitud
+        if (completedRequests == formCount) {
+          // Seleccionar el div con el ID específico
+          const targetDiv = document.getElementById("targetDiv");
 
-      // Enviar los datos del formulario actual
-      axios({
-          method: "post",
-          url: "../../survey_clientStore",
-          data: formData,
-          headers: {
-              "Content-Type": "multipart/form-data",
-          },
-      })
-          .then(function (response) {
-              //console.log(`Pregunta ${i} enviada con éxito`);
-              completedRequests++;
-              
-              // Verificar si esta es la última solicitud
-              if (completedRequests == formCount) {
-                // Seleccionar el div con el ID específico
-                const targetDiv = document.getElementById("targetDiv");
-            
-                // Reemplazar su contenido con el mensaje de agradecimiento
-                targetDiv.innerHTML = `
-                    <div class="container-fluid vh-100 d-flex justify-content-center align-items-center gradient-background"style="background: linear-gradient(95deg, #F9DD6A 5%, #023039 90%);">
-                        <div class="text-center text-black">
-                            <h1 class="mb-4 text-black">🎉 Gracias por postular a una convocatoria de ComexLat 🎉</h1>
-                            <p class="fs-5">Estamos emocionados de recibir tu solicitud. 😊</p>
-                        </div>
-                    </div>
+          // Reemplazar su contenido con el mensaje de agradecimiento
+          targetDiv.innerHTML = `
+                       <div class="container-fluid vh-100 d-flex justify-content-center align-items-center gradient-background"style="background: radial-gradient(circle, #023039 75%,black);">
+        <div class="text-center">
+            <h1 class="mb-4 ">🎉 Gracias por postular a una convocatoria de Aybar Corp 🎉</h1>
+            <p class="fs-5 text-white">Estamos emocionados de recibir tu solicitud. 😊</p>
+        </div>
+    </div>
                 `;
-            
-               
-            }
-            
-          })
-          .catch(function (error) {
-              console.error(`Error en la pregunta ${i}:`, error);
-          });
+        }
+      })
+      .catch(function(error) {
+        console.error(`Error en la pregunta ${i}:`, error);
+      });
   }
 }
-
-
 
 function refresh() {
   alert("¡Muchas Gracias por completar el cuestionario!");

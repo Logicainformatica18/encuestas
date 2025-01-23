@@ -234,39 +234,7 @@
                     <div class="container mt-5">
                         <div class="row justify-content-justify">
                             <div class="col-lg-12">
-                                <h1 class="text-center mb-4">Declaración del Titular sobre el Tratamiento de sus Datos
-                                    Personales y su Consentimiento</h1>
-                                <div class="card shadow-sm">
-                                    <div class="card-body">
-                                        <p>
-                                            Con mi firma manuscrita, mi huella biométrica y/o mi firma electrónica o
-                                            digital (pudiendo ser esta mediante mi voz, claves, clic en páginas web y/o
-                                            plataformas digitales y/o cualquier factor de autenticación o combinación
-                                            que permita dejar constancia de mi aceptación), declaro que he sido
-                                            informado en forma libre, previa, expresa, informada e inequívoca respecto a
-                                            que mis datos personales, así como aquellos datos sensibles, que proporcione
-                                            a LA EMPRESA en este formulario, serán incorporados en su banco de datos
-                                            personales y serán tratados con todas las medidas de seguridad y
-                                            confidencialidad establecidas en la Ley, su Reglamento y demás normas
-                                            complementarias y sustitutorias.
-                                        </p>
-                                        <p>
-                                            LA EMPRESA ha informado previamente al titular de los datos personales en
-                                            forma detallada, sencilla, expresa e inequívoca de los alcances, que los
-                                            datos aquí captados serán tratados para contactarse con el titular de los
-                                            datos y cumplir con los fines detallados en el formulario.
-                                        </p>
-                                        <p>
-                                            Asimismo, con la aceptación del presente formulario declaro conocer y estar
-                                            de acuerdo con el tratamiento de mis datos personales según lo informado en
-                                            este formulario y en la Política de Privacidad publicada en la página web,
-                                            teniendo pleno conocimiento que, para las finalidades descritas en este
-                                            formulario, inclusive en los supuestos de encargo y transferencia de datos a
-                                            favor de empresas subsidiarias y/o flujo transfronterizo, no se requiere de
-                                            mi consentimiento expreso.
-                                        </p>
-                                    </div>
-                                </div>
+                        
                             </div>
                         </div>
                     </div>

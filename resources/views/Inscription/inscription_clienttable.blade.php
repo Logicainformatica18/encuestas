@@ -1,6 +1,6 @@
 
  
-        <div class="row">
+        <div class="row pl-5 pr-5 pb-5">
         
                     @php
                         $enumeracion = 0;
@@ -27,15 +27,23 @@
                                      <input type="hidden" value="true" name="date_end" id="date_end">          
                                      @endif 
 
-                                    <button id="next" class="btn  btn-warning granulated-background fs-5"
-                                     style=" color:rgb(0, 0, 0);font-family:Montserrat-Bold;margin-top:-0px"
-                                        onclick="clientStore();this.style.display='none'; return false;">Postularme ></button>
-                                    @if ($survey_details->survey->state == 'public')
-                                      
-                                        <input type="hidden" value="public" name="state" id="state">
-                                    @endif
+                                   
 
+                              
+                           
+                                <div class="text-center py-5">
+                                    <button id="next" class="btn  btn-warning granulated-background"
+                                    style=" color:rgb(0, 0, 0);font-family:Montserrat-Bold;margin-top:-0px;font-size:25px;"
+                                       onclick="clientStore();this.style.display='none';client.front_page.style.display='none'; return false;">POSTULARME 👆💻</button>
+                                   @if ($survey_details->survey->state == 'public')
+                                     
+                                       <input type="hidden" value="public" name="state" id="state">
+                                   @endif
+                                   <p></p>
+                                   <img src="{{asset('portada.jpg')}}"name="front_page" style="width:90%;border-radius:20px"class="py-2" alt="">
                                 </form>
+                       
+                               
                             </div>
                         
                         @endif
@@ -202,7 +210,7 @@
                                     <label class="form-check-label fs-3" for="txtTratamientoDatos1">
                                         <span class="fs-2">Nota: Certifico que la información aquí suministrada es verdadera y podrá ser verificada en cualquier momento por la empresa.
                                             </span>
-                                        <a class="text-warning fs-2" data-bs-toggle="modal" data-bs-target="#bs-example-modal-xlg" style="cursor: pointer;">
+                                        <a class="text-warning fs-2" data-toggle="modal" data-target="#exampleModal" style="cursor: pointer;">
                                              Así mismo estoy dispuesto a brindar una ampliación de cualquier aspecto de los datos
                                             registrados.
                                         </a>

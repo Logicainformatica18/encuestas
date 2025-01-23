@@ -46,10 +46,12 @@
                     {{-- <img class="img-circle elevation-2" src="../dist/img/user7-128x128.jpg" alt="User Avatar"> --}}
 
                     @if ($users->photo == '' && $users->sex == 'M')
-                        <img class="img-circle elevation-1" src="Recurso 23.png" alt="User Avatar">
+                        <img class="img-circle elevation-1" src="male.png" alt="User Avatar">
                     @elseif($users->photo == '' && $users->sex == 'F')
-                        <img class="img-circle elevation-2" src="Recurso 23.png" alt="User Avatar">
-                    @else
+                        <img class="img-circle elevation-2" src="female.png" alt="User Avatar">
+                        @elseif($users->photo != '' && $users->google_id != '')
+                        <img src="{{ $users->photo }}" class="img-circle elevation-2" alt='User Avatar'>
+                    @elseif($users->photo == '' && $users->sex == 'F')
                         <img src="imageusers/{{ $users->photo }}" class="img-circle elevation-2" alt='User Avatar'>
                     @endif
                 </div>

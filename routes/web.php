@@ -31,8 +31,6 @@ Route::get('/sistema', [App\Http\Controllers\HomeController::class, 'sistema'])-
  
 
 Route::get('encuesta/{survey_id}',[App\Http\Controllers\SurveyClientController::class, 'index']);
-Route::get('inscripcion/{survey_id}',[App\Http\Controllers\SurveyClientController::class, 'inscription']);
-
 
 
 
@@ -174,7 +172,9 @@ Route::group(['middleware' => ['role:Administrador']], function () {
  
    Route::post('ResourceDestroyAll', [App\Http\Controllers\ResourceController::class, 'destroyAll']);
 });
-
+Route::group(['middleware' => ['role:Postulante']], function () {
+Route::get('inscripcion/{survey_id}',[App\Http\Controllers\SurveyClientController::class, 'inscription']);
+});
 
 //// social media
    Route::post('socialMediaShare',[App\Http\Controllers\SocialMediaController::class, 'share']);
@@ -223,6 +223,7 @@ Route::get('/auth/google/callback', function () {
                     'email' => $user->email,
                     'google_id'=> $user->id,
                     'photo'=> $user->avatar,
+                    'sex' => $user->user['gender'] ?? '', // Acceder al género si está disponible
                     'password' => Hash::make('postulante')
                 ]);
               
