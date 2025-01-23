@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\SelectionDetail;
+use App\Models\SurveyClient;
 use App\Models\SurveyDetail;
 use App\Models\Survey;
 use App\Models\Selection;
@@ -134,6 +135,7 @@ class SurveyDetailController extends Controller
      */
     public function destroy(Request $request)
     {
+        SurveyClient::where('survey_detail_id', "=",$request->id)->delete();
         SurveyDetail::find($request->id)->delete();
         return $this->create();
     }

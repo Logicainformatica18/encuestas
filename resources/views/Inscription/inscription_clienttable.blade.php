@@ -31,7 +31,7 @@
 
                               
                            
-                                <div class="text-center py-5">
+                                <div class="text-center ">
                                     <button id="next" class="btn  btn-warning granulated-background"
                                     style=" color:rgb(0, 0, 0);font-family:Montserrat-Bold;margin-top:-0px;font-size:25px;"
                                        onclick="clientStore();this.style.display='none';client.front_page.style.display='none'; return false;">POSTULARME 👆💻</button>
@@ -43,7 +43,7 @@
                                    <img src="{{asset('portada.jpg')}}"name="front_page" style="width:90%;border-radius:20px"class="py-2" alt="">
                                 </form>
                        
-                               
+                                <p class="text-justify ">Por favor, lea detenidamente las siguientes preguntas antes de responder. Recuerde que los campos marcados con un asterisco (*) son obligatorios. Asegúrese de proporcionar la información completa y correcta antes de enviar el formulario. ¡Gracias!</p>
                             </div>
                         
                         @endif
@@ -65,10 +65,19 @@
                                     <input type="hidden" value="{{ $survey_details->requerid }}" name="requerid">
 
                                 {{ csrf_field() }}
+                                
                                 <h6 style="color:#13434d">{{ $enumeracion = $enumeracion + 1}} .
                                 
                                     @php
                                     echo $survey_details->question;
+                                    if ($survey_details->requerid=="yes") {
+
+                                    echo " <b class='text-danger'style='font-size:20px'>*</b>" ;
+                                        
+                                    }
+                                    else{
+                                        echo " <b class='text-primary'style='font-size:14px'> (opcional)</b>" ;
+                                    }
                                     @endphp
                                  </h6>
                                   &nbsp; 
@@ -80,13 +89,11 @@
                                     <br>
                                 @if ($survey_details->type == 'short_answer')
                                
-                                    <input id="answer" name="answer" class="form-control" required>
-                                    <div class="invalid-feedback">
+                                    <input id="answer" name="answer" class="form-control " required>
+                                    <div class="invalid-feedback ">
                                         Este campo es obligatorio.
                                     </div>
-                                    {{-- @error('answer')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror --}}
+                              
 
                                     <p></p>
                                       @elseif($survey_details->type == 'email')
@@ -116,7 +123,9 @@
                                         <label style="display: flex; align-items: center;">
 
                                             <input style="" type="radio" name="option"
-                                                value="{{ $item }}" id="option">&nbsp;
+                                                value="{{ $item }}" id="option"@if ($survey_details->requerid =="yes")
+                                                class="is-invalid"                                                    
+                                                @endif >&nbsp;
                                             {{ $item }}
                                         </label>
                                     @endforeach

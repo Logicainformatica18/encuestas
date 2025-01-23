@@ -9,7 +9,7 @@ function survey_clientStore(formCount) {
 
     let requeridValue = formData.get("requerid");
     let answerValue = formData.get("answer");
-    let optionValue = formData.get("option");
+
     let typeValue = formData.get("type");
 
     if (!txtTratamientoDatos1.checked) {
@@ -17,14 +17,11 @@ function survey_clientStore(formCount) {
       return;
     }
 
-    if (requeridValue === "yes" && !answerValue && typeValue == "short_answer") {
+    if (requeridValue === "yes" && !answerValue ) {
       alert(`Debe responder la pregunta ${i}`);
       return; // Termina la función si hay un campo obligatorio vacío
     }
-    if (optionValue === "no_respondido") {
-      alert(`Debe marcar una opción en la pregunta ${i}`);
-      return; // Termina la función si no se marcó una opción
-    }
+    
 
     // Enviar los datos del formulario actual
     axios({

@@ -6,7 +6,7 @@
 
 
 
-        <div class="container text-center pt-3">
+        <div class="container text-center ">
             <p></p>
             <img width="60%" src="../imageusers/{{ $survey->front_page }}" alt=""
                 style="border-radius: 30px;">

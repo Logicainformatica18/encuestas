@@ -115,7 +115,7 @@ class SurveyClientController extends Controller
         // Resto de tu código...
 
 
-        if ($request->type == "short_answer") {
+        if ($request->type == "short_answer" || $request->type == "number") {
             $survey_client->answer = $request->answer;
         } else {
             //   $survey_client->answer = "";

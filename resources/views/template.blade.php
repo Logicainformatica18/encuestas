@@ -47,6 +47,7 @@
     <script src="{{ asset('schedule.js') }}"></script>
     <script src="{{ asset('registry.js') }}"></script>
     <script src="{{ asset('module.js') }}"></script>
+    <script src="{{ asset('associate.js') }}"></script>
 
 
     <script src="{{ asset('resource.js') }}"></script>
