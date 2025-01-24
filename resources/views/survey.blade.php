@@ -1,22 +1,12 @@
 @extends('template')
 @section('content')
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Formularios</h1>
-                    {{ session('success') }}
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                        <li class="breadcrumb-item active">Formularios</li>
-                    </ol>
-                </div>
-            </div>
-        </div><!-- /.container-fluid -->
+    <section class="content-header col-2"  >
+        <h1 >Formularios</h1>
+        {{ session('success') }}
+       
     </section>
+    <p></p>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
         onclick="New();$('#survey')[0].reset();reset_textarea()">
@@ -26,7 +16,7 @@
 
     <!-- /.content -->
     {{-- {{ $survey->onEachSide(5)->links() }} --}}
-    <div id="mycontent">
+    <div id="mycontent" >
         @include('surveytable')
     </div>
 
@@ -97,7 +87,23 @@
                         <input type="time" name="hour_end" id="hour_end" class="form-control"value="22:00:00">
                         Detalle : <input type="text" name="detail" id="detail" class="form-control">
                         Url Menú : <input type="text" name="url" id="url" class="form-control">
-
+                        <p></p>
+                        <div class="form-check">
+                            <input type="checkbox" name="visible" id="visible" value="1" class="" checked>
+                            <label class="form-check-label" for="visible">Visible</label>
+                        </div>
+                   
+                        <div class="form-check">
+                            <input type="checkbox" name="email_confirmation" id="email_confirmation" value="1" class="">
+                            <label class="form-check-label" for="email_confirmation">Confirmación por Email</label>
+                        </div>
+                        
+                        
+                        <p></p>
+                        Contraseña: <input type="password" name="password" id="password" class="form-control">
+                        
+                       
+                        
                 </div>
                 <div class="modal-footer">
                     <input type="button" value="Nuevo" class="btn btn-warning" onclick="New();$('#survey')[0].reset();reset_textarea()"

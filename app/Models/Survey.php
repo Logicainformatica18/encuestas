@@ -13,4 +13,9 @@ class Survey extends Model
 
         return $this->hasMany('App\Models\SurveyDetail', 'survey_id','id');
     }
+    public function created_bys()
+    {  
+
+        return $this->belongsTo('App\Models\User', 'created_by','id');
+    }
 }

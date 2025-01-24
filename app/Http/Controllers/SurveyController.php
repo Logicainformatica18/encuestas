@@ -7,7 +7,10 @@ use App\Http\Requests\StoreSurveyRequest;
 use App\Http\Requests\UpdateSurveyRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AgradecimientoEmail;
+use App\Mail\NotificationSurveyComplete;
+use Illuminate\Support\Facades\Auth;
 class SurveyController extends Controller
 {
 
@@ -51,7 +54,11 @@ class SurveyController extends Controller
             $request->front_page = fileStore($request->file('front_page'), "imageusers");
             $survey->front_page = $request->front_page;
         }
-
+        $survey->visible = $request->visible;
+        $survey->email_confirmation = $request->email_confirmation;
+        $survey->password = $request->password;
+        $survey->created_by = Auth::user()->id;
+        
         $survey->description = $request->description;
         $survey->detail = $request->detail;
         $survey->date_start = $request->date_start;
@@ -70,7 +77,16 @@ class SurveyController extends Controller
     {
         //
     }
+    public function notify(Request $request)
+    {
 
+        $survey = Survey::find($request->id);
+        if ($survey->email_confirmation ===1) {
+            Mail::to($survey->created_bys->email)->send(new NotificationSurveyComplete($survey));
+        }
+       
+        //return $survey;
+    }
     /**
      * Show the form for editing the specified resource.
      */
@@ -92,6 +108,10 @@ class SurveyController extends Controller
             $request->front_page = fileStore($request->file('front_page'), "imageusers");
             $survey->front_page = $request->front_page;
         }
+        $survey->visible = $request->visible ?? 0;;
+        $survey->email_confirmation = $request->email_confirmation ?? 0;
+        $survey->password = $request->password;
+        $survey->created_by = Auth::user()->id;
 
         $survey->description = $request->description;
         $survey->detail = $request->detail;
@@ -101,6 +121,7 @@ class SurveyController extends Controller
         $survey->type = $request->type;
         $survey->state = $request->state;
         $survey->save();
+      
         return $this->create();
     }
 

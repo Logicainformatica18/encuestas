@@ -150,7 +150,8 @@ Route::group(['middleware' => ['role:Administrador']], function () {
    Route::post('surveyEdit',[App\Http\Controllers\SurveyController::class, 'edit']);
    Route::post('surveyUpdate',[App\Http\Controllers\SurveyController::class, 'update']);
    Route::post('surveyDestroy',[App\Http\Controllers\SurveyController::class, 'destroy']);
-   Route::post('surveyShow',[App\Http\Controllers\SurveyController::class, 'show']);
+   
+   Route::post('surveyNotify',[App\Http\Controllers\SurveyController::class, 'notify']);
 
 
    Route::post('survey_detail',[App\Http\Controllers\SurveyController::class, 'survey_detail']);

@@ -24,8 +24,8 @@
     <!-- Daterange picker -->
     <link rel="stylesheet" href="../../plugins/daterangepicker/daterangepicker.css">
     <!-- summernote -->
-   
-    
+
+
     <link rel="stylesheet" href="../../plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     {{-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet"> --}}
@@ -99,7 +99,7 @@
     <script src="{{ asset('dist/js/demo.js') }}"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css" rel="stylesheet">
 
-    <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}} "></script>
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }} "></script>
 
     <!-- DataTables -->
     <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
@@ -112,7 +112,7 @@
     <div class="wrapper">
 
         <!-- Navbar -->
-        <nav class="main-header navbar navbar-expand" style="background-color:  #023039">
+        <nav class="main-header navbar navbar-expand" style="background: linear-gradient(to left, #023039,black);">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" data-widget="pushmenu" href="../../#" role="button"><i
@@ -169,9 +169,11 @@
                 <div class="user-panel mt-1 pb-1 mb-3 d-flex">
                     <div class="image">
                         @if (Auth::user()->photo == '' && Auth::user()->sex == 'M')
-                            <img class="img-circle elevation-2" src="{{asset('male.png')}}" alt="User Avatar" id="blah">
+                            <img class="img-circle elevation-2" src="{{ asset('male.png') }}" alt="User Avatar"
+                                id="blah">
                         @elseif(Auth::user()->photo == '' && Auth::user()->sex == 'F')
-                            <img class="img-circle elevation-2" src="{{asset('female.png')}}" alt="User Avatar"id="blah">
+                            <img class="img-circle elevation-2" src="{{ asset('female.png') }}"
+                                alt="User Avatar"id="blah">
                         @elseif(Auth::user()->google_id != '' && Auth::user()->photo == '')
                             <img src="{{ Auth::user()->photo }}" class="img-circle elevation-2"
                                 alt='User Avatar'id="blah">
@@ -221,16 +223,8 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li> --}}
-                        {{-- <li class="nav-item">
-                            <a href="../../pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
-                                <p>
-                                    Widgets
-                                    <span class="right badge badge-danger">New</span>
-                                </p>
-                            </a>
                         </li>
+                 
                         <li class="nav-item has-treeview">
                             <a href="../../#" class="nav-link">
                                 <i class="nav-icon fas fa-copy"></i>
@@ -407,7 +401,7 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li> --}}
+                        </li>  --}}
                         @role('Administrador|Administrador')
                             <li class="nav-item has-treeview menu-open">
                                 <a href="../../#" class="nav-link" style="background-color: #00bf6f;color:black">
@@ -417,25 +411,17 @@
                                         <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                                <ul class="nav nav-treeview">
+                                <ul class="nav nav-treeview ">
+
 
                                     <li class="nav-item">
                                         <a href="{{ route('usuarios.index') }}" class="nav-link">
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
-                                            <img src="{{ asset('usuario.png') }}" alt="" srcset=""
-                                                width="30px">
+                                            <img src="{{ asset('usuario.png') }}"class="nav-icon" alt=""
+                                                srcset="" width="30px">
                                             <p>Usuarios</p>
                                         </a>
                                     </li>
-
-
-
-                                    {{-- <li class="nav-item">
-                                        <a href="{{ route('tipos.index') }}" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Tipos</p>
-                                        </a>
-                                    </li> --}}
                                     <li class="nav-item">
                                         <a href="{{ route('encuestas.index') }}" class="nav-link">
                                             {{-- <i class="far fa-circle nav-icon"></i> --}}
@@ -453,6 +439,13 @@
                                         </a>
                                     </li>
                                     {{-- <li class="nav-item">
+                                        <a href="{{ route('tipos.index') }}" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Tipos</p>
+                                        </a>
+                                    </li> --}}
+
+                                    {{-- <li class="nav-item">
                                         <a href="{{ url('ajustes') }}" class="nav-link">
                                             <img src="{{ asset('categorias.png') }}" alt="" srcset=""
                                                 width="30px">
@@ -467,27 +460,82 @@
                                         </a>
                                     </li>
 
-
-
-
-
-
-
-                                    {{-- <li class="nav-item">
-                                    <a href="../../pages/tables/data.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>DataTables</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="../../pages/tables/jsgrid.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>jsGrid</p>
-                                    </a>
-                                </li> --}}
                                 </ul>
                             </li>
                         @endrole
+
+
+                        @role('Postulante')
+                            @php
+                                $survey_ = Session::get('survey_');
+                                $enumeracion_ = 0;
+                            @endphp
+                            <li class="nav-item has-treeview menu-open">
+                                <a href="../../#" class="nav-link" style="background-color: #00bf6f;color:black">
+                                    <i class="nav-icon fas fa-table"></i>
+                                    <p>
+                                        Personal
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
+                                </a>
+
+
+
+                                <ul class="nav nav-treeview ">
+                                    @foreach ($survey_ as $item)
+                                        @php
+                                            $enumeracion_++;
+                                        @endphp
+
+                                        <li class="nav-item">
+                                            <a href="{{ url('inscripcion/' . $item->id) }}" class="nav-link">
+                                                <img src="{{ asset('formularioss.png') }}"class="nav-icon" alt=""
+                                                    srcset="" width="30px">
+                                                <p> {{ $item->url }}</p>
+                                            </a>
+                                        </li>
+                                        @if ($loop->last && $enumeracion_ == 10)
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <img src="{{ asset('formularioss.png') }}"class="nav-icon"
+                                                    alt="" srcset="" width="30px">
+                                                <p> #</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link">
+                                                <img src="{{ asset('formularioss.png') }}"class="nav-icon"
+                                                    alt="" srcset="" width="30px">
+                                                <p> #</p>
+                                            </a>
+                                        </li>
+                                        @else
+                                           
+                                        @endif
+                                    @endforeach
+
+
+                                </ul>
+                            </li>
+                            {{-- <li class="nav-item">
+                                        <a href="{{ route('usuarios.index') }}" class="nav-link">
+                                           
+                                            <img src="{{ asset('usuario.png') }}"class="nav-icon" alt=""
+                                                srcset="" width="30px">
+                                            <p>Usuarios</p>
+                                        </a>
+                                    </li> --}}
+
+
+
+
+
+
+
+                        @endrole
+
+
+
                         {{-- <li class="nav-header">EXAMPLES</li>
                         <li class="nav-item">
                             <a href="../../pages/calendar.html" class="nav-link">
@@ -768,47 +816,15 @@
                                 <p>Informational</p>
                             </a>
                         </li> --}}
-                  @php
-                  $survey_ = Session::get('survey_');
-                  @endphp
-                        @role('Postulante')
-                        <li class="nav-item has-treeview menu-open">
-                            <a href="#" class="nav-link" style="background-color: #00bf6f;color:black">
-                                <i class="nav-icon fas fa-table"></i>
-                                <p>
-                                    Personal
-                                    <i class="fas fa-angle-left right"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-
-                               
-                                @foreach ($survey_ as $item)
-                                    <li class="nav-item">
-                                        <a href="{{url('inscripcion/'.$item->id)}}"   class="nav-link">
-                                            <img src="{{ asset('formularioss.png') }}" alt="" srcset="" width="30px">
-                                            <p class=""style=""> {{ $item->url }}</p>
-                                        </a>
-                                    </li>
-                                @endforeach
-            
-                        
 
 
-            
-
-
-                            </ul>
-                        </li>
-                    @endrole
-                  
                     </ul>
                 </nav>
 
 
 
 
-               
+
                 <!-- /.sidebar-menu -->
                 <div class="user-panel pl-6 mt-3 pb-3 mb-3 d-flex">
 
@@ -836,24 +852,24 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="container-fluid">
 
 
 
+
+        <!-- Main content -->
+        <div class="content-wrapper"id="targetDiv">
             <!-- Main content -->
-            <div class="content-wrapper"id="targetDiv">
-                <!-- Main content -->
-                <section class="content">
-                    <div class="container-fluid">
-                        @yield('content')
+            <section class="content p-3">
 
-                    </div>
-                </section>
-                <!-- /.content -->
-            </div>
+                @yield('content')
+
+
+            </section>
+            <!-- /.content -->
         </div>
+
         <!-- /.content-wrapper -->
-        <footer class="main-footer"style="background-color: #023039">
+        <footer class="main-footer"style="background: linear-gradient(to left, #023039,black); color: white">
             <span
                 style="background-image: linear-gradient(45deg, rgb(0, 0, 0), red); -webkit-background-clip: text; color: transparent;">
                 <a href="https://anthonycode.com"target="_blank"><b>Copyright © 2025</b> </a></span>
@@ -1009,7 +1025,6 @@
             });
         }
         datatable_load();
-        
     </script>
 
 

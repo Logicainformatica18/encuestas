@@ -205,6 +205,7 @@
                                     <p></p>
                                 @endif
                                 @if (!$loop->last)
+                             
                                     {{-- <button id="prev" class="btn btn-warning btn-lg"
                                         onclick="prevPage()">atras</button> --}}
                                     {{-- <button id="next" class="btn btn-warning btn-lg"
@@ -213,7 +214,8 @@
                                 @endif
 
                                 @if ($loop->last)
-                                    
+                                <input type="hidden" name="survey_id" id="survey_id" value="{{$survey_details->survey->id}}">
+                                
                                 <div class="form-check text-start">
                                     <input class="form-check-input" type="checkbox" id="txtTratamientoDatos1" name="data_aprobed_1" value="true"requerid>
                                     <label class="form-check-label fs-3" for="txtTratamientoDatos1">

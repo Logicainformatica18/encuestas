@@ -40,12 +40,27 @@ function surveyEdit(id) {
       survey.id.value = response.data["id"];
       survey.title.value = response.data["title"];
       survey.detail.value = response.data["detail"];
-         survey.state.value = response.data["state"];
-         survey.date_start.value = response.data["date_start"];
-         survey.date_end.value = response.data["date_end"];
-            survey.type.value = response.data["type"];
-            survey.url.value = response.data["url"];
-                  // JavaScript para establecer el contenido del textarea
+      survey.state.value = response.data["state"];
+      survey.date_start.value = response.data["date_start"];
+      survey.date_end.value = response.data["date_end"];
+      survey.type.value = response.data["type"];
+      survey.url.value = response.data["url"];
+      survey.password.value = response.data["password"];
+      if (response.data["email_confirmation"]=="1") {
+        survey.email_confirmation.checked = true;
+      }
+      else{
+        survey.email_confirmation.checked = false;
+      }
+      if (response.data["visible"]=="1") {
+        survey.visible.checked = true;
+      }
+      else{
+        survey.visible.checked = false;
+      }
+    
+
+      // JavaScript para establecer el contenido del textarea
       document.getElementsByClassName("note-editable")[0].innerHTML = response.data["description"];
     })
     .catch(function(response) {

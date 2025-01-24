@@ -1,4 +1,4 @@
-function survey_clientStore(formCount) {
+async function survey_clientStore(formCount) {
   let completedRequests = 0; // Contador para las solicitudes completadas
 
   for (let i = 1; i <= formCount; i++) {
@@ -7,8 +7,10 @@ function survey_clientStore(formCount) {
     let txtTratamientoDatos1 = document.getElementById("txtTratamientoDatos1");
     let txtTratamientoDatos2 = document.getElementById("txtTratamientoDatos2");
 
+    let id = formData.get("survey_id");
     let requeridValue = formData.get("requerid");
     let answerValue = formData.get("answer");
+    let selectValue = formData.get("selection_detail_id");
 
     let typeValue = formData.get("type");
 
@@ -17,11 +19,24 @@ function survey_clientStore(formCount) {
       return;
     }
 
-    if (requeridValue === "yes" && !answerValue ) {
-      alert(`Debe responder la pregunta ${i}`);
-      return; // Termina la función si hay un campo obligatorio vacío
+    if (typeValue === "selection") {
+      if (requeridValue === "yes" && selectValue == "0") {
+        alert(`Debe responder la pregunta ${i}`);
+        return;
+      }
     }
-    
+    if (typeValue == "short_answer" || typeValue == "email" || typeValue == "multiple_option") {
+      if (requeridValue === "yes" && !answerValue) {
+        alert(`Debe responder la pregunta ${i}`);
+        return;
+      }
+    }
+    if (typeValue === "file") {
+      if (requeridValue === "yes" && (!answerValue || answerValue.size === 0)) {
+        alert(`Debe seleccionar un archivo para la pregunta ${i}`);
+        return;
+      }
+    }
 
     // Enviar los datos del formulario actual
     axios({
@@ -48,8 +63,8 @@ function survey_clientStore(formCount) {
             <h1 class="mb-4 ">🎉 Gracias por postular a una convocatoria de Aybar Corp 🎉</h1>
             <p class="fs-5 text-white">Estamos emocionados de recibir tu solicitud. 😊</p>
         </div>
-    </div>
-                `;
+    </div>`;
+          executeWithoutBlocking(surveyNotify(id));
         }
       })
       .catch(function(error) {
@@ -57,12 +72,33 @@ function survey_clientStore(formCount) {
       });
   }
 }
-
+function surveyNotify(id) {
+  var formData = new FormData();
+  formData.append("id", id);
+  axios({
+    method: "post",
+    url: "../../surveyNotify",
+    data: formData,
+    headers: {
+      "Content-Type": "multipart/form-data"
+    }
+  })
+    .then(function(response) {
+      //handle success
+      console.log("Notificado con éxito");
+    })
+    .catch(function(response) {
+      //handle error
+      console.log(response);
+    });
+}
 function refresh() {
   alert("¡Muchas Gracias por completar el cuestionario!");
   window.location.reload();
 }
-
+function executeWithoutBlocking(fn) {
+  setTimeout(fn, 0);
+}
 function survey_clientEdit(id, student) {
   var formData = new FormData(document.getElementById("qualification"));
   formData.append("id", id);
