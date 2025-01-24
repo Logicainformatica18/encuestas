@@ -1,16 +1,14 @@
 @extends('template')
 @section('content')
-
-
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <h1>Ajustes</h1>
                     {{ session('success') }}
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Inicio</a></li>
                         <li class="breadcrumb-item active">Ajustes</li>
@@ -21,16 +19,16 @@
     </section>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-        onclick="New();$('#setting')[0].reset();setting.fotografia.src='https://placehold.co/300x300';">
+        onclick="New();$('#setting')[0].reset();">
         Agregar
     </button>
     <p></p>
-  
-  <!-- /.content -->
-  {{-- {{ $setting->onEachSide(1)->links() }} --}}
+
+    <!-- /.content -->
+    {{-- {{ $setting->onEachSide(1)->links() }} --}}
     <p></p>
     <div id="mycontent">
-        @include("setting.settingtable")
+        @include('setting.settingtable')
     </div>
 
 
@@ -54,52 +52,124 @@
                         Descripción<input name="description" type="text" class="form-control">
 
                         <br>
-                    
+
 
                         <div class="container row align-content-center">
-                            @for ($i=1; $i <=10;$i++)
-                            <div class="col-4 col-sm-4 col-md-3 col-lg-4 col-xl-2 pt-2 text-center">
-                               
-                                Imágen {{ $i }}
-                                    
-                                <div class="btn btn-default btn-file col-9 ">
-                                    <i class="fas fa-paperclip"></i> Subir
-                                    <input type='file' id="imgInp{{$i}}" name="image_{{$i}}" onchange="readImage(this,'blah{{$i}}');">
-                                </div> 
-                                <div class="size-100 pt-2">
-                                    
-                                    <img id="blah{{$i}}" name="fotografia" src="https://placehold.co/300x300" alt="Tu imagen"
-                                        class="img-bordered" width="100%">
-                                </div>
+
+                            <h6 >Logotipo</h6>
+                   
+                            <div class="col-12 col-sm-12 ">
+                                <input type='file'  name="image_1" class="form-control">
                             </div>
-                            @endfor
-                            
+                          
+                            <h6 class="pt-3">Portada  Login(1240*915 aprox)</h6>
+                    
+                            <div class="col-12 col-sm-12 ">
+                                <input type='file'  name="image_2" class="form-control">
+                           
+                            </div>
+                   
                            
                         </div>
-                        <div class="container row align-content-center">
-                        @for ($i=1; $i <=10;$i++)
-                        <div class="col-4 col-sm-4 col-md-3 col-lg-4 col-xl-2 pt-2">
-                           
-                            Color {{ $i }}
-                           <input type="text"name="color_{{$i}}"class="form-control">     
-                            
+
+                        <h6 class="pt-3">Botón Login</h6>
+
+                        <div class="row align-content-center">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                Color Fondo
+                                <input type="color" name="color_1" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                Color Texto
+                                <input type="color" name="color_2" class="form-control">
+                            </div>
                         </div>
-                        @endfor
-                    </div>
+                        <p></p>
+                        <h6>Barra Lateral Izquierda (Se elegirá para la marca)</h6>
+
+                        <div class="row align-content-center">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                Fondo degradado 01
+                                <input type="color" name="color_3" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                Fondo degradado 02
+                                <input type="color" name="color_4" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                Color Texto
+                                <input type="color" name="color_5" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                Fondo módulo
+                                <input type="color" name="color_6" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                Color Texto módulo
+                                <input type="color" name="color_7" class="form-control">
+                            </div>
+                        </div>
+                        <p></p>
+                        <h6>Barra Superior</h6>
+
+                        <div class="row align-content-center">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                Fondo degradado 01
+                                <input type="color" name="color_8" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                Fondo degradado 02
+                                <input type="color" name="color_9" class="form-control">
+                            </div>
+                        </div>
+                        <p></p>
+                        <h6>Barra Inferior</h6>
+
+                        <div class="row align-content-center">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                Fondo degradado 01
+                                <input type="color" name="color_10" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                Fondo degradado 02
+                                <input type="color" name="color_11" class="form-control">
+                            </div>
+                        </div>
+                        <p></p>
+                        <h6>Textos</h6>
+
+                        <div class="row align-content-center">
+                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                Texto 1
+                                <input type="color" name="color_12" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                Texto 2
+                                <input type="color" name="color_13" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                Texto 3
+                                <input type="color" name="color_14" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                                Texto 4
+                                <input type="color" name="color_15" class="form-control">
+                            </div>
+                        </div>
 
                 </div>
                 <div class="modal-footer">
-                    <input type="button" value="Nuevo" class="btn btn-warning" onclick="New();$('#setting')[0].reset(); setting.fotografia.src='https://placehold.co/300x300';"
+                    <input type="button" value="Nuevo" class="btn btn-warning"
+                        onclick="New();$('#setting')[0].reset(); setting.fotografia.src='https://placehold.co/300x300';"
                         name="new">
-                    <input type="button" value="Guardar" class="btn btn-success" onclick="settingStore()" id="create">
-                    <input type="button" value="Modificar" class="btn btn-danger" onclick="settingUpdate();" id="update">
+                    <input type="button" value="Guardar" class="btn btn-success" onclick="settingStore()"
+                        id="create">
+                    <input type="button" value="Modificar" class="btn btn-danger" onclick="settingUpdate();"
+                        id="update">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
- 
-
 @endsection

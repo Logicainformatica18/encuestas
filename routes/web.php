@@ -69,6 +69,9 @@ Route::get('encuesta/{survey_id}',[App\Http\Controllers\SurveyClientController::
 
 
 
+   Route::get('doc', function(){
+       return view('doc.documentation');
+   });
 
 Route::get('/perfil', [App\Http\Controllers\HomeController::class, 'sistema'])->name('sistema');
 /////////////////////////////////////////

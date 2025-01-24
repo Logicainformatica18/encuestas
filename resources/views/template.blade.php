@@ -445,18 +445,26 @@
                                         </a>
                                     </li> --}}
 
-                                    {{-- <li class="nav-item">
-                                        <a href="{{ url('ajustes') }}" class="nav-link">
-                                            <img src="{{ asset('categorias.png') }}" alt="" srcset=""
-                                                width="30px">
-                                            <p>Ajustes</p>
-                                        </a>
-                                    </li> --}}
+                              
                                     <li class="nav-item">
                                         <a href="{{ url('recursos') }}" class="nav-link">
                                             <img src="{{ asset('categorias.png') }}" alt="" srcset=""
                                                 width="30px">
                                             <p>Recursos</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('ajustes') }}" class="nav-link">
+                                            <img src="{{ asset('encuestadorr.png') }}" alt="" srcset=""
+                                                width="30px">
+                                            <p>Ajustes</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="{{ url('doc') }}" class="nav-link">
+                                            <img src="{{ asset('encuestadorr.png') }}" alt="" srcset=""
+                                                width="30px">
+                                            <p>Documentación</p>
                                         </a>
                                     </li>
 

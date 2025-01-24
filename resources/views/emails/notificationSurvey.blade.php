@@ -17,7 +17,7 @@
         <p>Saludos cordiales,</p>
         <br>
         <img 
-            src="{{ asset('logo.png') }}" width="240" alt="Logo de la Empresa">
+            src="https://media.licdn.com/dms/image/v2/D4D0BAQHwgX9KJgR4NQ/company-logo_200_200/company-logo_200_200/0/1684956800375/aybarcorpoficial_logo?e=2147483647&v=beta&t=ZUc0MmYZlQn_LKANJXpw8CRrCvW9RH7Z_ioUEUmK2mA" width="240" alt="Logo de la Empresa">
         <br>
         <b>Equipo de {{ config('app.name') }}</b>
         
