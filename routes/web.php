@@ -85,7 +85,7 @@ Route::group(['middleware' => ['role:Administrador']], function () {
     Route::post('settingStore',[App\Http\Controllers\SettingController::class, 'store']);
     Route::post('settingEdit',[App\Http\Controllers\SettingController::class, 'edit']);
     Route::post('settingUpdate',[App\Http\Controllers\SettingController::class, 'update']);
-    Route::get('settingDestroy',[App\Http\Controllers\SettingController::class, 'destroy']);
+    Route::get('settingDestroy/{id}',[App\Http\Controllers\SettingController::class, 'destroy']);
     Route::post('settingShow',[App\Http\Controllers\SettingController::class, 'show']);
 
 

@@ -16,18 +16,20 @@
                             <table id="example1" class="table table-bordered table-striped table-responsive">
                                 <thead>
                                     <th ></th>
+                                    
+                                    <th >__Opciones__</th>
                                     <th class="sorting">ID</th>
+                                    <th class="sorting">Título</th>
                                     <th class="sorting">Descripción</th>
-                                    <th class="sorting">Detalle</th>
-                                    <th ><img width="20" src="https://img1.freepng.es/20180622/aac/kisspng-computer-icons-download-share-icon-nut-vector-5b2d36055f5105.9823437615296896053904.jpg" alt="" srcset=""></th>
+                                    @for ($i=1;$i<=15;$i++) 
+                                    <th class="sorting">Color {{$i}}</th>                                 
+                                    @endfor
+                                   
                                 </thead>
                                 <tbody>
                                     @foreach ($setting as $settings)
                                         <tr>
                                             <td></td>
-                                            <td>{{ $settings->id }}</td>
-                                            <td>{{ $settings->description }}</td>
-                                            <td>{{ $settings->detail }}</td>
                                             <td>
                                                 <!-- Button trigger modal -->
                                                 <button type="button" class="btn btn-success note-icon-pencil"
@@ -37,6 +39,16 @@
                                                 <!-- <button class="note-icon-pencil" ></button> -->
                                                 <button class="btn btn-danger note-icon-trash" onclick="settingDestroy('{{ $settings->id }}'); return false"></button>
                                             </td>
+                                            <td>{{ $settings->id }}</td>
+                                            <td>{{ $settings->title }}</td>
+                                            <td>{{ $settings->description }}</td>
+                                            @for ($i=1;$i<=15;$i++) 
+                                            @php
+                                             $property = "color_".$i;   
+                                            @endphp
+                                            <td  >{{$settings->$property}}</td>
+                                            @endfor
+                                           
 
                                         </tr>
                                     @endforeach

@@ -38,8 +38,25 @@ function settingEdit(id) {
       var contentdiv = document.getElementById("mycontent");
       // contentdiv.innerHTML = response.data["description"];
       setting.id.value = response.data["id"];
+      setting.title.value = response.data["title"];
       setting.description.value = response.data["description"];
-      setting.detail.value = response.data["detail"];
+      setting.color_1.value = response.data["color_1"];
+      setting.color_2.value = response.data["color_2"];
+      setting.color_3.value = response.data["color_3"];
+      setting.color_4.value = response.data["color_4"];
+      setting.color_5.value = response.data["color_5"];
+      setting.color_6.value = response.data["color_6"];
+      setting.color_7.value = response.data["color_7"];
+      setting.color_8.value = response.data["color_8"];
+      setting.color_9.value = response.data["color_9"];
+      setting.color_10.value = response.data["color_10"];
+      setting.color_11.value = response.data["color_11"];
+      setting.color_12.value = response.data["color_12"];
+      setting.color_13.value = response.data["color_13"];
+      setting.color_14.value = response.data["color_14"];
+      setting.color_15.value = response.data["color_15"];
+      
+
     })
     .catch(function(response) {
       //handle error
@@ -73,12 +90,11 @@ function settingUpdate() {
 
 function settingDestroy(id) {
   if (confirm("¿Quieres eliminar este registro?")) {
-    var formData = new FormData(document.getElementById("setting"));
-    formData.append("id", id);
+    
+    
     axios({
-      method: "post",
-      url: "settingDestroy",
-      data: formData,
+      method: "get",
+      url: "settingDestroy/"+id, 
       headers: {
         "Content-Type": "multipart/form-data"
       }

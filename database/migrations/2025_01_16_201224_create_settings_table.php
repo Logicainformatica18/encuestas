@@ -36,6 +36,11 @@ return new class extends Migration
             $table->string('color_8')->nullable();
             $table->string('color_9')->nullable();
             $table->string('color_10')->nullable();
+            $table->string('color_11')->nullable();
+            $table->string('color_12')->nullable();
+            $table->string('color_13')->nullable();
+            $table->string('color_14')->nullable();
+            $table->string('color_15')->nullable();
 
             $table->timestamps();
         });

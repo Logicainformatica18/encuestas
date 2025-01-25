@@ -19,7 +19,7 @@
     </section>
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-        onclick="New();$('#setting')[0].reset();">
+        onclick="New();">
         Agregar
     </button>
     <p></p>
@@ -57,19 +57,25 @@
                         <div class="container row align-content-center">
 
                             <h6 >Logotipo</h6>
-                   
                             <div class="col-12 col-sm-12 ">
                                 <input type='file'  name="image_1" class="form-control">
                             </div>
-                          
                             <h6 class="pt-3">Portada  Login(1240*915 aprox)</h6>
-                    
                             <div class="col-12 col-sm-12 ">
                                 <input type='file'  name="image_2" class="form-control">
-                           
                             </div>
-                   
-                           
+                            <h6 class="pt-3">Logo Barra lateral izquierdo  Grande</h6>
+                            <div class="col-12 col-sm-12 ">
+                                <input type='file'  name="image_3" class="form-control">
+                            </div>
+                            <h6 class="pt-3">Logo Barra lateral izquierdo  Pequeño</h6>
+                            <div class="col-12 col-sm-12 ">
+                                <input type='file'  name="image_4" class="form-control">
+                            </div>
+                            <h6 class="pt-3">Logo Reporte</h6>
+                            <div class="col-12 col-sm-12 ">
+                                <input type='file'  name="image_5" class="form-control">
+                            </div>
                         </div>
 
                         <h6 class="pt-3">Botón Login</h6>
@@ -160,7 +166,7 @@
                 </div>
                 <div class="modal-footer">
                     <input type="button" value="Nuevo" class="btn btn-warning"
-                        onclick="New();$('#setting')[0].reset(); setting.fotografia.src='https://placehold.co/300x300';"
+                        onclick="New();$('#setting')[0].reset(); "
                         name="new">
                     <input type="button" value="Guardar" class="btn btn-success" onclick="settingStore()"
                         id="create">

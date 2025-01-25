@@ -15,23 +15,22 @@ function datebirth($day, $month, $year)
 function fileStore($photo, $directory)
 {
     if ($photo != "") {
-
+        $uniqueId = uniqid(); // Genera un identificador único
+    
+       
         //get imageName
-        $imageName =  time() . "_" . $photo->getClientOriginalName();
+        $imageName =  time() . "_" .$uniqueId. $photo->getClientOriginalName();
         //move imageFile
         $photo->move($directory, $imageName);
         return    $imageName;
     }
 }
-function fileUpdate($photo, $directory,$imagename)
+function fileUpdate($photo, $directory)
 {
-    if ($photo != "") {
-
-     $imageName = $imagename;
-        //move imageFile
-        $photo->move($directory, $imageName);
-        return    $imageName;
-    }
+    fileDestroy($photo, $directory);
+    return fileStore($photo, $directory);
+   
+   
 }
 function fileDestroy($photo, $directory)
 {
@@ -40,7 +39,7 @@ function fileDestroy($photo, $directory)
         unlink($image_path);
     } catch (\Exception $e) {
                //   return  $e->getMessage();
-               return "<div style='background-color:red'> ERROR de carga de imagen</div>";
+               return "<div style='background-color:red'> ERROR </div>";
     }
 }
 function saludo(){

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Session;
+use App\Models\Survey;
 use Illuminate\Http\Request;
 use App\Models\Resource;
 use App\Http\Requests\StoreResourceRequest;
@@ -11,21 +13,23 @@ class ResourceController extends Controller
 {
     /**
      * Display a listing of the resource.
-     */   
-     public function __construct()
+     */
+    public function __construct()
     {
         $this->middleware('auth');
-
-
     }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-          //
-          $Resource = Resource::orderBy('id','DESC')->get();
-          return view("Resource.Resource", compact("Resource"));
+        $survey_ = Survey::where("type", "=", "postulation")
+            ->select("url", "id")
+            ->get();
+        // Almacenar en la sesión
+        Session::put('survey_', $survey_);
+        $Resource = Resource::orderBy('id', 'DESC')->get();
+        return view("Resource.Resource", compact("Resource"));
     }
 
     /**
@@ -33,7 +37,7 @@ class ResourceController extends Controller
      */
     public function create()
     {
-        $Resource = Resource::orderBy('id','DESC')->get();
+        $Resource = Resource::orderBy('id', 'DESC')->get();
         return view("Resource.Resourcetable", compact("Resource"));
     }
 
@@ -46,8 +50,7 @@ class ResourceController extends Controller
         $Resource->title = $request->title;
         $Resource->description = $request->description;
         $Resource->detail = $request->detail;
-        $request->file = fileStore($request->file('file'), "resource");
-        $Resource->file = $request->file;
+        $Resource->file = fileStore($request->file('file'), "resource");
         $Resource->save();
         return $this->create();
     }
@@ -65,7 +68,7 @@ class ResourceController extends Controller
      */
     public function edit(Request $request)
     {
-        $Resource=Resource::find($request->id);
+        $Resource = Resource::find($request->id);
         return $Resource;
     }
 
@@ -78,11 +81,7 @@ class ResourceController extends Controller
         $Resource->title = $request->title;
         $Resource->description = $request->description;
         $Resource->detail = $request->detail;
-        //eliminar imagen anterior
-        $table = Resource::find($request["id"]);
-        fileDestroy($table->file, "resource");
-        //guarda la nueva
-        fileUpdate($request->file('file'), "resource", $Resource->file);
+        $Resource->file =  fileUpdate($request->file('file'), "resource");
         $Resource->save();
         return $this->create();
     }
@@ -100,13 +99,11 @@ class ResourceController extends Controller
     public function destroyAll(Request $request)
     {
         foreach ($request->deleteAll as $deleteAllId) {
-            
+
             $table = Resource::find($deleteAllId);
             fileDestroy($table->file, "resource");
             Resource::find($deleteAllId)->delete();
-            
         }
-       return $this->create();
-      
+        return $this->create();
     }
 }
